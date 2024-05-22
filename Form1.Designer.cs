@@ -1,6 +1,6 @@
 ﻿namespace SAA
 {
-    partial class FormMain
+    partial class frm_Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,21 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbl_TituloForm = new Label();
             menuStrip1 = new MenuStrip();
             opçõesToolStripMenuItem = new ToolStripMenuItem();
+            cadastrarAlunoToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
             sairToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // lbl_TituloForm
-            // 
-            lbl_TituloForm.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_TituloForm.Location = new Point(180, 24);
-            lbl_TituloForm.Name = "lbl_TituloForm";
-            lbl_TituloForm.Size = new Size(440, 36);
-            lbl_TituloForm.TabIndex = 1;
-            lbl_TituloForm.Text = "SAA - SISTEMA DE ALUNOS ACAMDEIA\r\n";
             // 
             // menuStrip1
             // 
@@ -55,30 +47,43 @@
             // 
             // opçõesToolStripMenuItem
             // 
-            opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
+            opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarAlunoToolStripMenuItem, toolStripSeparator1, sairToolStripMenuItem });
             opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
-            opçõesToolStripMenuItem.Size = new Size(59, 20);
-            opçõesToolStripMenuItem.Text = "Opções";
+            opçõesToolStripMenuItem.Size = new Size(50, 20);
+            opçõesToolStripMenuItem.Text = "Menu";
+            // 
+            // cadastrarAlunoToolStripMenuItem
+            // 
+            cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
+            cadastrarAlunoToolStripMenuItem.Size = new Size(159, 22);
+            cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
+            cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(156, 6);
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(93, 22);
+            sairToolStripMenuItem.Size = new Size(159, 22);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
-            // FormMain
+            // frm_Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lbl_TituloForm);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            MaximizeBox = false;
-            Name = "FormMain";
+            Name = "frm_Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SAA - Sistemas de Alunos Academia";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -86,9 +91,10 @@
         }
 
         #endregion
-        private Label lbl_TituloForm;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem opçõesToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem cadastrarAlunoToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }
