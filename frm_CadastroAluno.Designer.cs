@@ -43,7 +43,7 @@
             mask_Matricula = new MaskedTextBox();
             btn_CadastrarAluno = new Button();
             statusStrip1 = new StatusStrip();
-            StauLabel_CadastroAluno = new ToolStripStatusLabel();
+            lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
             grid_CadastroAluno = new DataGridView();
             matricula = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
@@ -52,6 +52,8 @@
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
             splitContainer1 = new SplitContainer();
+            btn_Pesquisar = new Button();
+            txtBox_Pesquisar = new TextBox();
             btn_RecarregarTabela = new Button();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grid_CadastroAluno).BeginInit();
@@ -198,20 +200,20 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { StauLabel_CadastroAluno });
-            statusStrip1.Location = new Point(0, 420);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
+            statusStrip1.Location = new Point(0, 459);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(1086, 37);
             statusStrip1.TabIndex = 17;
             statusStrip1.Text = "statusStrip1";
             // 
-            // StauLabel_CadastroAluno
+            // lbl_CadastroAlunoMsg
             // 
-            StauLabel_CadastroAluno.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            StauLabel_CadastroAluno.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            StauLabel_CadastroAluno.Name = "StauLabel_CadastroAluno";
-            StauLabel_CadastroAluno.Size = new Size(65, 32);
-            StauLabel_CadastroAluno.Text = "label";
+            lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
+            lbl_CadastroAlunoMsg.Size = new Size(65, 32);
+            lbl_CadastroAlunoMsg.Text = "label";
             // 
             // grid_CadastroAluno
             // 
@@ -224,7 +226,7 @@
             grid_CadastroAluno.Name = "grid_CadastroAluno";
             grid_CadastroAluno.RowTemplate.Height = 25;
             grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_CadastroAluno.Size = new Size(653, 420);
+            grid_CadastroAluno.Size = new Size(653, 459);
             grid_CadastroAluno.TabIndex = 19;
             // 
             // matricula
@@ -267,6 +269,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
+            splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
             splitContainer1.Panel1.Controls.Add(btn_RecarregarTabela);
             splitContainer1.Panel1.Controls.Add(lbl_TitleCadastroAluno);
             splitContainer1.Panel1.Controls.Add(lbl_NomeCompleto);
@@ -286,9 +290,35 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(grid_CadastroAluno);
-            splitContainer1.Size = new Size(1086, 420);
+            splitContainer1.Size = new Size(1086, 459);
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 20;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.Cursor = Cursors.Hand;
+            btn_Pesquisar.Dock = DockStyle.Bottom;
+            btn_Pesquisar.FlatStyle = FlatStyle.System;
+            btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Pesquisar.ImageAlign = ContentAlignment.MiddleRight;
+            btn_Pesquisar.Location = new Point(0, 397);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(429, 32);
+            btn_Pesquisar.TabIndex = 18;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseCompatibleTextRendering = true;
+            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
+            // txtBox_Pesquisar
+            // 
+            txtBox_Pesquisar.Cursor = Cursors.IBeam;
+            txtBox_Pesquisar.Dock = DockStyle.Bottom;
+            txtBox_Pesquisar.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBox_Pesquisar.Location = new Point(0, 429);
+            txtBox_Pesquisar.Name = "txtBox_Pesquisar";
+            txtBox_Pesquisar.Size = new Size(429, 30);
+            txtBox_Pesquisar.TabIndex = 17;
             // 
             // btn_RecarregarTabela
             // 
@@ -303,12 +333,13 @@
             btn_RecarregarTabela.Text = "Recarregar Tabela";
             btn_RecarregarTabela.UseCompatibleTextRendering = true;
             btn_RecarregarTabela.UseVisualStyleBackColor = true;
+            btn_RecarregarTabela.Click += btn_RecarregarTabela_Click;
             // 
             // frm_CadastroAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1086, 457);
+            ClientSize = new Size(1086, 496);
             ControlBox = false;
             Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
@@ -346,7 +377,7 @@
         private MaskedTextBox mask_Matricula;
         private Button btn_CadastrarAluno;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel StauLabel_CadastroAluno;
+        private ToolStripStatusLabel lbl_CadastroAlunoMsg;
         private DataGridView grid_CadastroAluno;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;
@@ -356,5 +387,7 @@
         private DataGridViewTextBoxColumn email;
         private SplitContainer splitContainer1;
         private Button btn_RecarregarTabela;
+        private Button btn_Pesquisar;
+        private TextBox txtBox_Pesquisar;
     }
 }

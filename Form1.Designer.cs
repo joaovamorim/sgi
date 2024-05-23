@@ -55,19 +55,19 @@
             // cadastrarAlunoToolStripMenuItem
             // 
             cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            cadastrarAlunoToolStripMenuItem.Size = new Size(159, 22);
+            cadastrarAlunoToolStripMenuItem.Size = new Size(180, 22);
             cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
             cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(156, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(159, 22);
+            sairToolStripMenuItem.Size = new Size(180, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 

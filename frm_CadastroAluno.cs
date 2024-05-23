@@ -1,4 +1,7 @@
-﻿namespace SAA
+﻿using System.Data;
+using MySql.Data.MySqlClient;
+
+namespace SAA
 {
     public partial class frm_CadastroAluno : Form
     {
@@ -15,6 +18,16 @@
         private void btn_CadastrarAluno_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_RecarregarTabela_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
