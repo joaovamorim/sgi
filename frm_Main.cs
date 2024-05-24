@@ -9,13 +9,13 @@ namespace SAA
 
         private void FecharFormulariosFilhos()
         {
-            // percorre todos os formulários abertos
+            // percorre todos os formulï¿½rios abertos
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                // se o formulário for filho
+                // se o formulï¿½rio for filho
                 if (Application.OpenForms[i].IsMdiChild)
                 {
-                    // fecha o formulário
+                    // fecha o formulï¿½rio
                     Application.OpenForms[i].Close();
                 }
             }
@@ -40,14 +40,14 @@ namespace SAA
         {
             FecharFormulariosFilhos();
 
-            frm_ConsultarTabela openMdi_ConsultarTabela = new frm_ConsultarTabela();
-            openMdi_ConsultarTabela.MdiParent = this;
-            openMdi_ConsultarTabela.Show();
+            
         }
 
         private void editarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FecharFormulariosFilhos();
 
+            
         }
     }
 }
