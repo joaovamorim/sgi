@@ -47,7 +47,9 @@ namespace SAA
 
         private void editarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FecharFormulariosFilhos();
 
+            
         }
     }
 }
