@@ -14,7 +14,12 @@
 
         private void btn_RecarregarTabela_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

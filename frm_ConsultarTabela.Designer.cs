@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            txtBox_Pesquisar = new TextBox();
+            btn_Pesquisar = new Button();
             btn_RecarregarTabela = new Button();
             grid_ConsultarTabela = new DataGridView();
             matricula = new DataGridViewTextBoxColumn();
@@ -55,6 +57,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
+            splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
             splitContainer1.Panel1.Controls.Add(btn_RecarregarTabela);
             // 
             // splitContainer1.Panel2
@@ -64,13 +68,34 @@
             splitContainer1.SplitterDistance = 39;
             splitContainer1.TabIndex = 0;
             // 
+            // txtBox_Pesquisar
+            // 
+            txtBox_Pesquisar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBox_Pesquisar.Location = new Point(89, 3);
+            txtBox_Pesquisar.Name = "txtBox_Pesquisar";
+            txtBox_Pesquisar.Size = new Size(425, 33);
+            txtBox_Pesquisar.TabIndex = 2;
+            // 
+            // btn_Pesquisar
+            // 
+            btn_Pesquisar.Cursor = Cursors.Hand;
+            btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Pesquisar.Location = new Point(3, 3);
+            btn_Pesquisar.Name = "btn_Pesquisar";
+            btn_Pesquisar.Size = new Size(80, 34);
+            btn_Pesquisar.TabIndex = 1;
+            btn_Pesquisar.Text = "Pesquisar";
+            btn_Pesquisar.UseVisualStyleBackColor = true;
+            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            // 
             // btn_RecarregarTabela
             // 
+            btn_RecarregarTabela.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_RecarregarTabela.Cursor = Cursors.Hand;
             btn_RecarregarTabela.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_RecarregarTabela.Location = new Point(12, 3);
+            btn_RecarregarTabela.Location = new Point(667, 3);
             btn_RecarregarTabela.Name = "btn_RecarregarTabela";
-            btn_RecarregarTabela.Size = new Size(159, 34);
+            btn_RecarregarTabela.Size = new Size(130, 34);
             btn_RecarregarTabela.TabIndex = 0;
             btn_RecarregarTabela.Text = "Recarregar Tabela";
             btn_RecarregarTabela.UseVisualStyleBackColor = true;
@@ -132,6 +157,7 @@
             Text = "frm_ConsultarTabela";
             Load += frm_ConsultarTabela_Load;
             splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
@@ -150,5 +176,7 @@
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
+        private Button btn_Pesquisar;
+        private TextBox txtBox_Pesquisar;
     }
 }
