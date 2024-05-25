@@ -30,12 +30,12 @@
         {
             splitContainer1 = new SplitContainer();
             txtBox_Pesquisar = new TextBox();
-            btn_Pesquisar = new Button();
+            btn_Consultar = new Button();
             btn_RecarregarTabela = new Button();
             grid_ConsultarTabela = new DataGridView();
             matricula = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
-            dataNascimento = new DataGridViewTextBoxColumn();
+            data_nascimento = new DataGridViewTextBoxColumn();
             cpf = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
@@ -58,7 +58,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
-            splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
+            splitContainer1.Panel1.Controls.Add(btn_Consultar);
             splitContainer1.Panel1.Controls.Add(btn_RecarregarTabela);
             // 
             // splitContainer1.Panel2
@@ -76,22 +76,23 @@
             txtBox_Pesquisar.Size = new Size(425, 33);
             txtBox_Pesquisar.TabIndex = 2;
             // 
-            // btn_Pesquisar
+            // btn_Consultar
             // 
-            btn_Pesquisar.Cursor = Cursors.Hand;
-            btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_Pesquisar.Location = new Point(3, 3);
-            btn_Pesquisar.Name = "btn_Pesquisar";
-            btn_Pesquisar.Size = new Size(80, 34);
-            btn_Pesquisar.TabIndex = 1;
-            btn_Pesquisar.Text = "Pesquisar";
-            btn_Pesquisar.UseVisualStyleBackColor = true;
-            btn_Pesquisar.Click += btn_Pesquisar_Click;
+            btn_Consultar.Cursor = Cursors.Hand;
+            btn_Consultar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Consultar.Location = new Point(3, 3);
+            btn_Consultar.Name = "btn_Consultar";
+            btn_Consultar.Size = new Size(80, 34);
+            btn_Consultar.TabIndex = 1;
+            btn_Consultar.Text = "Consultar";
+            btn_Consultar.UseVisualStyleBackColor = true;
+            btn_Consultar.Click += btn_Pesquisar_Click;
             // 
             // btn_RecarregarTabela
             // 
             btn_RecarregarTabela.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_RecarregarTabela.Cursor = Cursors.Hand;
+            btn_RecarregarTabela.Enabled = false;
             btn_RecarregarTabela.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_RecarregarTabela.Location = new Point(667, 3);
             btn_RecarregarTabela.Name = "btn_RecarregarTabela";
@@ -106,7 +107,7 @@
             grid_ConsultarTabela.AccessibleRole = AccessibleRole.TitleBar;
             grid_ConsultarTabela.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_ConsultarTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
+            grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email });
             grid_ConsultarTabela.Dock = DockStyle.Fill;
             grid_ConsultarTabela.Location = new Point(0, 0);
             grid_ConsultarTabela.Name = "grid_ConsultarTabela";
@@ -125,10 +126,10 @@
             nome.HeaderText = "NOME";
             nome.Name = "nome";
             // 
-            // dataNascimento
+            // data_nascimento
             // 
-            dataNascimento.HeaderText = "DATA NASCIMENTO";
-            dataNascimento.Name = "dataNascimento";
+            data_nascimento.HeaderText = "DATA NASCIMENTO";
+            data_nascimento.Name = "data_nascimento";
             // 
             // cpf
             // 
@@ -170,13 +171,13 @@
         private SplitContainer splitContainer1;
         private Button btn_RecarregarTabela;
         private DataGridView grid_ConsultarTabela;
+        private Button btn_Consultar;
+        private TextBox txtBox_Pesquisar;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn dataNascimento;
+        private DataGridViewTextBoxColumn data_nascimento;
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
-        private Button btn_Pesquisar;
-        private TextBox txtBox_Pesquisar;
     }
 }
