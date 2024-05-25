@@ -93,7 +93,7 @@
             MainMenuStrip = menuStrip1;
             Name = "frm_Main";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "SAA - Sistemas de Alunos Academia";
+            Text = "SGI - SISTEMA DE GERENCIAMENTO INTEGRADO";
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
