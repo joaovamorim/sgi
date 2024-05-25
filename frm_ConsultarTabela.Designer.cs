@@ -92,7 +92,7 @@
             // 
             btn_RecarregarTabela.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_RecarregarTabela.Cursor = Cursors.Hand;
-            btn_RecarregarTabela.Enabled = false;
+            btn_RecarregarTabela.Enabled = true;
             btn_RecarregarTabela.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_RecarregarTabela.Location = new Point(667, 3);
             btn_RecarregarTabela.Name = "btn_RecarregarTabela";
