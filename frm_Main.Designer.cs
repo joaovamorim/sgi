@@ -32,8 +32,8 @@
             opçõesToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             cadastrarAlunoToolStripMenuItem = new ToolStripMenuItem();
-            consultarAlunoToolStripMenuItem = new ToolStripMenuItem();
             editarAlunoToolStripMenuItem = new ToolStripMenuItem();
+            consultarAlunoToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,14 +66,7 @@
             cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
             cadastrarAlunoToolStripMenuItem.Size = new Size(104, 20);
             cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
-            cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click_1;
-            // 
-            // consultarAlunoToolStripMenuItem
-            // 
-            consultarAlunoToolStripMenuItem.Name = "consultarAlunoToolStripMenuItem";
-            consultarAlunoToolStripMenuItem.Size = new Size(106, 20);
-            consultarAlunoToolStripMenuItem.Text = "Consultar Tabela";
-            consultarAlunoToolStripMenuItem.Click += consultarAlunoToolStripMenuItem_Click_1;
+            cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
             // 
             // editarAlunoToolStripMenuItem
             // 
@@ -81,6 +74,13 @@
             editarAlunoToolStripMenuItem.Size = new Size(84, 20);
             editarAlunoToolStripMenuItem.Text = "Editar Aluno";
             editarAlunoToolStripMenuItem.Click += editarAlunoToolStripMenuItem_Click;
+            // 
+            // consultarAlunoToolStripMenuItem
+            // 
+            consultarAlunoToolStripMenuItem.Name = "consultarAlunoToolStripMenuItem";
+            consultarAlunoToolStripMenuItem.Size = new Size(106, 20);
+            consultarAlunoToolStripMenuItem.Text = "Consultar Tabela";
+            consultarAlunoToolStripMenuItem.Click += consultarTabelaToolStripMenuItem_Click;
             // 
             // frm_Main
             // 

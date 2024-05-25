@@ -26,7 +26,7 @@ namespace SAA
             Close();
         }
 
-        private void cadastrarAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FecharFormulariosFilhos();
 
@@ -36,20 +36,22 @@ namespace SAA
             openMdi_CadastroAluno.Show();
         }
 
-        private void consultarAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            FecharFormulariosFilhos();
-
-            
-        }
-
         private void editarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FecharFormulariosFilhos();
 
             frm_EditarAluno openMdi_EditarAluno = new frm_EditarAluno();
             openMdi_EditarAluno.MdiParent = this;
-            openMdi_EditarAluno .Show();
+            openMdi_EditarAluno.Show();
+        }
+
+        private void consultarTabelaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FecharFormulariosFilhos();
+
+            frm_ConsultarTabela openMdi_ConsultarTabela = new frm_ConsultarTabela();
+            openMdi_ConsultarTabela.MdiParent = this;
+            openMdi_ConsultarTabela .Show();
         }
     }
 }

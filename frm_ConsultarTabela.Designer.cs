@@ -105,12 +105,15 @@
             // grid_ConsultarTabela
             // 
             grid_ConsultarTabela.AccessibleRole = AccessibleRole.TitleBar;
+            grid_ConsultarTabela.AllowUserToAddRows = false;
+            grid_ConsultarTabela.AllowUserToDeleteRows = false;
             grid_ConsultarTabela.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_ConsultarTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email });
             grid_ConsultarTabela.Dock = DockStyle.Fill;
             grid_ConsultarTabela.Location = new Point(0, 0);
             grid_ConsultarTabela.Name = "grid_ConsultarTabela";
+            grid_ConsultarTabela.ReadOnly = true;
             grid_ConsultarTabela.RowTemplate.Height = 25;
             grid_ConsultarTabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grid_ConsultarTabela.Size = new Size(800, 407);
@@ -120,31 +123,37 @@
             // 
             matricula.HeaderText = "MATRÍCULA";
             matricula.Name = "matricula";
+            matricula.ReadOnly = true;
             // 
             // nome
             // 
             nome.HeaderText = "NOME";
             nome.Name = "nome";
+            nome.ReadOnly = true;
             // 
             // data_nascimento
             // 
             data_nascimento.HeaderText = "DATA NASCIMENTO";
             data_nascimento.Name = "data_nascimento";
+            data_nascimento.ReadOnly = true;
             // 
             // cpf
             // 
             cpf.HeaderText = "CPF";
             cpf.Name = "cpf";
+            cpf.ReadOnly = true;
             // 
             // telefone
             // 
             telefone.HeaderText = "TELEFONE";
             telefone.Name = "telefone";
+            telefone.ReadOnly = true;
             // 
             // email
             // 
             email.HeaderText = "E-MAIL";
             email.Name = "email";
+            email.ReadOnly = true;
             // 
             // frm_ConsultarTabela
             // 
