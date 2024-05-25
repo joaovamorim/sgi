@@ -49,7 +49,9 @@ namespace SAA
         {
             FecharFormulariosFilhos();
 
-            
+            frm_EditarAluno openMdi_EditarAluno = new frm_EditarAluno();
+            openMdi_EditarAluno.MdiParent = this;
+            openMdi_EditarAluno .Show();
         }
     }
 }
