@@ -32,29 +32,29 @@
             txtBox_Pesquisar = new TextBox();
             btn_Pesquisar = new Button();
             splitContainer1 = new SplitContainer();
-            email = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
-            cpf = new DataGridViewTextBoxColumn();
-            dataNascimento = new DataGridViewTextBoxColumn();
-            nome = new DataGridViewTextBoxColumn();
-            matricula = new DataGridViewTextBoxColumn();
-            grid_CadastroAluno = new DataGridView();
-            lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
-            statusStrip1 = new StatusStrip();
-            btn_CadastrarAluno = new Button();
-            mask_Matricula = new MaskedTextBox();
-            lbl_Matricula = new Label();
+            lbl_TitleCadastroAluno = new Label();
+            lbl_NomeCompleto = new Label();
             mask_CPF = new MaskedTextBox();
-            mask_DataNascimento = new MaskedTextBox();
-            txtBox_Email = new TextBox();
-            lbl_Email = new Label();
-            mask_Telefone = new MaskedTextBox();
             lbl_Telefone = new Label();
+            txtBox_NomeCompleto = new TextBox();
+            mask_Telefone = new MaskedTextBox();
+            lbl_Matricula = new Label();
+            btn_CadastrarAluno = new Button();
+            mask_DataNascimento = new MaskedTextBox();
             lbl_CPF = new Label();
             lbl_DataNascimento = new Label();
-            txtBox_NomeCompleto = new TextBox();
-            lbl_NomeCompleto = new Label();
-            lbl_TitleCadastroAluno = new Label();
+            lbl_Email = new Label();
+            txtBox_Email = new TextBox();
+            mask_Matricula = new MaskedTextBox();
+            grid_CadastroAluno = new DataGridView();
+            matricula = new DataGridViewTextBoxColumn();
+            nome = new DataGridViewTextBoxColumn();
+            dataNascimento = new DataGridViewTextBoxColumn();
+            cpf = new DataGridViewTextBoxColumn();
+            telefone = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
+            statusStrip1 = new StatusStrip();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -139,66 +139,68 @@
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 20;
             // 
-            // email
+            // lbl_TitleCadastroAluno
             // 
-            email.HeaderText = "E-MAIL";
-            email.Name = "email";
+            lbl_TitleCadastroAluno.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_TitleCadastroAluno.Location = new Point(91, 33);
+            lbl_TitleCadastroAluno.Name = "lbl_TitleCadastroAluno";
+            lbl_TitleCadastroAluno.Size = new Size(246, 48);
+            lbl_TitleCadastroAluno.TabIndex = 0;
+            lbl_TitleCadastroAluno.Text = "Cadastro do Aluno";
             // 
-            // telefone
+            // lbl_NomeCompleto
             // 
-            telefone.HeaderText = "TELEFONE";
-            telefone.Name = "telefone";
+            lbl_NomeCompleto.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_NomeCompleto.Location = new Point(33, 81);
+            lbl_NomeCompleto.Name = "lbl_NomeCompleto";
+            lbl_NomeCompleto.Size = new Size(154, 34);
+            lbl_NomeCompleto.TabIndex = 1;
+            lbl_NomeCompleto.Text = "Nome Completo:";
             // 
-            // cpf
+            // mask_CPF
             // 
-            cpf.HeaderText = "CPF";
-            cpf.Name = "cpf";
+            mask_CPF.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            mask_CPF.Location = new Point(199, 167);
+            mask_CPF.Mask = "000.000.000-00";
+            mask_CPF.Name = "mask_CPF";
+            mask_CPF.Size = new Size(196, 25);
+            mask_CPF.TabIndex = 12;
             // 
-            // dataNascimento
+            // lbl_Telefone
             // 
-            dataNascimento.HeaderText = "DATA NASCIMENTO";
-            dataNascimento.Name = "dataNascimento";
+            lbl_Telefone.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Telefone.Location = new Point(108, 202);
+            lbl_Telefone.Name = "lbl_Telefone";
+            lbl_Telefone.Size = new Size(85, 35);
+            lbl_Telefone.TabIndex = 7;
+            lbl_Telefone.Text = "Telefone:";
             // 
-            // nome
+            // txtBox_NomeCompleto
             // 
-            nome.HeaderText = "NOME";
-            nome.Name = "nome";
+            txtBox_NomeCompleto.Cursor = Cursors.IBeam;
+            txtBox_NomeCompleto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBox_NomeCompleto.Location = new Point(199, 84);
+            txtBox_NomeCompleto.Name = "txtBox_NomeCompleto";
+            txtBox_NomeCompleto.Size = new Size(196, 25);
+            txtBox_NomeCompleto.TabIndex = 2;
             // 
-            // matricula
+            // mask_Telefone
             // 
-            matricula.HeaderText = "MATRÍCULA";
-            matricula.Name = "matricula";
+            mask_Telefone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            mask_Telefone.Location = new Point(199, 205);
+            mask_Telefone.Mask = "(00) 00000-0000";
+            mask_Telefone.Name = "mask_Telefone";
+            mask_Telefone.Size = new Size(196, 25);
+            mask_Telefone.TabIndex = 8;
             // 
-            // grid_CadastroAluno
+            // lbl_Matricula
             // 
-            grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
-            grid_CadastroAluno.Dock = DockStyle.Fill;
-            grid_CadastroAluno.Location = new Point(0, 0);
-            grid_CadastroAluno.MultiSelect = false;
-            grid_CadastroAluno.Name = "grid_CadastroAluno";
-            grid_CadastroAluno.RowTemplate.Height = 25;
-            grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_CadastroAluno.Size = new Size(653, 459);
-            grid_CadastroAluno.TabIndex = 19;
-            // 
-            // lbl_CadastroAlunoMsg
-            // 
-            lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
-            lbl_CadastroAlunoMsg.Size = new Size(65, 32);
-            lbl_CadastroAlunoMsg.Text = "label";
-            // 
-            // statusStrip1
-            // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
-            statusStrip1.Location = new Point(0, 459);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1086, 37);
-            statusStrip1.TabIndex = 17;
-            statusStrip1.Text = "statusStrip1";
+            lbl_Matricula.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Matricula.Location = new Point(96, 241);
+            lbl_Matricula.Name = "lbl_Matricula";
+            lbl_Matricula.Size = new Size(97, 35);
+            lbl_Matricula.TabIndex = 13;
+            lbl_Matricula.Text = "Matricula:";
             // 
             // btn_CadastrarAluno
             // 
@@ -215,80 +217,14 @@
             btn_CadastrarAluno.UseVisualStyleBackColor = true;
             btn_CadastrarAluno.Click += btn_CadastrarAluno_Click;
             // 
-            // mask_Matricula
-            // 
-            mask_Matricula.Enabled = false;
-            mask_Matricula.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            mask_Matricula.Location = new Point(199, 245);
-            mask_Matricula.Mask = "000000";
-            mask_Matricula.Name = "mask_Matricula";
-            mask_Matricula.Size = new Size(196, 25);
-            mask_Matricula.TabIndex = 14;
-            // 
-            // lbl_Matricula
-            // 
-            lbl_Matricula.Enabled = false;
-            lbl_Matricula.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Matricula.Location = new Point(96, 241);
-            lbl_Matricula.Name = "lbl_Matricula";
-            lbl_Matricula.Size = new Size(97, 35);
-            lbl_Matricula.TabIndex = 13;
-            lbl_Matricula.Text = "Matricula:";
-            // 
-            // mask_CPF
-            // 
-            mask_CPF.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            mask_CPF.Location = new Point(199, 167);
-            mask_CPF.Mask = "000.000.000-00";
-            mask_CPF.Name = "mask_CPF";
-            mask_CPF.Size = new Size(196, 25);
-            mask_CPF.TabIndex = 12;
-            // 
             // mask_DataNascimento
             // 
             mask_DataNascimento.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_DataNascimento.Location = new Point(199, 126);
-            mask_DataNascimento.Mask = "00/00/0000";
+            mask_DataNascimento.Mask = "0000/00/00";
             mask_DataNascimento.Name = "mask_DataNascimento";
             mask_DataNascimento.Size = new Size(196, 25);
             mask_DataNascimento.TabIndex = 11;
-            mask_DataNascimento.ValidatingType = typeof(DateTime);
-            // 
-            // txtBox_Email
-            // 
-            txtBox_Email.Cursor = Cursors.IBeam;
-            txtBox_Email.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBox_Email.Location = new Point(199, 284);
-            txtBox_Email.Name = "txtBox_Email";
-            txtBox_Email.Size = new Size(196, 25);
-            txtBox_Email.TabIndex = 10;
-            // 
-            // lbl_Email
-            // 
-            lbl_Email.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Email.Location = new Point(123, 281);
-            lbl_Email.Name = "lbl_Email";
-            lbl_Email.Size = new Size(70, 35);
-            lbl_Email.TabIndex = 9;
-            lbl_Email.Text = "E-mail:";
-            // 
-            // mask_Telefone
-            // 
-            mask_Telefone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            mask_Telefone.Location = new Point(199, 205);
-            mask_Telefone.Mask = "(00) 00000-0000";
-            mask_Telefone.Name = "mask_Telefone";
-            mask_Telefone.Size = new Size(196, 25);
-            mask_Telefone.TabIndex = 8;
-            // 
-            // lbl_Telefone
-            // 
-            lbl_Telefone.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_Telefone.Location = new Point(108, 202);
-            lbl_Telefone.Name = "lbl_Telefone";
-            lbl_Telefone.Size = new Size(85, 35);
-            lbl_Telefone.TabIndex = 7;
-            lbl_Telefone.Text = "Telefone:";
             // 
             // lbl_CPF
             // 
@@ -308,32 +244,93 @@
             lbl_DataNascimento.TabIndex = 3;
             lbl_DataNascimento.Text = "Data Nascimento:";
             // 
-            // txtBox_NomeCompleto
+            // lbl_Email
             // 
-            txtBox_NomeCompleto.Cursor = Cursors.IBeam;
-            txtBox_NomeCompleto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBox_NomeCompleto.Location = new Point(199, 84);
-            txtBox_NomeCompleto.Name = "txtBox_NomeCompleto";
-            txtBox_NomeCompleto.Size = new Size(196, 25);
-            txtBox_NomeCompleto.TabIndex = 2;
+            lbl_Email.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Email.Location = new Point(123, 281);
+            lbl_Email.Name = "lbl_Email";
+            lbl_Email.Size = new Size(70, 35);
+            lbl_Email.TabIndex = 9;
+            lbl_Email.Text = "E-mail:";
             // 
-            // lbl_NomeCompleto
+            // txtBox_Email
             // 
-            lbl_NomeCompleto.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_NomeCompleto.Location = new Point(33, 81);
-            lbl_NomeCompleto.Name = "lbl_NomeCompleto";
-            lbl_NomeCompleto.Size = new Size(154, 34);
-            lbl_NomeCompleto.TabIndex = 1;
-            lbl_NomeCompleto.Text = "Nome Completo:";
+            txtBox_Email.Cursor = Cursors.IBeam;
+            txtBox_Email.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBox_Email.Location = new Point(199, 284);
+            txtBox_Email.Name = "txtBox_Email";
+            txtBox_Email.Size = new Size(196, 25);
+            txtBox_Email.TabIndex = 10;
             // 
-            // lbl_TitleCadastroAluno
+            // mask_Matricula
             // 
-            lbl_TitleCadastroAluno.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_TitleCadastroAluno.Location = new Point(91, 33);
-            lbl_TitleCadastroAluno.Name = "lbl_TitleCadastroAluno";
-            lbl_TitleCadastroAluno.Size = new Size(246, 48);
-            lbl_TitleCadastroAluno.TabIndex = 0;
-            lbl_TitleCadastroAluno.Text = "Cadastro do Aluno";
+            mask_Matricula.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            mask_Matricula.Location = new Point(199, 245);
+            mask_Matricula.Mask = "000000";
+            mask_Matricula.Name = "mask_Matricula";
+            mask_Matricula.Size = new Size(196, 25);
+            mask_Matricula.TabIndex = 14;
+            // 
+            // grid_CadastroAluno
+            // 
+            grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
+            grid_CadastroAluno.Dock = DockStyle.Fill;
+            grid_CadastroAluno.Location = new Point(0, 0);
+            grid_CadastroAluno.MultiSelect = false;
+            grid_CadastroAluno.Name = "grid_CadastroAluno";
+            grid_CadastroAluno.RowTemplate.Height = 25;
+            grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grid_CadastroAluno.Size = new Size(653, 459);
+            grid_CadastroAluno.TabIndex = 19;
+            // 
+            // matricula
+            // 
+            matricula.HeaderText = "MATRÍCULA";
+            matricula.Name = "matricula";
+            // 
+            // nome
+            // 
+            nome.HeaderText = "NOME";
+            nome.Name = "nome";
+            // 
+            // dataNascimento
+            // 
+            dataNascimento.HeaderText = "DATA NASCIMENTO";
+            dataNascimento.Name = "dataNascimento";
+            // 
+            // cpf
+            // 
+            cpf.HeaderText = "CPF";
+            cpf.Name = "cpf";
+            // 
+            // telefone
+            // 
+            telefone.HeaderText = "TELEFONE";
+            telefone.Name = "telefone";
+            // 
+            // email
+            // 
+            email.HeaderText = "E-MAIL";
+            email.Name = "email";
+            // 
+            // lbl_CadastroAlunoMsg
+            // 
+            lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
+            lbl_CadastroAlunoMsg.Size = new Size(65, 32);
+            lbl_CadastroAlunoMsg.Text = "label";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
+            statusStrip1.Location = new Point(0, 459);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1086, 37);
+            statusStrip1.TabIndex = 17;
+            statusStrip1.Text = "statusStrip1";
             // 
             // frm_CadastroAluno
             // 
