@@ -39,7 +39,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { opçõesToolStripMenuItem, cadastrarAlunoToolStripMenuItem, consultarAlunoToolStripMenuItem, editarAlunoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { opçõesToolStripMenuItem, cadastrarAlunoToolStripMenuItem, editarAlunoToolStripMenuItem, consultarAlunoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -50,13 +50,13 @@
             // 
             opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
             opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
-            opçõesToolStripMenuItem.Size = new Size(50, 23);
+            opçõesToolStripMenuItem.Size = new Size(50, 20);
             opçõesToolStripMenuItem.Text = "Menu";
             // 
             // sairToolStripMenuItem
             // 
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Tag = "Fechar App";
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
@@ -64,21 +64,21 @@
             // cadastrarAlunoToolStripMenuItem
             // 
             cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            cadastrarAlunoToolStripMenuItem.Size = new Size(104, 23);
+            cadastrarAlunoToolStripMenuItem.Size = new Size(104, 20);
             cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
             cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click_1;
             // 
             // consultarAlunoToolStripMenuItem
             // 
             consultarAlunoToolStripMenuItem.Name = "consultarAlunoToolStripMenuItem";
-            consultarAlunoToolStripMenuItem.Size = new Size(106, 23);
+            consultarAlunoToolStripMenuItem.Size = new Size(106, 20);
             consultarAlunoToolStripMenuItem.Text = "Consultar Tabela";
             consultarAlunoToolStripMenuItem.Click += consultarAlunoToolStripMenuItem_Click_1;
             // 
             // editarAlunoToolStripMenuItem
             // 
             editarAlunoToolStripMenuItem.Name = "editarAlunoToolStripMenuItem";
-            editarAlunoToolStripMenuItem.Size = new Size(84, 23);
+            editarAlunoToolStripMenuItem.Size = new Size(84, 20);
             editarAlunoToolStripMenuItem.Text = "Editar Aluno";
             editarAlunoToolStripMenuItem.Click += editarAlunoToolStripMenuItem_Click;
             // 
