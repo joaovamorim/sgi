@@ -195,6 +195,7 @@
             // 
             // lbl_Matricula
             // 
+            lbl_Matricula.Enabled = false;
             lbl_Matricula.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_Matricula.Location = new Point(96, 241);
             lbl_Matricula.Name = "lbl_Matricula";
@@ -221,7 +222,7 @@
             // 
             mask_DataNascimento.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_DataNascimento.Location = new Point(199, 126);
-            mask_DataNascimento.Mask = "0000/00/00";
+            mask_DataNascimento.Mask = "00/00/0000";
             mask_DataNascimento.Name = "mask_DataNascimento";
             mask_DataNascimento.Size = new Size(196, 25);
             mask_DataNascimento.TabIndex = 11;
@@ -264,6 +265,7 @@
             // 
             // mask_Matricula
             // 
+            mask_Matricula.Enabled = false;
             mask_Matricula.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_Matricula.Location = new Point(199, 245);
             mask_Matricula.Mask = "000000";
@@ -273,6 +275,8 @@
             // 
             // grid_CadastroAluno
             // 
+            grid_CadastroAluno.AllowUserToAddRows = false;
+            grid_CadastroAluno.AllowUserToDeleteRows = false;
             grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
@@ -280,6 +284,7 @@
             grid_CadastroAluno.Location = new Point(0, 0);
             grid_CadastroAluno.MultiSelect = false;
             grid_CadastroAluno.Name = "grid_CadastroAluno";
+            grid_CadastroAluno.ReadOnly = true;
             grid_CadastroAluno.RowTemplate.Height = 25;
             grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grid_CadastroAluno.Size = new Size(653, 459);
@@ -289,39 +294,45 @@
             // 
             matricula.HeaderText = "MATRÍCULA";
             matricula.Name = "matricula";
+            matricula.ReadOnly = true;
             // 
             // nome
             // 
             nome.HeaderText = "NOME";
             nome.Name = "nome";
+            nome.ReadOnly = true;
             // 
             // dataNascimento
             // 
             dataNascimento.HeaderText = "DATA NASCIMENTO";
             dataNascimento.Name = "dataNascimento";
+            dataNascimento.ReadOnly = true;
             // 
             // cpf
             // 
             cpf.HeaderText = "CPF";
             cpf.Name = "cpf";
+            cpf.ReadOnly = true;
             // 
             // telefone
             // 
             telefone.HeaderText = "TELEFONE";
             telefone.Name = "telefone";
+            telefone.ReadOnly = true;
             // 
             // email
             // 
             email.HeaderText = "E-MAIL";
             email.Name = "email";
+            email.ReadOnly = true;
             // 
             // lbl_CadastroAlunoMsg
             // 
             lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
             lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
-            lbl_CadastroAlunoMsg.Size = new Size(65, 32);
-            lbl_CadastroAlunoMsg.Text = "label";
+            lbl_CadastroAlunoMsg.Size = new Size(118, 32);
+            lbl_CadastroAlunoMsg.Text = "Resultado";
             // 
             // statusStrip1
             // 

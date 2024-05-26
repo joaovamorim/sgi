@@ -79,7 +79,7 @@ namespace SAA
             }
         }
 
-        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        private void btn_Consultar_Click(object sender, EventArgs e)
         {
             txtBox_Pesquisar.Clear();
             grid_ConsultarTabela.Rows.Clear();
@@ -97,6 +97,12 @@ namespace SAA
                     query = "SELECT * FROM alunos WHERE nome LIKE '" + txtBox_Pesquisar.Text + "'";
                 }
 
+                // // Aviso se o txtBox_Pesquisar estiver vazio - A Resolver
+                // if (String.IsNullOrEmpty(txtBox_Pesquisar.Text))
+                // {
+                //     MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // }
+
                 DataTable dados = new DataTable();
 
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
@@ -108,12 +114,6 @@ namespace SAA
                 foreach (DataRow linha in dados.Rows)
                 {
                     grid_ConsultarTabela.Rows.Add(linha.ItemArray);
-                }
-
-                // Aviso quando o txtBox_Consultar estiver vazio
-                if (String.IsNullOrEmpty(txtBox_Pesquisar.Text))
-                {
-                    MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception Error)

@@ -33,7 +33,7 @@
             btn_RecarregarTabela = new Button();
             statusStrip1 = new StatusStrip();
             lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
-            grid_CadastroAluno = new DataGridView();
+            grid_EditarAluno = new DataGridView();
             matricula = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
             dataNascimento = new DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             lbl_DataNascimento = new Label();
             mask_Matricula = new MaskedTextBox();
             statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)grid_CadastroAluno).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)grid_EditarAluno).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -118,52 +118,62 @@
             lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
             lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
-            lbl_CadastroAlunoMsg.Size = new Size(65, 32);
-            lbl_CadastroAlunoMsg.Text = "label";
+            lbl_CadastroAlunoMsg.Size = new Size(118, 32);
+            lbl_CadastroAlunoMsg.Text = "Resultado";
             // 
-            // grid_CadastroAluno
+            // grid_EditarAluno
             // 
-            grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
-            grid_CadastroAluno.Dock = DockStyle.Fill;
-            grid_CadastroAluno.Location = new Point(0, 0);
-            grid_CadastroAluno.MultiSelect = false;
-            grid_CadastroAluno.Name = "grid_CadastroAluno";
-            grid_CadastroAluno.RowTemplate.Height = 25;
-            grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_CadastroAluno.Size = new Size(500, 473);
-            grid_CadastroAluno.TabIndex = 19;
+            grid_EditarAluno.AllowUserToAddRows = false;
+            grid_EditarAluno.AllowUserToDeleteRows = false;
+            grid_EditarAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            grid_EditarAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid_EditarAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
+            grid_EditarAluno.Dock = DockStyle.Fill;
+            grid_EditarAluno.Location = new Point(0, 0);
+            grid_EditarAluno.MultiSelect = false;
+            grid_EditarAluno.Name = "grid_EditarAluno";
+            grid_EditarAluno.ReadOnly = true;
+            grid_EditarAluno.RowTemplate.Height = 25;
+            grid_EditarAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            grid_EditarAluno.Size = new Size(500, 473);
+            grid_EditarAluno.TabIndex = 19;
+            grid_EditarAluno.CellContentClick += grid_EditarAluno_CellContentClick;
             // 
             // matricula
             // 
             matricula.HeaderText = "MATRÍCULA";
             matricula.Name = "matricula";
+            matricula.ReadOnly = true;
             // 
             // nome
             // 
             nome.HeaderText = "NOME";
             nome.Name = "nome";
+            nome.ReadOnly = true;
             // 
             // dataNascimento
             // 
             dataNascimento.HeaderText = "DATA NASCIMENTO";
             dataNascimento.Name = "dataNascimento";
+            dataNascimento.ReadOnly = true;
             // 
             // cpf
             // 
             cpf.HeaderText = "CPF";
             cpf.Name = "cpf";
+            cpf.ReadOnly = true;
             // 
             // telefone
             // 
             telefone.HeaderText = "TELEFONE";
             telefone.Name = "telefone";
+            telefone.ReadOnly = true;
             // 
             // email
             // 
             email.HeaderText = "E-MAIL";
             email.Name = "email";
+            email.ReadOnly = true;
             // 
             // lbl_TitleEditarAluno
             // 
@@ -302,7 +312,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(grid_CadastroAluno);
+            splitContainer1.Panel2.Controls.Add(grid_EditarAluno);
             splitContainer1.Size = new Size(933, 473);
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 22;
@@ -350,7 +360,7 @@
             Load += frm_EditarAluno_Load;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)grid_CadastroAluno).EndInit();
+            ((System.ComponentModel.ISupportInitialize)grid_EditarAluno).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
@@ -367,7 +377,7 @@
         private Button btn_RecarregarTabela;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lbl_CadastroAlunoMsg;
-        private DataGridView grid_CadastroAluno;
+        private DataGridView grid_EditarAluno;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn dataNascimento;

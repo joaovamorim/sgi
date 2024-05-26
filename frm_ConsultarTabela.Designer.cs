@@ -86,7 +86,7 @@
             btn_Consultar.TabIndex = 1;
             btn_Consultar.Text = "Consultar";
             btn_Consultar.UseVisualStyleBackColor = true;
-            btn_Consultar.Click += btn_Pesquisar_Click;
+            btn_Consultar.Click += btn_Consultar_Click;
             // 
             // btn_RecarregarTabela
             // 
