@@ -46,17 +46,17 @@ namespace SAA
         }
 
         // Verifica se os campos estão vazios
-        private bool textBoxVazias()
-        {
-            foreach (Control c in this.Controls)
-                if (c is TextBox)
-                {
-                    TextBox textBox = c as TextBox;
-                    if (string.IsNullOrWhiteSpace(textBox.Text))
-                        return true;
-                }
-            return false;
-        }
+        // private bool textBoxVazias()
+        // {
+        //     foreach (Control c in this.Controls)
+        //         if (c is TextBox)
+        //         {
+        //             TextBox textBox = c as TextBox;
+        //             if (string.IsNullOrWhiteSpace(textBox.Text))
+        //                 return true;
+        //         }
+        //     return false;
+        // }
 
         private void btn_CadastrarAluno_Click(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace SAA
                 MySqlCommand comando = new MySqlCommand();
                 comando.Connection = conexao;
 
-                int matricula = new Random(DateTime.Now.Millisecond).Next(0, 1000);
+                int matricula = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
                 string nome = txtBox_NomeCompleto.Text;
                 string dataNascimento = mask_DataNascimento.Text;
                 string cpf = mask_CPF.Text;
