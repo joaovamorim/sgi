@@ -82,7 +82,10 @@ namespace SAA
                 comando.ExecuteNonQuery();
 
                 lbl_CadastroAlunoMsg.Text = "Registro inserido com Sucesso!";
+
                 comando.Dispose();
+
+                RefreshTable();
             }
             catch (Exception ex)
             {
@@ -94,7 +97,7 @@ namespace SAA
             }
         }
 
-        private void btn_RecarregarTabela_Click(object sender, EventArgs e)
+        private void RefreshTable()
         {
             grid_CadastroAluno.Rows.Clear();
 
@@ -117,11 +120,9 @@ namespace SAA
                 {
                     grid_CadastroAluno.Rows.Add(linha.ItemArray);
                 }
-                lbl_CadastroAlunoMsg.Text = "Tabela Recarregada com Sucesso!";
             }
-            catch (Exception Error)
+            catch (Exception)
             {
-                lbl_CadastroAlunoMsg.Text = "Erro ao Recarregar a Tabela. " + Error.Message;
             }
             finally
             {

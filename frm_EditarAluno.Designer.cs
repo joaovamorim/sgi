@@ -30,9 +30,9 @@
         {
             btn_Pesquisar = new Button();
             txtBox_Pesquisar = new TextBox();
-            btn_RecarregarTabela = new Button();
+            btn_DeletarRegistro = new Button();
             statusStrip1 = new StatusStrip();
-            lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
+            lbl_ResultadoMsg = new ToolStripStatusLabel();
             grid_EditarAluno = new DataGridView();
             matricula = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
@@ -89,37 +89,37 @@
             txtBox_Pesquisar.Size = new Size(429, 30);
             txtBox_Pesquisar.TabIndex = 17;
             // 
-            // btn_RecarregarTabela
+            // btn_DeletarRegistro
             // 
-            btn_RecarregarTabela.Cursor = Cursors.Hand;
-            btn_RecarregarTabela.FlatStyle = FlatStyle.System;
-            btn_RecarregarTabela.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_RecarregarTabela.ImageAlign = ContentAlignment.MiddleRight;
-            btn_RecarregarTabela.Location = new Point(22, 330);
-            btn_RecarregarTabela.Name = "btn_RecarregarTabela";
-            btn_RecarregarTabela.Size = new Size(165, 56);
-            btn_RecarregarTabela.TabIndex = 16;
-            btn_RecarregarTabela.Text = "Recarregar Tabela";
-            btn_RecarregarTabela.UseCompatibleTextRendering = true;
-            btn_RecarregarTabela.UseVisualStyleBackColor = true;
-            btn_RecarregarTabela.Click += btn_RecarregarTabela_Click;
+            btn_DeletarRegistro.Cursor = Cursors.Hand;
+            btn_DeletarRegistro.FlatStyle = FlatStyle.System;
+            btn_DeletarRegistro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_DeletarRegistro.ImageAlign = ContentAlignment.MiddleRight;
+            btn_DeletarRegistro.Location = new Point(22, 330);
+            btn_DeletarRegistro.Name = "btn_DeletarRegistro";
+            btn_DeletarRegistro.Size = new Size(165, 56);
+            btn_DeletarRegistro.TabIndex = 16;
+            btn_DeletarRegistro.Text = "Deletar Registro";
+            btn_DeletarRegistro.UseCompatibleTextRendering = true;
+            btn_DeletarRegistro.UseVisualStyleBackColor = true;
+            btn_DeletarRegistro.Click += btn_DeletarRegistro_Click;
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_ResultadoMsg });
             statusStrip1.Location = new Point(0, 473);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(933, 37);
             statusStrip1.TabIndex = 21;
             statusStrip1.Text = "statusStrip1";
             // 
-            // lbl_CadastroAlunoMsg
+            // lbl_ResultadoMsg
             // 
-            lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
-            lbl_CadastroAlunoMsg.Size = new Size(118, 32);
-            lbl_CadastroAlunoMsg.Text = "Resultado";
+            lbl_ResultadoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            lbl_ResultadoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_ResultadoMsg.Name = "lbl_ResultadoMsg";
+            lbl_ResultadoMsg.Size = new Size(118, 32);
+            lbl_ResultadoMsg.Text = "Resultado";
             // 
             // grid_EditarAluno
             // 
@@ -137,7 +137,6 @@
             grid_EditarAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grid_EditarAluno.Size = new Size(500, 473);
             grid_EditarAluno.TabIndex = 19;
-            grid_EditarAluno.CellContentClick += grid_EditarAluno_CellContentClick;
             // 
             // matricula
             // 
@@ -294,7 +293,7 @@
             // 
             splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
             splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
-            splitContainer1.Panel1.Controls.Add(btn_RecarregarTabela);
+            splitContainer1.Panel1.Controls.Add(btn_DeletarRegistro);
             splitContainer1.Panel1.Controls.Add(lbl_TitleEditarAluno);
             splitContainer1.Panel1.Controls.Add(lbl_NomeCompleto);
             splitContainer1.Panel1.Controls.Add(mask_CPF);
@@ -374,9 +373,9 @@
 
         private Button btn_Pesquisar;
         private TextBox txtBox_Pesquisar;
-        private Button btn_RecarregarTabela;
+        private Button btn_DeletarRegistro;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel lbl_CadastroAlunoMsg;
+        private ToolStripStatusLabel lbl_ResultadoMsg;
         private DataGridView grid_EditarAluno;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;

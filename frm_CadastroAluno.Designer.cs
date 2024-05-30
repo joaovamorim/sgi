@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btn_RecarregarTabela = new Button();
             txtBox_Pesquisar = new TextBox();
             btn_Pesquisar = new Button();
             splitContainer1 = new SplitContainer();
@@ -62,21 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)grid_CadastroAluno).BeginInit();
             statusStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // btn_RecarregarTabela
-            // 
-            btn_RecarregarTabela.Cursor = Cursors.Hand;
-            btn_RecarregarTabela.FlatStyle = FlatStyle.System;
-            btn_RecarregarTabela.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_RecarregarTabela.ImageAlign = ContentAlignment.MiddleRight;
-            btn_RecarregarTabela.Location = new Point(22, 330);
-            btn_RecarregarTabela.Name = "btn_RecarregarTabela";
-            btn_RecarregarTabela.Size = new Size(165, 56);
-            btn_RecarregarTabela.TabIndex = 16;
-            btn_RecarregarTabela.Text = "Recarregar Tabela";
-            btn_RecarregarTabela.UseCompatibleTextRendering = true;
-            btn_RecarregarTabela.UseVisualStyleBackColor = true;
-            btn_RecarregarTabela.Click += btn_RecarregarTabela_Click;
             // 
             // txtBox_Pesquisar
             // 
@@ -116,7 +100,6 @@
             // 
             splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
             splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
-            splitContainer1.Panel1.Controls.Add(btn_RecarregarTabela);
             splitContainer1.Panel1.Controls.Add(lbl_TitleCadastroAluno);
             splitContainer1.Panel1.Controls.Add(lbl_NomeCompleto);
             splitContainer1.Panel1.Controls.Add(mask_CPF);
@@ -369,8 +352,6 @@
         }
 
         #endregion
-
-        private Button btn_RecarregarTabela;
         private TextBox txtBox_Pesquisar;
         private Button btn_Pesquisar;
         private SplitContainer splitContainer1;

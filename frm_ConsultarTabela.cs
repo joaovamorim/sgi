@@ -88,21 +88,19 @@ namespace SAA
 
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
+            string query = "SELECT * FROM alunos";
+
+            if (String.IsNullOrWhiteSpace(txtBox_Pesquisar.Text))
+            {
+                MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                query = "SELECT * FROM alunos WHERE nome LIKE '" + txtBox_Pesquisar.Text + "'";
+            }
+
             try
             {
-                string query = "SELECT * FROM alunos";
-
-                if (txtBox_Pesquisar.Text != "")
-                {
-                    query = "SELECT * FROM alunos WHERE nome LIKE '" + txtBox_Pesquisar.Text + "'";
-                }
-
-                // // Aviso se o txtBox_Pesquisar estiver vazio - A Resolver
-                // if (String.IsNullOrEmpty(txtBox_Pesquisar.Text))
-                // {
-                //     MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // }
-
                 DataTable dados = new DataTable();
 
                 MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);

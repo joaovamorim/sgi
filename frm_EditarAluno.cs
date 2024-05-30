@@ -46,17 +46,17 @@ namespace SAA
             }
         }
 
-        private bool textBoxVazias()
-        {
-            foreach (Control c in this.Controls)
-                if (c is TextBox)
-                {
-                    TextBox textBox = c as TextBox;
-                    if (string.IsNullOrWhiteSpace(textBox.Text))
-                        return true;
-                }
-            return false;
-        }
+        //private bool textBoxVazias()
+        //{
+        //    foreach (Control c in this.Controls)
+        //        if (c is TextBox)
+        //        {
+        //            TextBox textBox = c as TextBox;
+        //            if (string.IsNullOrWhiteSpace(textBox.Text))
+        //                return true;
+        //        }
+        //    return false;
+        //}
 
         private void btn_EditarAluno_Click(object sender, EventArgs e)
         {
@@ -83,12 +83,15 @@ namespace SAA
 
                 comando.ExecuteNonQuery();
 
-                lbl_CadastroAlunoMsg.Text = "Registro Alterado com Sucesso!";
+                lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
+
                 comando.Dispose();
+                
+                RefreshTable();
             }
             catch (Exception ex)
             {
-                lbl_CadastroAlunoMsg.Text = ex.Message;
+                lbl_ResultadoMsg.Text = ex.Message;
             }
             finally
             {
@@ -96,7 +99,7 @@ namespace SAA
             }
         }
 
-        private void btn_RecarregarTabela_Click(object sender, EventArgs e)
+        private void RefreshTable()
         {
             grid_EditarAluno.Rows.Clear();
 
@@ -120,9 +123,8 @@ namespace SAA
                     grid_EditarAluno.Rows.Add(linha.ItemArray);
                 }
             }
-            catch (Exception Error)
+            catch (Exception)
             {
-                MessageBox.Show("Erro ao Recarregar a Tabela.\n" + Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -178,11 +180,38 @@ namespace SAA
             }
         }
 
-        private void grid_EditarAluno_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btn_DeletarRegistro_Click(object sender, EventArgs e)
         {
-            string matricula;
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            MySqlConnection conexao = new MySqlConnection(strConnection);
 
-            
+            try
+            {
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+
+                int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
+
+                comando.CommandText = "DELETE FROM alunos WHERE matricula = '" + matricula + "'";
+
+                comando.ExecuteNonQuery();
+
+                lbl_ResultadoMsg.Text = "Registro excluido com Sucesso!";
+
+                comando.Dispose();
+
+                RefreshTable();
+            }
+            catch (Exception ex)
+            {
+                lbl_ResultadoMsg.Text = ex.Message;
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 }

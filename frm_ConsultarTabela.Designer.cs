@@ -73,7 +73,7 @@
             txtBox_Pesquisar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtBox_Pesquisar.Location = new Point(89, 3);
             txtBox_Pesquisar.Name = "txtBox_Pesquisar";
-            txtBox_Pesquisar.Size = new Size(425, 33);
+            txtBox_Pesquisar.Size = new Size(222, 33);
             txtBox_Pesquisar.TabIndex = 2;
             // 
             // btn_Consultar
@@ -92,7 +92,6 @@
             // 
             btn_RecarregarTabela.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_RecarregarTabela.Cursor = Cursors.Hand;
-            btn_RecarregarTabela.Enabled = true;
             btn_RecarregarTabela.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_RecarregarTabela.Location = new Point(667, 3);
             btn_RecarregarTabela.Name = "btn_RecarregarTabela";
@@ -112,6 +111,7 @@
             grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email });
             grid_ConsultarTabela.Dock = DockStyle.Fill;
             grid_ConsultarTabela.Location = new Point(0, 0);
+            grid_ConsultarTabela.MultiSelect = false;
             grid_ConsultarTabela.Name = "grid_ConsultarTabela";
             grid_ConsultarTabela.ReadOnly = true;
             grid_ConsultarTabela.RowTemplate.Height = 25;
