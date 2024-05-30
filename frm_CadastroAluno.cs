@@ -45,55 +45,76 @@ namespace SAA
             }
         }
 
-        // Verifica se os campos estão vazios
-        // private bool textBoxVazias()
-        // {
-        //     foreach (Control c in this.Controls)
-        //         if (c is TextBox)
-        //         {
-        //             TextBox textBox = c as TextBox;
-        //             if (string.IsNullOrWhiteSpace(textBox.Text))
-        //                 return true;
-        //         }
-        //     return false;
-        // }
+        private void LimparTextsBox()
+        {
+            txtBox_NomeCompleto.Clear();
+            mask_DataNascimento.Clear();
+            mask_CPF.Clear();
+            mask_Telefone.Clear();
+            txtBox_Email.Clear();
+        }
 
         private void btn_CadastrarAluno_Click(object sender, EventArgs e)
         {
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
-
-            try
+            if (txtBox_NomeCompleto.Text == "" || txtBox_NomeCompleto.Text == null)
             {
-                conexao.Open();
-
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexao;
-
-                int matricula = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
-                string nome = txtBox_NomeCompleto.Text;
-                string dataNascimento = mask_DataNascimento.Text;
-                string cpf = mask_CPF.Text;
-                string telefone = mask_Telefone.Text;
-                string email = txtBox_Email.Text;
-
-                comando.CommandText = "INSERT INTO alunos VALUES (" + matricula + ", '" + nome + "', '" + dataNascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "')";
-
-                comando.ExecuteNonQuery();
-
-                lbl_CadastroAlunoMsg.Text = "Registro inserido com Sucesso!";
-
-                comando.Dispose();
-
-                RefreshTable();
+                MessageBox.Show("O campo Nome Completo deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else if (mask_DataNascimento.MaskCompleted == false)
             {
-               lbl_CadastroAlunoMsg.Text = ex.Message;
+                MessageBox.Show("O campo Data Nascimento deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            finally
+            else if (mask_CPF.MaskCompleted == false)
             {
-               conexao.Close();
+                MessageBox.Show("O campo CPF deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (mask_Telefone.MaskCompleted == false)
+            {
+                MessageBox.Show("O campo Telefone deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtBox_Email.Text == "" || txtBox_Email.Text == null)
+            {
+                MessageBox.Show("O campo E-mail deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+                MySqlConnection conexao = new MySqlConnection(strConnection);
+
+                try
+                {
+                    conexao.Open();
+
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.Connection = conexao;
+
+                    int matricula = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
+                    string nome = txtBox_NomeCompleto.Text;
+                    string dataNascimento = mask_DataNascimento.Text;
+                    string cpf = mask_CPF.Text;
+                    string telefone = mask_Telefone.Text;
+                    string email = txtBox_Email.Text;
+
+                    comando.CommandText = "INSERT INTO alunos VALUES (" + matricula + ", '" + nome + "', '" + dataNascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "')";
+
+                    comando.ExecuteNonQuery();
+
+                    lbl_CadastroAlunoMsg.Text = "Registro inserido com Sucesso!";
+
+                    comando.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    lbl_CadastroAlunoMsg.Text = ex.Message;
+                }
+                finally
+                {
+                    LimparTextsBox();
+
+                    RefreshTable();
+
+                    conexao.Close();
+                }
             }
         }
 
