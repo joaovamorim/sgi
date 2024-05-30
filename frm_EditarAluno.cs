@@ -46,56 +46,78 @@ namespace SAA
             }
         }
 
-        //private bool textBoxVazias()
-        //{
-        //    foreach (Control c in this.Controls)
-        //        if (c is TextBox)
-        //        {
-        //            TextBox textBox = c as TextBox;
-        //            if (string.IsNullOrWhiteSpace(textBox.Text))
-        //                return true;
-        //        }
-        //    return false;
-        //}
+        private void LimparTextsBox()
+        {
+            txtBox_NomeCompleto.Clear();
+            mask_DataNascimento.Clear();
+            mask_CPF.Clear();
+            mask_Telefone.Clear();
+            txtBox_Email.Clear();
+        }
 
         private void btn_EditarAluno_Click(object sender, EventArgs e)
         {
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
-
-            try
+            if (txtBox_NomeCompleto.Text == "" || txtBox_NomeCompleto.Text == null)
             {
-                conexao.Open();
-
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexao;
-
-                int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
-                string nome = txtBox_NomeCompleto.Text;
-                string dataNascimento = mask_DataNascimento.Text;
-                string cpf = mask_CPF.Text;
-                string telefone = mask_Telefone.Text;
-                string email = txtBox_Email.Text;
-
-                string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + dataNascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "' WHERE matricula LIKE '" + matricula + "'";
-
-                comando.CommandText = query;
-
-                comando.ExecuteNonQuery();
-
-                lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
-
-                comando.Dispose();
-                
-                RefreshTable();
+                MessageBox.Show("O campo Nome Completo deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else if (mask_DataNascimento.MaskCompleted == false)
             {
-                lbl_ResultadoMsg.Text = ex.Message;
+                MessageBox.Show("O campo Data Nascimento deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            finally
+            else if (mask_CPF.MaskCompleted == false)
             {
-                conexao.Close();
+                MessageBox.Show("O campo CPF deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (mask_Telefone.MaskCompleted == false)
+            {
+                MessageBox.Show("O campo Telefone deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (txtBox_Email.Text == "" || txtBox_Email.Text == null)
+            {
+                MessageBox.Show("O campo E-mail deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+                MySqlConnection conexao = new MySqlConnection(strConnection);
+
+                try
+                {
+                    conexao.Open();
+
+                    MySqlCommand comando = new MySqlCommand();
+                    comando.Connection = conexao;
+
+                    int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
+                    string nome = txtBox_NomeCompleto.Text;
+                    string dataNascimento = mask_DataNascimento.Text;
+                    string cpf = mask_CPF.Text;
+                    string telefone = mask_Telefone.Text;
+                    string email = txtBox_Email.Text;
+
+                    string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + dataNascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "' WHERE matricula LIKE '" + matricula + "'";
+
+                    comando.CommandText = query;
+
+                    comando.ExecuteNonQuery();
+
+                    lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
+
+                    comando.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    lbl_ResultadoMsg.Text = ex.Message;
+                }
+                finally
+                {
+                    LimparTextsBox();
+                    
+                    RefreshTable();
+
+                    conexao.Close();
+                }
             }
         }
 
