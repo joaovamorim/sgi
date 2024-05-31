@@ -57,68 +57,76 @@ namespace SAA
 
         private void btn_EditarAluno_Click(object sender, EventArgs e)
         {
-            if (txtBox_NomeCompleto.Text == "" || txtBox_NomeCompleto.Text == null)
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            MySqlConnection conexao = new MySqlConnection(strConnection);
+
+            try
             {
-                MessageBox.Show("O campo Nome Completo deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                conexao.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.Connection = conexao;
+
+                int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
+                string nome = txtBox_NomeCompleto.Text;
+                string dataNascimento = mask_DataNascimento.Text;
+                string cpf = mask_CPF.Text;
+                string telefone = mask_Telefone.Text;
+                string email = txtBox_Email.Text;
+
+                string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + dataNascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "' WHERE matricula LIKE '" + matricula + "'";
+
+                comando.CommandText = query;
+
+                comando.ExecuteNonQuery();
+
+                lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
+
+                comando.Dispose();
             }
-            else if (mask_DataNascimento.MaskCompleted == false)
+            catch (Exception ex)
             {
-                MessageBox.Show("O campo Data Nascimento deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lbl_ResultadoMsg.Text = ex.Message;
             }
-            else if (mask_CPF.MaskCompleted == false)
+            finally
             {
-                MessageBox.Show("O campo CPF deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LimparTextsBox();
+
+                RefreshTable();
+
+                conexao.Close();
             }
-            else if (mask_Telefone.MaskCompleted == false)
-            {
-                MessageBox.Show("O campo Telefone deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (txtBox_Email.Text == "" || txtBox_Email.Text == null)
-            {
-                MessageBox.Show("O campo E-mail deve estar preenchido.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
-                MySqlConnection conexao = new MySqlConnection(strConnection);
+        }
 
-                try
-                {
-                    conexao.Open();
+        private void TrueControlsFrm()
+        {
+            txtBox_NomeCompleto.Enabled = true;
+            mask_DataNascimento.Enabled = true;
+            mask_CPF.Enabled = true;
+            mask_Telefone.Enabled = true;
+            txtBox_Email.Enabled = true;
+            btn_EditarAluno.Enabled = true;
+        }
 
-                    MySqlCommand comando = new MySqlCommand();
-                    comando.Connection = conexao;
+        private void FalseControlsFrm()
+        {
+            txtBox_NomeCompleto.Enabled = false;
+            mask_DataNascimento.Enabled = false;
+            mask_CPF.Enabled = false;
+            mask_Telefone.Enabled = false;
+            txtBox_Email.Enabled = false;
+            btn_EditarAluno.Enabled = false;
+        }
 
-                    int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
-                    string nome = txtBox_NomeCompleto.Text;
-                    string dataNascimento = mask_DataNascimento.Text;
-                    string cpf = mask_CPF.Text;
-                    string telefone = mask_Telefone.Text;
-                    string email = txtBox_Email.Text;
+        private void grid_EditarAluno_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            TrueControlsFrm();
 
-                    string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + dataNascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "' WHERE matricula LIKE '" + matricula + "'";
-
-                    comando.CommandText = query;
-
-                    comando.ExecuteNonQuery();
-
-                    lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
-
-                    comando.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    lbl_ResultadoMsg.Text = ex.Message;
-                }
-                finally
-                {
-                    LimparTextsBox();
-                    
-                    RefreshTable();
-
-                    conexao.Close();
-                }
-            }
+            txtBox_NomeCompleto.Text = grid_EditarAluno.SelectedRows[0].Cells[1].Value.ToString();
+            mask_DataNascimento.Text = grid_EditarAluno.SelectedRows[0].Cells[2].Value.ToString();
+            mask_CPF.Text = grid_EditarAluno.SelectedRows[0].Cells[3].Value.ToString();
+            mask_Telefone.Text = grid_EditarAluno.SelectedRows[0].Cells[4].Value.ToString();
+            txtBox_Email.Text = grid_EditarAluno.SelectedRows[0].Cells[5].Value.ToString();
         }
 
         private void RefreshTable()
@@ -150,6 +158,8 @@ namespace SAA
             }
             finally
             {
+                FalseControlsFrm();
+
                 conexao.Close();
             }
         }

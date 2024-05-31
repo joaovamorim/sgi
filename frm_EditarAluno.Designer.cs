@@ -70,7 +70,7 @@
             btn_Pesquisar.FlatStyle = FlatStyle.System;
             btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Pesquisar.ImageAlign = ContentAlignment.MiddleRight;
-            btn_Pesquisar.Location = new Point(0, 411);
+            btn_Pesquisar.Location = new Point(0, 426);
             btn_Pesquisar.Name = "btn_Pesquisar";
             btn_Pesquisar.Size = new Size(429, 32);
             btn_Pesquisar.TabIndex = 18;
@@ -84,7 +84,7 @@
             txtBox_Pesquisar.Cursor = Cursors.IBeam;
             txtBox_Pesquisar.Dock = DockStyle.Bottom;
             txtBox_Pesquisar.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBox_Pesquisar.Location = new Point(0, 443);
+            txtBox_Pesquisar.Location = new Point(0, 458);
             txtBox_Pesquisar.Name = "txtBox_Pesquisar";
             txtBox_Pesquisar.Size = new Size(429, 30);
             txtBox_Pesquisar.TabIndex = 17;
@@ -107,19 +107,18 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_ResultadoMsg });
-            statusStrip1.Location = new Point(0, 473);
+            statusStrip1.Location = new Point(0, 488);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(933, 37);
+            statusStrip1.Size = new Size(933, 22);
             statusStrip1.TabIndex = 21;
             statusStrip1.Text = "statusStrip1";
             // 
             // lbl_ResultadoMsg
             // 
             lbl_ResultadoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            lbl_ResultadoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_ResultadoMsg.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_ResultadoMsg.Name = "lbl_ResultadoMsg";
-            lbl_ResultadoMsg.Size = new Size(118, 32);
-            lbl_ResultadoMsg.Text = "Resultado";
+            lbl_ResultadoMsg.Size = new Size(0, 17);
             // 
             // grid_EditarAluno
             // 
@@ -135,8 +134,9 @@
             grid_EditarAluno.ReadOnly = true;
             grid_EditarAluno.RowTemplate.Height = 25;
             grid_EditarAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_EditarAluno.Size = new Size(500, 473);
+            grid_EditarAluno.Size = new Size(500, 488);
             grid_EditarAluno.TabIndex = 19;
+            grid_EditarAluno.MouseDoubleClick += grid_EditarAluno_MouseDoubleClick;
             // 
             // matricula
             // 
@@ -204,6 +204,7 @@
             // txtBox_NomeCompleto
             // 
             txtBox_NomeCompleto.Cursor = Cursors.IBeam;
+            txtBox_NomeCompleto.Enabled = false;
             txtBox_NomeCompleto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtBox_NomeCompleto.Location = new Point(199, 84);
             txtBox_NomeCompleto.Name = "txtBox_NomeCompleto";
@@ -212,6 +213,7 @@
             // 
             // mask_Telefone
             // 
+            mask_Telefone.Enabled = false;
             mask_Telefone.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_Telefone.Location = new Point(199, 205);
             mask_Telefone.Mask = "(00) 00000-0000";
@@ -222,6 +224,7 @@
             // btn_EditarAluno
             // 
             btn_EditarAluno.Cursor = Cursors.Hand;
+            btn_EditarAluno.Enabled = false;
             btn_EditarAluno.FlatStyle = FlatStyle.System;
             btn_EditarAluno.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_EditarAluno.ImageAlign = ContentAlignment.MiddleRight;
@@ -236,6 +239,7 @@
             // 
             // mask_CPF
             // 
+            mask_CPF.Enabled = false;
             mask_CPF.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_CPF.Location = new Point(199, 167);
             mask_CPF.Mask = "000.000.000-00";
@@ -255,6 +259,7 @@
             // 
             // mask_DataNascimento
             // 
+            mask_DataNascimento.Enabled = false;
             mask_DataNascimento.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_DataNascimento.Location = new Point(199, 126);
             mask_DataNascimento.Mask = "00/00/0000";
@@ -275,6 +280,7 @@
             // txtBox_Email
             // 
             txtBox_Email.Cursor = Cursors.IBeam;
+            txtBox_Email.Enabled = false;
             txtBox_Email.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtBox_Email.Location = new Point(199, 284);
             txtBox_Email.Name = "txtBox_Email";
@@ -312,7 +318,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(grid_EditarAluno);
-            splitContainer1.Size = new Size(933, 473);
+            splitContainer1.Size = new Size(933, 488);
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 22;
             // 

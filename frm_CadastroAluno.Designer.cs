@@ -67,7 +67,7 @@
             txtBox_Pesquisar.Cursor = Cursors.IBeam;
             txtBox_Pesquisar.Dock = DockStyle.Bottom;
             txtBox_Pesquisar.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBox_Pesquisar.Location = new Point(0, 429);
+            txtBox_Pesquisar.Location = new Point(0, 444);
             txtBox_Pesquisar.Name = "txtBox_Pesquisar";
             txtBox_Pesquisar.Size = new Size(429, 30);
             txtBox_Pesquisar.TabIndex = 17;
@@ -79,7 +79,7 @@
             btn_Pesquisar.FlatStyle = FlatStyle.System;
             btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Pesquisar.ImageAlign = ContentAlignment.MiddleRight;
-            btn_Pesquisar.Location = new Point(0, 397);
+            btn_Pesquisar.Location = new Point(0, 412);
             btn_Pesquisar.Name = "btn_Pesquisar";
             btn_Pesquisar.Size = new Size(429, 32);
             btn_Pesquisar.TabIndex = 18;
@@ -118,7 +118,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(grid_CadastroAluno);
-            splitContainer1.Size = new Size(1086, 459);
+            splitContainer1.Size = new Size(1086, 474);
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 20;
             // 
@@ -270,7 +270,7 @@
             grid_CadastroAluno.ReadOnly = true;
             grid_CadastroAluno.RowTemplate.Height = 25;
             grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_CadastroAluno.Size = new Size(653, 459);
+            grid_CadastroAluno.Size = new Size(653, 474);
             grid_CadastroAluno.TabIndex = 19;
             // 
             // matricula
@@ -312,17 +312,16 @@
             // lbl_CadastroAlunoMsg
             // 
             lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
-            lbl_CadastroAlunoMsg.Size = new Size(118, 32);
-            lbl_CadastroAlunoMsg.Text = "Resultado";
+            lbl_CadastroAlunoMsg.Size = new Size(0, 17);
             // 
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
-            statusStrip1.Location = new Point(0, 459);
+            statusStrip1.Location = new Point(0, 474);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1086, 37);
+            statusStrip1.Size = new Size(1086, 22);
             statusStrip1.TabIndex = 17;
             statusStrip1.Text = "statusStrip1";
             // 
