@@ -242,7 +242,7 @@
             mask_CPF.Enabled = false;
             mask_CPF.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_CPF.Location = new Point(199, 167);
-            mask_CPF.Mask = "000.000.000-00";
+            mask_CPF.Mask = "000\\.000\\.000-00";
             mask_CPF.Name = "mask_CPF";
             mask_CPF.Size = new Size(196, 25);
             mask_CPF.TabIndex = 12;
