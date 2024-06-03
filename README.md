@@ -1,1 +1,1 @@
-version v1.2.4-pre-alpha
+version v1.2.5-pre-alpha

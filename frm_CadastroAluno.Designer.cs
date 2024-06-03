@@ -31,6 +31,9 @@
             txtBox_Pesquisar = new TextBox();
             btn_Pesquisar = new Button();
             splitContainer1 = new SplitContainer();
+            radio_Inativo = new RadioButton();
+            radio_Ativo = new RadioButton();
+            lbl_Status = new Label();
             lbl_TitleCadastroAluno = new Label();
             lbl_NomeCompleto = new Label();
             mask_CPF = new MaskedTextBox();
@@ -46,14 +49,15 @@
             txtBox_Email = new TextBox();
             mask_Matricula = new MaskedTextBox();
             grid_CadastroAluno = new DataGridView();
+            lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
+            statusStrip1 = new StatusStrip();
             matricula = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
             dataNascimento = new DataGridViewTextBoxColumn();
             cpf = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
-            lbl_CadastroAlunoMsg = new ToolStripStatusLabel();
-            statusStrip1 = new StatusStrip();
+            status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -67,7 +71,7 @@
             txtBox_Pesquisar.Cursor = Cursors.IBeam;
             txtBox_Pesquisar.Dock = DockStyle.Bottom;
             txtBox_Pesquisar.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBox_Pesquisar.Location = new Point(0, 444);
+            txtBox_Pesquisar.Location = new Point(0, 475);
             txtBox_Pesquisar.Name = "txtBox_Pesquisar";
             txtBox_Pesquisar.Size = new Size(429, 30);
             txtBox_Pesquisar.TabIndex = 17;
@@ -79,7 +83,7 @@
             btn_Pesquisar.FlatStyle = FlatStyle.System;
             btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Pesquisar.ImageAlign = ContentAlignment.MiddleRight;
-            btn_Pesquisar.Location = new Point(0, 412);
+            btn_Pesquisar.Location = new Point(0, 443);
             btn_Pesquisar.Name = "btn_Pesquisar";
             btn_Pesquisar.Size = new Size(429, 32);
             btn_Pesquisar.TabIndex = 18;
@@ -98,6 +102,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(radio_Inativo);
+            splitContainer1.Panel1.Controls.Add(radio_Ativo);
+            splitContainer1.Panel1.Controls.Add(lbl_Status);
             splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
             splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
             splitContainer1.Panel1.Controls.Add(lbl_TitleCadastroAluno);
@@ -118,9 +125,45 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(grid_CadastroAluno);
-            splitContainer1.Size = new Size(1086, 474);
+            splitContainer1.Size = new Size(1086, 505);
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 20;
+            // 
+            // radio_Inativo
+            // 
+            radio_Inativo.AutoSize = true;
+            radio_Inativo.Cursor = Cursors.Hand;
+            radio_Inativo.Enabled = false;
+            radio_Inativo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radio_Inativo.Location = new Point(278, 315);
+            radio_Inativo.Name = "radio_Inativo";
+            radio_Inativo.Size = new Size(87, 29);
+            radio_Inativo.TabIndex = 21;
+            radio_Inativo.Text = "Inativo";
+            radio_Inativo.UseVisualStyleBackColor = true;
+            // 
+            // radio_Ativo
+            // 
+            radio_Ativo.AutoSize = true;
+            radio_Ativo.Checked = true;
+            radio_Ativo.Cursor = Cursors.Hand;
+            radio_Ativo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radio_Ativo.Location = new Point(199, 315);
+            radio_Ativo.Name = "radio_Ativo";
+            radio_Ativo.Size = new Size(73, 29);
+            radio_Ativo.TabIndex = 20;
+            radio_Ativo.TabStop = true;
+            radio_Ativo.Text = "Ativo";
+            radio_Ativo.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Status
+            // 
+            lbl_Status.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Status.Location = new Point(127, 316);
+            lbl_Status.Name = "lbl_Status";
+            lbl_Status.Size = new Size(66, 35);
+            lbl_Status.TabIndex = 19;
+            lbl_Status.Text = "Status:";
             // 
             // lbl_TitleCadastroAluno
             // 
@@ -192,7 +235,7 @@
             btn_CadastrarAluno.FlatStyle = FlatStyle.System;
             btn_CadastrarAluno.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_CadastrarAluno.ImageAlign = ContentAlignment.MiddleRight;
-            btn_CadastrarAluno.Location = new Point(199, 330);
+            btn_CadastrarAluno.Location = new Point(199, 369);
             btn_CadastrarAluno.Name = "btn_CadastrarAluno";
             btn_CadastrarAluno.Size = new Size(196, 56);
             btn_CadastrarAluno.TabIndex = 15;
@@ -262,7 +305,7 @@
             grid_CadastroAluno.AllowUserToDeleteRows = false;
             grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
+            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, status });
             grid_CadastroAluno.Dock = DockStyle.Fill;
             grid_CadastroAluno.Location = new Point(0, 0);
             grid_CadastroAluno.MultiSelect = false;
@@ -270,8 +313,24 @@
             grid_CadastroAluno.ReadOnly = true;
             grid_CadastroAluno.RowTemplate.Height = 25;
             grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_CadastroAluno.Size = new Size(653, 474);
+            grid_CadastroAluno.Size = new Size(653, 505);
             grid_CadastroAluno.TabIndex = 19;
+            // 
+            // lbl_CadastroAlunoMsg
+            // 
+            lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
+            lbl_CadastroAlunoMsg.Size = new Size(0, 17);
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
+            statusStrip1.Location = new Point(0, 505);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1086, 22);
+            statusStrip1.TabIndex = 17;
+            statusStrip1.Text = "statusStrip1";
             // 
             // matricula
             // 
@@ -309,27 +368,17 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
-            // lbl_CadastroAlunoMsg
+            // status
             // 
-            lbl_CadastroAlunoMsg.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            lbl_CadastroAlunoMsg.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_CadastroAlunoMsg.Name = "lbl_CadastroAlunoMsg";
-            lbl_CadastroAlunoMsg.Size = new Size(0, 17);
-            // 
-            // statusStrip1
-            // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_CadastroAlunoMsg });
-            statusStrip1.Location = new Point(0, 474);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(1086, 22);
-            statusStrip1.TabIndex = 17;
-            statusStrip1.Text = "statusStrip1";
+            status.HeaderText = "STATUS";
+            status.Name = "status";
+            status.ReadOnly = true;
             // 
             // frm_CadastroAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1086, 496);
+            ClientSize = new Size(1086, 527);
             ControlBox = false;
             Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
@@ -365,17 +414,21 @@
         private MaskedTextBox mask_DataNascimento;
         private Label lbl_CPF;
         private Label lbl_DataNascimento;
-        private Label lbl_Email;
         private TextBox txtBox_Email;
         private MaskedTextBox mask_Matricula;
         private DataGridView grid_CadastroAluno;
+        private ToolStripStatusLabel lbl_CadastroAlunoMsg;
+        private StatusStrip statusStrip1;
+        private RadioButton radio_Inativo;
+        private RadioButton radio_Ativo;
+        private Label lbl_Status;
+        private Label lbl_Email;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn dataNascimento;
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
-        private ToolStripStatusLabel lbl_CadastroAlunoMsg;
-        private StatusStrip statusStrip1;
+        private DataGridViewTextBoxColumn status;
     }
 }

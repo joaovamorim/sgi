@@ -53,6 +53,7 @@ namespace SAA
             mask_CPF.Clear();
             mask_Telefone.Clear();
             txtBox_Email.Clear();
+            radio_Ativo.Checked = true;
         }
 
         private void btn_EditarAluno_Click(object sender, EventArgs e)
@@ -106,6 +107,8 @@ namespace SAA
             mask_Telefone.Enabled = true;
             txtBox_Email.Enabled = true;
             btn_EditarAluno.Enabled = true;
+            radio_Ativo.Enabled = true;
+            radio_Inativo.Enabled = true;
         }
 
         private void FalseControlsFrm()
@@ -116,6 +119,8 @@ namespace SAA
             mask_Telefone.Enabled = false;
             txtBox_Email.Enabled = false;
             btn_EditarAluno.Enabled = false;
+            radio_Ativo .Enabled = false;
+            radio_Inativo .Enabled = false;
         }
 
         private void grid_EditarAluno_MouseDoubleClick(object sender, MouseEventArgs e)

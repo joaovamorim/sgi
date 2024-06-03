@@ -39,6 +39,7 @@
             cpf = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
+            status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -108,7 +109,7 @@
             grid_ConsultarTabela.AllowUserToDeleteRows = false;
             grid_ConsultarTabela.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_ConsultarTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email });
+            grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email, status });
             grid_ConsultarTabela.Dock = DockStyle.Fill;
             grid_ConsultarTabela.Location = new Point(0, 0);
             grid_ConsultarTabela.MultiSelect = false;
@@ -155,6 +156,12 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
+            // status
+            // 
+            status.HeaderText = "STATUS";
+            status.Name = "status";
+            status.ReadOnly = true;
+            // 
             // frm_ConsultarTabela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -188,5 +195,6 @@
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn status;
     }
 }

@@ -40,6 +40,7 @@
             cpf = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
+            status = new DataGridViewTextBoxColumn();
             lbl_TitleEditarAluno = new Label();
             lbl_NomeCompleto = new Label();
             lbl_Telefone = new Label();
@@ -55,6 +56,9 @@
             lbl_CPF = new Label();
             lbl_DataNascimento = new Label();
             mask_Matricula = new MaskedTextBox();
+            radio_Inativo = new RadioButton();
+            radio_Ativo = new RadioButton();
+            lbl_Status = new Label();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grid_EditarAluno).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -70,7 +74,7 @@
             btn_Pesquisar.FlatStyle = FlatStyle.System;
             btn_Pesquisar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Pesquisar.ImageAlign = ContentAlignment.MiddleRight;
-            btn_Pesquisar.Location = new Point(0, 426);
+            btn_Pesquisar.Location = new Point(0, 553);
             btn_Pesquisar.Name = "btn_Pesquisar";
             btn_Pesquisar.Size = new Size(429, 32);
             btn_Pesquisar.TabIndex = 18;
@@ -84,7 +88,7 @@
             txtBox_Pesquisar.Cursor = Cursors.IBeam;
             txtBox_Pesquisar.Dock = DockStyle.Bottom;
             txtBox_Pesquisar.Font = new Font("Segoe UI", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtBox_Pesquisar.Location = new Point(0, 458);
+            txtBox_Pesquisar.Location = new Point(0, 585);
             txtBox_Pesquisar.Name = "txtBox_Pesquisar";
             txtBox_Pesquisar.Size = new Size(429, 30);
             txtBox_Pesquisar.TabIndex = 17;
@@ -95,7 +99,7 @@
             btn_DeletarRegistro.FlatStyle = FlatStyle.System;
             btn_DeletarRegistro.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_DeletarRegistro.ImageAlign = ContentAlignment.MiddleRight;
-            btn_DeletarRegistro.Location = new Point(22, 330);
+            btn_DeletarRegistro.Location = new Point(22, 360);
             btn_DeletarRegistro.Name = "btn_DeletarRegistro";
             btn_DeletarRegistro.Size = new Size(165, 56);
             btn_DeletarRegistro.TabIndex = 16;
@@ -107,7 +111,7 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { lbl_ResultadoMsg });
-            statusStrip1.Location = new Point(0, 488);
+            statusStrip1.Location = new Point(0, 615);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(933, 22);
             statusStrip1.TabIndex = 21;
@@ -126,7 +130,7 @@
             grid_EditarAluno.AllowUserToDeleteRows = false;
             grid_EditarAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_EditarAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_EditarAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email });
+            grid_EditarAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, status });
             grid_EditarAluno.Dock = DockStyle.Fill;
             grid_EditarAluno.Location = new Point(0, 0);
             grid_EditarAluno.MultiSelect = false;
@@ -134,7 +138,7 @@
             grid_EditarAluno.ReadOnly = true;
             grid_EditarAluno.RowTemplate.Height = 25;
             grid_EditarAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_EditarAluno.Size = new Size(500, 488);
+            grid_EditarAluno.Size = new Size(500, 615);
             grid_EditarAluno.TabIndex = 19;
             grid_EditarAluno.MouseDoubleClick += grid_EditarAluno_MouseDoubleClick;
             // 
@@ -173,6 +177,12 @@
             email.HeaderText = "E-MAIL";
             email.Name = "email";
             email.ReadOnly = true;
+            // 
+            // status
+            // 
+            status.HeaderText = "STATUS";
+            status.Name = "status";
+            status.ReadOnly = true;
             // 
             // lbl_TitleEditarAluno
             // 
@@ -228,7 +238,7 @@
             btn_EditarAluno.FlatStyle = FlatStyle.System;
             btn_EditarAluno.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_EditarAluno.ImageAlign = ContentAlignment.MiddleRight;
-            btn_EditarAluno.Location = new Point(199, 330);
+            btn_EditarAluno.Location = new Point(199, 360);
             btn_EditarAluno.Name = "btn_EditarAluno";
             btn_EditarAluno.Size = new Size(196, 56);
             btn_EditarAluno.TabIndex = 15;
@@ -297,6 +307,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            splitContainer1.Panel1.Controls.Add(radio_Inativo);
+            splitContainer1.Panel1.Controls.Add(radio_Ativo);
+            splitContainer1.Panel1.Controls.Add(lbl_Status);
             splitContainer1.Panel1.Controls.Add(btn_Pesquisar);
             splitContainer1.Panel1.Controls.Add(txtBox_Pesquisar);
             splitContainer1.Panel1.Controls.Add(btn_DeletarRegistro);
@@ -318,7 +331,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(grid_EditarAluno);
-            splitContainer1.Size = new Size(933, 488);
+            splitContainer1.Size = new Size(933, 615);
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 22;
             // 
@@ -350,11 +363,48 @@
             mask_Matricula.Size = new Size(196, 25);
             mask_Matricula.TabIndex = 14;
             // 
+            // radio_Inativo
+            // 
+            radio_Inativo.AutoSize = true;
+            radio_Inativo.Cursor = Cursors.Hand;
+            radio_Inativo.Enabled = false;
+            radio_Inativo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radio_Inativo.Location = new Point(278, 315);
+            radio_Inativo.Name = "radio_Inativo";
+            radio_Inativo.Size = new Size(87, 29);
+            radio_Inativo.TabIndex = 24;
+            radio_Inativo.Text = "Inativo";
+            radio_Inativo.UseVisualStyleBackColor = true;
+            // 
+            // radio_Ativo
+            // 
+            radio_Ativo.AutoSize = true;
+            radio_Ativo.Checked = true;
+            radio_Ativo.Cursor = Cursors.Hand;
+            radio_Ativo.Enabled = false;
+            radio_Ativo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radio_Ativo.Location = new Point(199, 315);
+            radio_Ativo.Name = "radio_Ativo";
+            radio_Ativo.Size = new Size(73, 29);
+            radio_Ativo.TabIndex = 23;
+            radio_Ativo.TabStop = true;
+            radio_Ativo.Text = "Ativo";
+            radio_Ativo.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Status
+            // 
+            lbl_Status.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_Status.Location = new Point(127, 316);
+            lbl_Status.Name = "lbl_Status";
+            lbl_Status.Size = new Size(66, 35);
+            lbl_Status.TabIndex = 22;
+            lbl_Status.Text = "Status:";
+            // 
             // frm_EditarAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 510);
+            ClientSize = new Size(933, 637);
             ControlBox = false;
             Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
@@ -383,12 +433,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lbl_ResultadoMsg;
         private DataGridView grid_EditarAluno;
-        private DataGridViewTextBoxColumn matricula;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn dataNascimento;
-        private DataGridViewTextBoxColumn cpf;
-        private DataGridViewTextBoxColumn telefone;
-        private DataGridViewTextBoxColumn email;
         private Label lbl_TitleEditarAluno;
         private Label lbl_NomeCompleto;
         private Label lbl_Telefone;
@@ -404,5 +448,15 @@
         private Label lbl_CPF;
         private Label lbl_DataNascimento;
         private MaskedTextBox mask_Matricula;
+        private DataGridViewTextBoxColumn matricula;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn dataNascimento;
+        private DataGridViewTextBoxColumn cpf;
+        private DataGridViewTextBoxColumn telefone;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn status;
+        private RadioButton radio_Inativo;
+        private RadioButton radio_Ativo;
+        private Label lbl_Status;
     }
 }
