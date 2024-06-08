@@ -16,7 +16,7 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEPDB1)));Persist Security Info=True;User ID=system;Password=root;";
+            string strConnection = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEPDB1)));Persist Security Info=True;User ID=system;Password=root;";
             OracleConnection conexao = new OracleConnection(strConnection);
 
             try
