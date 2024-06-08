@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="frm_CadastrarAluno\frmCadastroAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frm_EditarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frm_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="frm_CadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frm_ConsultarTabela.cs">

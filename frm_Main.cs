@@ -31,7 +31,7 @@ namespace SAA
             FecharFormulariosFilhos();
 
             // Instancia da Form Cadastrar Aluno no Mdi
-            frm_CadastroAluno openMdi_CadastroAluno = new frm_CadastroAluno();
+            frmCadastroAluno openMdi_CadastroAluno = new frmCadastroAluno();
             openMdi_CadastroAluno.MdiParent = this;
             openMdi_CadastroAluno.Show();
         }

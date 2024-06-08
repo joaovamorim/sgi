@@ -1,6 +1,6 @@
 ﻿namespace SAA
 {
-    partial class frm_CadastroAluno
+    partial class frmCadastroAluno
     {
         /// <summary>
         /// Required designer variable.

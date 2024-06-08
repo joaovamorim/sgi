@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using System.Data.OracleClient;
 
 namespace SAA
 {
@@ -15,16 +16,19 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            string strConnection = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=XEPDB1)));Persist Security Info=True;User ID=system;Password=root;";
+            OracleConnection conexao = new OracleConnection(strConnection);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = @"SELECT *
+                                FROM all_objects
+                                WHERE object_type in ('TABLE', 'VIEW')
+                                AND object_name = 'alunos.academia'";
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, strConnection);
 
                 conexao.Open();
 
