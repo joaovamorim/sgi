@@ -1,6 +1,6 @@
 ﻿namespace SAA
 {
-    partial class frm_CadastroAluno
+    partial class frmCadastroAluno
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@
             cpf = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
-            status = new DataGridViewTextBoxColumn();
+            _status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -305,7 +305,7 @@
             grid_CadastroAluno.AllowUserToDeleteRows = false;
             grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, status });
+            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
             grid_CadastroAluno.Dock = DockStyle.Fill;
             grid_CadastroAluno.Location = new Point(0, 0);
             grid_CadastroAluno.MultiSelect = false;
@@ -368,13 +368,13 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
-            // status
+            // _status
             // 
-            status.HeaderText = "STATUS";
-            status.Name = "status";
-            status.ReadOnly = true;
+            _status.HeaderText = "STATUS";
+            _status.Name = "_status";
+            _status.ReadOnly = true;
             // 
-            // frm_CadastroAluno
+            // frmCadastroAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -383,7 +383,7 @@
             Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frm_CadastroAluno";
+            Name = "frmCadastroAluno";
             StartPosition = FormStartPosition.Manual;
             Text = "Cadastro de Aluno";
             Load += frm_CadastroAluno_Load;
@@ -429,6 +429,6 @@
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn status;
+        private DataGridViewTextBoxColumn _status;
     }
 }

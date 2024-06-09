@@ -1,6 +1,6 @@
 ﻿namespace SAA
 {
-    partial class frm_ConsultarTabela
+    partial class frmConsultaTabela
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@
             cpf = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
-            status = new DataGridViewTextBoxColumn();
+            _status = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -109,7 +109,7 @@
             grid_ConsultarTabela.AllowUserToDeleteRows = false;
             grid_ConsultarTabela.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_ConsultarTabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email, status });
+            grid_ConsultarTabela.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, data_nascimento, cpf, telefone, email, _status });
             grid_ConsultarTabela.Dock = DockStyle.Fill;
             grid_ConsultarTabela.Location = new Point(0, 0);
             grid_ConsultarTabela.MultiSelect = false;
@@ -156,20 +156,20 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
-            // status
+            // _status
             // 
-            status.HeaderText = "STATUS";
-            status.Name = "status";
-            status.ReadOnly = true;
+            _status.HeaderText = "STATUS";
+            _status.Name = "_status";
+            _status.ReadOnly = true;
             // 
-            // frm_ConsultarTabela
+            // frmConsultaTabela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(splitContainer1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frm_ConsultarTabela";
+            Name = "frmConsultaTabela";
             StartPosition = FormStartPosition.Manual;
             Text = "frm_ConsultarTabela";
             Load += frm_ConsultarTabela_Load;
@@ -195,6 +195,6 @@
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn status;
+        private DataGridViewTextBoxColumn _status;
     }
 }

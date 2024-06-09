@@ -1,6 +1,6 @@
 ﻿namespace SAA
 {
-    partial class frm_EditarAluno
+    partial class frmEditarAluno
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,6 @@
             statusStrip1 = new StatusStrip();
             lbl_ResultadoMsg = new ToolStripStatusLabel();
             grid_EditarAluno = new DataGridView();
-            matricula = new DataGridViewTextBoxColumn();
-            nome = new DataGridViewTextBoxColumn();
-            dataNascimento = new DataGridViewTextBoxColumn();
-            cpf = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
-            status = new DataGridViewTextBoxColumn();
             lbl_TitleEditarAluno = new Label();
             lbl_NomeCompleto = new Label();
             lbl_Telefone = new Label();
@@ -53,12 +46,19 @@
             lbl_Email = new Label();
             txtBox_Email = new TextBox();
             splitContainer1 = new SplitContainer();
-            lbl_CPF = new Label();
-            lbl_DataNascimento = new Label();
-            mask_Matricula = new MaskedTextBox();
             radio_Inativo = new RadioButton();
             radio_Ativo = new RadioButton();
             lbl_Status = new Label();
+            lbl_CPF = new Label();
+            lbl_DataNascimento = new Label();
+            mask_Matricula = new MaskedTextBox();
+            matricula = new DataGridViewTextBoxColumn();
+            nome = new DataGridViewTextBoxColumn();
+            dataNascimento = new DataGridViewTextBoxColumn();
+            cpf = new DataGridViewTextBoxColumn();
+            telefone = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            _status = new DataGridViewTextBoxColumn();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grid_EditarAluno).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -130,7 +130,7 @@
             grid_EditarAluno.AllowUserToDeleteRows = false;
             grid_EditarAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grid_EditarAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_EditarAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, status });
+            grid_EditarAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
             grid_EditarAluno.Dock = DockStyle.Fill;
             grid_EditarAluno.Location = new Point(0, 0);
             grid_EditarAluno.MultiSelect = false;
@@ -141,48 +141,6 @@
             grid_EditarAluno.Size = new Size(500, 615);
             grid_EditarAluno.TabIndex = 19;
             grid_EditarAluno.MouseDoubleClick += grid_EditarAluno_MouseDoubleClick;
-            // 
-            // matricula
-            // 
-            matricula.HeaderText = "MATRÍCULA";
-            matricula.Name = "matricula";
-            matricula.ReadOnly = true;
-            // 
-            // nome
-            // 
-            nome.HeaderText = "NOME";
-            nome.Name = "nome";
-            nome.ReadOnly = true;
-            // 
-            // dataNascimento
-            // 
-            dataNascimento.HeaderText = "DATA NASCIMENTO";
-            dataNascimento.Name = "dataNascimento";
-            dataNascimento.ReadOnly = true;
-            // 
-            // cpf
-            // 
-            cpf.HeaderText = "CPF";
-            cpf.Name = "cpf";
-            cpf.ReadOnly = true;
-            // 
-            // telefone
-            // 
-            telefone.HeaderText = "TELEFONE";
-            telefone.Name = "telefone";
-            telefone.ReadOnly = true;
-            // 
-            // email
-            // 
-            email.HeaderText = "E-MAIL";
-            email.Name = "email";
-            email.ReadOnly = true;
-            // 
-            // status
-            // 
-            status.HeaderText = "STATUS";
-            status.Name = "status";
-            status.ReadOnly = true;
             // 
             // lbl_TitleEditarAluno
             // 
@@ -272,7 +230,7 @@
             mask_DataNascimento.Enabled = false;
             mask_DataNascimento.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             mask_DataNascimento.Location = new Point(199, 126);
-            mask_DataNascimento.Mask = "00/00/0000";
+            mask_DataNascimento.Mask = @"00/00/0000";
             mask_DataNascimento.Name = "mask_DataNascimento";
             mask_DataNascimento.Size = new Size(196, 25);
             mask_DataNascimento.TabIndex = 11;
@@ -335,34 +293,6 @@
             splitContainer1.SplitterDistance = 429;
             splitContainer1.TabIndex = 22;
             // 
-            // lbl_CPF
-            // 
-            lbl_CPF.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_CPF.Location = new Point(137, 164);
-            lbl_CPF.Name = "lbl_CPF";
-            lbl_CPF.Size = new Size(50, 35);
-            lbl_CPF.TabIndex = 5;
-            lbl_CPF.Text = "CPF:";
-            // 
-            // lbl_DataNascimento
-            // 
-            lbl_DataNascimento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_DataNascimento.Location = new Point(33, 123);
-            lbl_DataNascimento.Name = "lbl_DataNascimento";
-            lbl_DataNascimento.Size = new Size(160, 35);
-            lbl_DataNascimento.TabIndex = 3;
-            lbl_DataNascimento.Text = "Data Nascimento:";
-            // 
-            // mask_Matricula
-            // 
-            mask_Matricula.Enabled = false;
-            mask_Matricula.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            mask_Matricula.Location = new Point(199, 245);
-            mask_Matricula.Mask = "000000";
-            mask_Matricula.Name = "mask_Matricula";
-            mask_Matricula.Size = new Size(196, 25);
-            mask_Matricula.TabIndex = 14;
-            // 
             // radio_Inativo
             // 
             radio_Inativo.AutoSize = true;
@@ -400,7 +330,77 @@
             lbl_Status.TabIndex = 22;
             lbl_Status.Text = "Status:";
             // 
-            // frm_EditarAluno
+            // lbl_CPF
+            // 
+            lbl_CPF.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_CPF.Location = new Point(137, 164);
+            lbl_CPF.Name = "lbl_CPF";
+            lbl_CPF.Size = new Size(50, 35);
+            lbl_CPF.TabIndex = 5;
+            lbl_CPF.Text = "CPF:";
+            // 
+            // lbl_DataNascimento
+            // 
+            lbl_DataNascimento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_DataNascimento.Location = new Point(33, 123);
+            lbl_DataNascimento.Name = "lbl_DataNascimento";
+            lbl_DataNascimento.Size = new Size(160, 35);
+            lbl_DataNascimento.TabIndex = 3;
+            lbl_DataNascimento.Text = "Data Nascimento:";
+            // 
+            // mask_Matricula
+            // 
+            mask_Matricula.Enabled = false;
+            mask_Matricula.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            mask_Matricula.Location = new Point(199, 245);
+            mask_Matricula.Mask = "000000";
+            mask_Matricula.Name = "mask_Matricula";
+            mask_Matricula.Size = new Size(196, 25);
+            mask_Matricula.TabIndex = 14;
+            // 
+            // matricula
+            // 
+            matricula.HeaderText = "MATRÍCULA";
+            matricula.Name = "matricula";
+            matricula.ReadOnly = true;
+            // 
+            // nome
+            // 
+            nome.HeaderText = "NOME";
+            nome.Name = "nome";
+            nome.ReadOnly = true;
+            // 
+            // dataNascimento
+            // 
+            dataNascimento.HeaderText = "DATA NASCIMENTO";
+            dataNascimento.Name = "dataNascimento";
+            dataNascimento.ReadOnly = true;
+            // 
+            // cpf
+            // 
+            cpf.HeaderText = "CPF";
+            cpf.Name = "cpf";
+            cpf.ReadOnly = true;
+            // 
+            // telefone
+            // 
+            telefone.HeaderText = "TELEFONE";
+            telefone.Name = "telefone";
+            telefone.ReadOnly = true;
+            // 
+            // email
+            // 
+            email.HeaderText = "E-MAIL";
+            email.Name = "email";
+            email.ReadOnly = true;
+            // 
+            // _status
+            // 
+            _status.HeaderText = "STATUS";
+            _status.Name = "_status";
+            _status.ReadOnly = true;
+            // 
+            // frmEditarAluno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -409,7 +409,7 @@
             Controls.Add(splitContainer1);
             Controls.Add(statusStrip1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frm_EditarAluno";
+            Name = "frmEditarAluno";
             StartPosition = FormStartPosition.Manual;
             Text = "frm_EditarAluno";
             Load += frm_EditarAluno_Load;
@@ -448,15 +448,15 @@
         private Label lbl_CPF;
         private Label lbl_DataNascimento;
         private MaskedTextBox mask_Matricula;
+        private RadioButton radio_Inativo;
+        private RadioButton radio_Ativo;
+        private Label lbl_Status;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn dataNascimento;
         private DataGridViewTextBoxColumn cpf;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn status;
-        private RadioButton radio_Inativo;
-        private RadioButton radio_Ativo;
-        private Label lbl_Status;
+        private DataGridViewTextBoxColumn _status;
     }
 }

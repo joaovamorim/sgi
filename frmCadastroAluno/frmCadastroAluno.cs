@@ -3,9 +3,9 @@ using MySql.Data.MySqlClient;
 
 namespace SAA
 {
-    public partial class frm_CadastroAluno : Form
+    public partial class frmCadastroAluno : Form
     {
-        public frm_CadastroAluno()
+        public frmCadastroAluno()
         {
             InitializeComponent();
         }
@@ -15,7 +15,7 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -78,7 +78,7 @@ namespace SAA
             }
             else
             {
-                string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+                string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
                 MySqlConnection conexao = new MySqlConnection(strConnection);
 
                 try
@@ -90,12 +90,13 @@ namespace SAA
 
                     int matricula = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
                     string nome = txtBox_NomeCompleto.Text;
-                    string dataNascimento = mask_DataNascimento.Text;
+                    string data_nascimento = mask_DataNascimento.Text;
                     string cpf = mask_CPF.Text;
                     string telefone = mask_Telefone.Text;
                     string email = txtBox_Email.Text;
+                    string _status = "Ativo";
 
-                    comando.CommandText = "INSERT INTO alunos VALUES (" + matricula + ", '" + nome + "', '" + dataNascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "')";
+                    comando.CommandText = "INSERT INTO alunos VALUES (" + matricula + ", '" + nome + "', '" + data_nascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "', '" + _status + "')";
 
                     comando.ExecuteNonQuery();
 
@@ -122,7 +123,7 @@ namespace SAA
         {
             grid_CadastroAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -156,7 +157,7 @@ namespace SAA
             txtBox_Pesquisar.Clear();
             grid_CadastroAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
 
             MySqlConnection conexao = new MySqlConnection(strConnection);
 

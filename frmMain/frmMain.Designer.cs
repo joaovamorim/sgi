@@ -1,6 +1,6 @@
 ﻿namespace SAA
 {
-    partial class frm_Main
+    partial class frmMain
     {
         /// <summary>
         ///  Required designer variable.

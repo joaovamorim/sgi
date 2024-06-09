@@ -3,9 +3,9 @@ using MySql.Data.MySqlClient;
 
 namespace SAA
 {
-    public partial class frm_EditarAluno : Form
+    public partial class frmEditarAluno : Form
     {
-        public frm_EditarAluno()
+        public frmEditarAluno()
         {
             InitializeComponent();
         }
@@ -16,7 +16,7 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -58,7 +58,7 @@ namespace SAA
 
         private void btn_EditarAluno_Click(object sender, EventArgs e)
         {
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -70,12 +70,22 @@ namespace SAA
 
                 int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
                 string nome = txtBox_NomeCompleto.Text;
-                string dataNascimento = mask_DataNascimento.Text;
+                string data_nascimento = mask_DataNascimento.Text;
                 string cpf = mask_CPF.Text;
                 string telefone = mask_Telefone.Text;
                 string email = txtBox_Email.Text;
+                string _status = "";
 
-                string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + dataNascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "' WHERE matricula LIKE '" + matricula + "'";
+                if (radio_Ativo.Checked == true)
+                {
+                    _status = "Ativo";
+                }
+                if (radio_Inativo.Checked == true)
+                {
+                    _status = "Inativo";
+                }
+
+                string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + data_nascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "', _status = '" + _status + "' WHERE matricula LIKE '" + matricula + "'";
 
                 comando.CommandText = query;
 
@@ -138,7 +148,7 @@ namespace SAA
         {
             grid_EditarAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -174,7 +184,7 @@ namespace SAA
             txtBox_Pesquisar.Clear();
             grid_EditarAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
 
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
@@ -219,7 +229,7 @@ namespace SAA
 
         private void btn_DeletarRegistro_Click(object sender, EventArgs e)
         {
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try

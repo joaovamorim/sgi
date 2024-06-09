@@ -3,9 +3,9 @@ using System.Data;
 
 namespace SAA
 {
-    public partial class frm_ConsultarTabela : Form
+    public partial class frmConsultaTabela : Form
     {
-        public frm_ConsultarTabela()
+        public frmConsultaTabela()
         {
             InitializeComponent();
         }
@@ -15,7 +15,7 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -49,7 +49,7 @@ namespace SAA
         {
             grid_ConsultarTabela.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
             MySqlConnection conexao = new MySqlConnection(strConnection);
 
             try
@@ -91,7 +91,7 @@ namespace SAA
             }
             else
             {
-                string strConnection = "server=127.0.0.1;User Id=root;database=academia;password=1234";
+                string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
                 MySqlConnection conexao = new MySqlConnection(strConnection);
 
                 string query = "SELECT * FROM alunos";

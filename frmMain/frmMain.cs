@@ -1,8 +1,8 @@
 namespace SAA
 {
-    public partial class frm_Main : Form
+    public partial class frmMain : Form
     {
-        public frm_Main()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace SAA
             FecharFormulariosFilhos();
 
             // Instancia da Form Cadastrar Aluno no Mdi
-            frm_CadastroAluno openMdi_CadastroAluno = new frm_CadastroAluno();
+            frmCadastroAluno openMdi_CadastroAluno = new frmCadastroAluno();
             openMdi_CadastroAluno.MdiParent = this;
             openMdi_CadastroAluno.Show();
         }
@@ -40,7 +40,7 @@ namespace SAA
         {
             FecharFormulariosFilhos();
 
-            frm_EditarAluno openMdi_EditarAluno = new frm_EditarAluno();
+            frmEditarAluno openMdi_EditarAluno = new frmEditarAluno();
             openMdi_EditarAluno.MdiParent = this;
             openMdi_EditarAluno.Show();
         }
@@ -49,7 +49,7 @@ namespace SAA
         {
             FecharFormulariosFilhos();
 
-            frm_ConsultarTabela openMdi_ConsultarTabela = new frm_ConsultarTabela();
+            frmConsultaTabela openMdi_ConsultarTabela = new frmConsultaTabela();
             openMdi_ConsultarTabela.MdiParent = this;
             openMdi_ConsultarTabela .Show();
         }
