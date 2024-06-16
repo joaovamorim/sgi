@@ -15,7 +15,7 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xe)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection connection = new OracleConnection(connectionString);
 
             try
@@ -54,6 +54,39 @@ namespace SAA
             txtBox_Email.Clear();
         }
 
+        private async void RefreshTable()
+        {
+            grid_CadastroAluno.Rows.Clear();
+
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection connection = new OracleConnection(connectionString);
+
+            try
+            {
+                string query = "SELECT * FROM ALUNOS";
+
+                DataTable dados = new DataTable();
+
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
+
+                await connection.OpenAsync();
+
+                adaptador.Fill(dados);
+
+                foreach (DataRow linha in dados.Rows)
+                {
+                    grid_CadastroAluno.Rows.Add(linha.ItemArray);
+                }
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                await connection.CloseAsync();
+            }
+        }
+
         private async void btn_CadastrarAluno_Click(object sender, EventArgs e)
         {
             if (txtBox_NomeCompleto.Text == "" || txtBox_NomeCompleto.Text == null)
@@ -78,7 +111,7 @@ namespace SAA
             }
             else
             {
-                string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xe)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+                string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
                 OracleConnection connection = new OracleConnection(connectionString);
 
                 try
@@ -119,45 +152,12 @@ namespace SAA
             }
         }
 
-        private async void RefreshTable()
-        {
-            grid_CadastroAluno.Rows.Clear();
-
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xe)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
-            OracleConnection connection = new OracleConnection(connectionString);
-
-            try
-            {
-                string query = "SELECT * FROM ALUNOS";
-
-                DataTable dados = new DataTable();
-
-                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
-
-                await connection.OpenAsync();
-
-                adaptador.Fill(dados);
-
-                foreach (DataRow linha in dados.Rows)
-                {
-                    grid_CadastroAluno.Rows.Add(linha.ItemArray);
-                }
-            }
-            catch (Exception)
-            {
-            }
-            finally
-            {
-                await connection.CloseAsync();
-            }
-        }
-
         private async void btn_Pesquisar_Click(object sender, EventArgs e)
         {
             txtBox_Pesquisar.Clear();
             grid_CadastroAluno.Rows.Clear();
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xe)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
 
             OracleConnection connection = new OracleConnection(connectionString);
 
@@ -169,12 +169,6 @@ namespace SAA
                 {
                     query = "SELECT * FROM ALUNOS WHERE NOME LIKE '" + txtBox_Pesquisar.Text + "'";
                 }
-
-                // // Aviso se o txtBox_Pesquisar estiver vazio - A Resolver
-                // if (String.IsNullOrEmpty(txtBox_Pesquisar.Text))
-                // {
-                //     MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // }
 
                 DataTable dados = new DataTable();
 

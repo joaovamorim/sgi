@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
 namespace SAA
@@ -15,16 +15,16 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection conexao = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
                 conexao.Open();
 
@@ -49,16 +49,16 @@ namespace SAA
         {
             grid_ConsultarTabela.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection conexao = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
                 conexao.Open();
 
@@ -91,18 +91,18 @@ namespace SAA
             }
             else
             {
-                string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-                MySqlConnection conexao = new MySqlConnection(strConnection);
+                string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+                OracleConnection conexao = new OracleConnection(connectionString);
 
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
-                query = "SELECT * FROM alunos WHERE nome LIKE '" + text.ToUpper() + "'";
+                query = "SELECT * FROM ALUNOS WHERE nome LIKE '" + text.ToUpper() + "'";
 
                 try
                 {
                     DataTable dados = new DataTable();
 
-                    MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                    OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
                     conexao.Open();
 
