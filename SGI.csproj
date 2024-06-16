@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
     <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.13" />
   </ItemGroup>
 
   <ItemGroup>

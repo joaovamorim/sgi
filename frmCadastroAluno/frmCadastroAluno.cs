@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using MySql.Data.MySqlClient;
+using Oracle.ManagedDataAccess.Client;
 
 namespace SAA
 {
@@ -10,23 +10,23 @@ namespace SAA
             InitializeComponent();
         }
 
-        private void frm_CadastroAluno_Load(object sender, EventArgs e)
+        private async void frm_CadastroAluno_Load(object sender, EventArgs e)
         {
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection connection = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
-                conexao.Open();
+                await connection.OpenAsync();
 
                 adaptador.Fill(dados);
 
@@ -41,7 +41,7 @@ namespace SAA
             }
             finally
             {
-                conexao.Close();
+                await connection.CloseAsync();
             }
         }
 
@@ -54,7 +54,40 @@ namespace SAA
             txtBox_Email.Clear();
         }
 
-        private void btn_CadastrarAluno_Click(object sender, EventArgs e)
+        private async void RefreshTable()
+        {
+            grid_CadastroAluno.Rows.Clear();
+
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection connection = new OracleConnection(connectionString);
+
+            try
+            {
+                string query = "SELECT * FROM ALUNOS";
+
+                DataTable dados = new DataTable();
+
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
+
+                await connection.OpenAsync();
+
+                adaptador.Fill(dados);
+
+                foreach (DataRow linha in dados.Rows)
+                {
+                    grid_CadastroAluno.Rows.Add(linha.ItemArray);
+                }
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                await connection.CloseAsync();
+            }
+        }
+
+        private async void btn_CadastrarAluno_Click(object sender, EventArgs e)
         {
             if (txtBox_NomeCompleto.Text == "" || txtBox_NomeCompleto.Text == null)
             {
@@ -78,31 +111,31 @@ namespace SAA
             }
             else
             {
-                string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-                MySqlConnection conexao = new MySqlConnection(strConnection);
+                string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+                OracleConnection connection = new OracleConnection(connectionString);
 
                 try
                 {
-                    conexao.Open();
+                    await connection.OpenAsync();
 
-                    MySqlCommand comando = new MySqlCommand();
-                    comando.Connection = conexao;
+                    OracleCommand comando = new OracleCommand();
+                    comando.Connection = connection;
 
                     int matricula = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
-                    string nome = txtBox_NomeCompleto.Text;
+                    string NOME = txtBox_NomeCompleto.Text;
                     string data_nascimento = mask_DataNascimento.Text;
                     string cpf = mask_CPF.Text;
                     string telefone = mask_Telefone.Text;
                     string email = txtBox_Email.Text;
-                    string _status = "Ativo";
+                    string status = "Ativo";
 
-                    comando.CommandText = "INSERT INTO alunos VALUES (" + matricula + ", '" + nome + "', '" + data_nascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "', '" + _status + "')";
+                    comando.CommandText = "INSERT INTO ALUNOS VALUES (" + matricula + ", '" + NOME + "', '" + data_nascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "', '" + status + "')";
 
-                    comando.ExecuteNonQuery();
+                    await comando.ExecuteNonQueryAsync();
 
                     lbl_CadastroAlunoMsg.Text = "Registro inserido com Sucesso!";
 
-                    comando.Dispose();
+                    await comando.DisposeAsync();
                 }
                 catch (Exception ex)
                 {
@@ -114,73 +147,34 @@ namespace SAA
 
                     RefreshTable();
 
-                    conexao.Close();
+                    await connection.CloseAsync();
                 }
             }
         }
 
-        private void RefreshTable()
-        {
-            grid_CadastroAluno.Rows.Clear();
-
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
-
-            try
-            {
-                string query = "SELECT * FROM alunos";
-
-                DataTable dados = new DataTable();
-
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
-
-                conexao.Open();
-
-                adaptador.Fill(dados);
-
-                foreach (DataRow linha in dados.Rows)
-                {
-                    grid_CadastroAluno.Rows.Add(linha.ItemArray);
-                }
-            }
-            catch (Exception)
-            {
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
-        private void btn_Pesquisar_Click(object sender, EventArgs e)
+        private async void btn_Pesquisar_Click(object sender, EventArgs e)
         {
             txtBox_Pesquisar.Clear();
             grid_CadastroAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
 
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            OracleConnection connection = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 if (txtBox_Pesquisar.Text != "")
                 {
-                    query = "SELECT * FROM alunos WHERE nome LIKE '" + txtBox_Pesquisar.Text + "'";
+                    query = "SELECT * FROM ALUNOS WHERE NOME LIKE '" + txtBox_Pesquisar.Text + "'";
                 }
-
-                // // Aviso se o txtBox_Pesquisar estiver vazio - A Resolver
-                // if (String.IsNullOrEmpty(txtBox_Pesquisar.Text))
-                // {
-                //     MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // }
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
-                conexao.Open();
+                await connection.OpenAsync();
 
                 adaptador.Fill(dados);
 
@@ -198,7 +192,7 @@ namespace SAA
             }
             finally
             {
-                conexao.Close();
+                await connection.CloseAsync();
             }
         }
     }

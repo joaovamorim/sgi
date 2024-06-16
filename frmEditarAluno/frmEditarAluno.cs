@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using MySql.Data.MySqlClient;
+using Oracle.ManagedDataAccess.Client;
 
 namespace SAA
 {
@@ -16,16 +16,16 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection conexao = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
                 conexao.Open();
 
@@ -54,59 +54,6 @@ namespace SAA
             mask_Telefone.Clear();
             txtBox_Email.Clear();
             radio_Ativo.Checked = true;
-        }
-
-        private void btn_EditarAluno_Click(object sender, EventArgs e)
-        {
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
-
-            try
-            {
-                conexao.Open();
-
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexao;
-
-                int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
-                string nome = txtBox_NomeCompleto.Text;
-                string data_nascimento = mask_DataNascimento.Text;
-                string cpf = mask_CPF.Text;
-                string telefone = mask_Telefone.Text;
-                string email = txtBox_Email.Text;
-                string _status = "";
-
-                if (radio_Ativo.Checked == true)
-                {
-                    _status = "Ativo";
-                }
-                if (radio_Inativo.Checked == true)
-                {
-                    _status = "Inativo";
-                }
-
-                string query = "UPDATE alunos SET nome = '" + nome + "', data_nascimento = '" + data_nascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "', _status = '" + _status + "' WHERE matricula LIKE '" + matricula + "'";
-
-                comando.CommandText = query;
-
-                comando.ExecuteNonQuery();
-
-                lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
-
-                comando.Dispose();
-            }
-            catch (Exception ex)
-            {
-                lbl_ResultadoMsg.Text = ex.Message;
-            }
-            finally
-            {
-                LimparTextsBox();
-
-                RefreshTable();
-
-                conexao.Close();
-            }
         }
 
         private void TrueControlsFrm()
@@ -148,16 +95,16 @@ namespace SAA
         {
             grid_EditarAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection conexao = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
                 conexao.Open();
 
@@ -179,33 +126,114 @@ namespace SAA
             }
         }
 
+        private void btn_EditarAluno_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection conexao = new OracleConnection(connectionString);
+
+            try
+            {
+                conexao.Open();
+
+                OracleCommand comando = new OracleCommand();
+                comando.Connection = conexao;
+
+                decimal matricula = (decimal)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
+                string nome = txtBox_NomeCompleto.Text;
+                string data_nascimento = mask_DataNascimento.Text;
+                string cpf = mask_CPF.Text;
+                string telefone = mask_Telefone.Text;
+                string email = txtBox_Email.Text;
+                string status = "";
+
+                if (radio_Ativo.Checked == true)
+                {
+                    status = "Ativo";
+                }
+                if (radio_Inativo.Checked == true)
+                {
+                    status = "Inativo";
+                }
+
+                string query = "UPDATE ALUNOS SET nome = '" + nome + "', data_nascimento = '" + data_nascimento + "', cpf = '" + cpf + "', telefone = '" + telefone + "', email = '" + email + "', status = '" + status + "' WHERE matricula LIKE '" + matricula + "'";
+
+                comando.CommandText = query;
+
+                comando.ExecuteNonQuery();
+
+                lbl_ResultadoMsg.Text = "Registro Alterado com Sucesso!";
+
+                comando.Dispose();
+            }
+            catch (Exception ex)
+            {
+                lbl_ResultadoMsg.Text = ex.Message;
+            }
+            finally
+            {
+                LimparTextsBox();
+
+                RefreshTable();
+
+                conexao.Close();
+            }
+        }
+
+        private void btn_DeletarRegistro_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
+            OracleConnection conexao = new OracleConnection(connectionString);
+
+            try
+            {
+                conexao.Open();
+
+                OracleCommand comando = new OracleCommand();
+                comando.Connection = conexao;
+
+                decimal matricula = (decimal)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
+
+                comando.CommandText = "DELETE FROM ALUNOS WHERE matricula = '" + matricula + "'";
+
+                comando.ExecuteNonQuery();
+
+                lbl_ResultadoMsg.Text = "Registro excluido com Sucesso!";
+
+                comando.Dispose();
+
+                RefreshTable();
+            }
+            catch (Exception ex)
+            {
+                lbl_ResultadoMsg.Text = ex.Message;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
         private void btn_Pesquisar_Click(object sender, EventArgs e)
         {
             txtBox_Pesquisar.Clear();
             grid_EditarAluno.Rows.Clear();
 
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
+            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
 
-            MySqlConnection conexao = new MySqlConnection(strConnection);
+            OracleConnection conexao = new OracleConnection(connectionString);
 
             try
             {
-                string query = "SELECT * FROM alunos";
+                string query = "SELECT * FROM ALUNOS";
 
                 if (txtBox_Pesquisar.Text != "")
                 {
-                    query = "SELECT * FROM alunos WHERE nome LIKE '" + txtBox_Pesquisar.Text + "'";
+                    query = "SELECT * FROM ALUNOS WHERE nome LIKE '" + txtBox_Pesquisar.Text + "'";
                 }
-
-                // // Aviso se o txtBox_Pesquisar estiver vazio - A Resolver
-                // if (String.IsNullOrEmpty(txtBox_Pesquisar.Text))
-                // {
-                //     MessageBox.Show("O preenchimento do campo é obrigatório.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // }
 
                 DataTable dados = new DataTable();
 
-                MySqlDataAdapter adaptador = new MySqlDataAdapter(query, strConnection);
+                OracleDataAdapter adaptador = new OracleDataAdapter(query, connectionString);
 
                 conexao.Open();
 
@@ -220,40 +248,6 @@ namespace SAA
             {
                 grid_EditarAluno.Rows.Clear();
                 MessageBox.Show("Erro ao Consultar Dados.\n" + Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conexao.Close();
-            }
-        }
-
-        private void btn_DeletarRegistro_Click(object sender, EventArgs e)
-        {
-            string strConnection = "server=127.0.0.1;User Id=root;database=academia.alunos;password=";
-            MySqlConnection conexao = new MySqlConnection(strConnection);
-
-            try
-            {
-                conexao.Open();
-
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexao;
-
-                int matricula = (int)grid_EditarAluno.SelectedRows[0].Cells[0].Value;
-
-                comando.CommandText = "DELETE FROM alunos WHERE matricula = '" + matricula + "'";
-
-                comando.ExecuteNonQuery();
-
-                lbl_ResultadoMsg.Text = "Registro excluido com Sucesso!";
-
-                comando.Dispose();
-
-                RefreshTable();
-            }
-            catch (Exception ex)
-            {
-                lbl_ResultadoMsg.Text = ex.Message;
             }
             finally
             {
