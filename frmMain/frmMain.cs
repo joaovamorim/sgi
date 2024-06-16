@@ -51,7 +51,7 @@ namespace SAA
 
             frmConsultaTabela openMdi_ConsultarTabela = new frmConsultaTabela();
             openMdi_ConsultarTabela.MdiParent = this;
-            openMdi_ConsultarTabela .Show();
+            openMdi_ConsultarTabela.Show();
         }
     }
 }

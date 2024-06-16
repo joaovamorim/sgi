@@ -1,10 +1,14 @@
 ﻿using System.Data;
 using Oracle.ManagedDataAccess.Client;
+using System.Configuration;
+
 
 namespace SAA
 {
     public partial class frmCadastroAluno : Form
     {
+        private static string connectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString.ToString();
+        
         public frmCadastroAluno()
         {
             InitializeComponent();
@@ -15,7 +19,6 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection connection = new OracleConnection(connectionString);
 
             try
@@ -58,7 +61,6 @@ namespace SAA
         {
             grid_CadastroAluno.Rows.Clear();
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection connection = new OracleConnection(connectionString);
 
             try
@@ -111,7 +113,6 @@ namespace SAA
             }
             else
             {
-                string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
                 OracleConnection connection = new OracleConnection(connectionString);
 
                 try
@@ -156,8 +157,6 @@ namespace SAA
         {
             txtBox_Pesquisar.Clear();
             grid_CadastroAluno.Rows.Clear();
-
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
 
             OracleConnection connection = new OracleConnection(connectionString);
 

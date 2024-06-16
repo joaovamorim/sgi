@@ -1,10 +1,13 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using System.Configuration;
 using System.Data;
 
 namespace SAA
 {
     public partial class frmConsultaTabela : Form
     {
+        private static string connectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString.ToString();
+
         public frmConsultaTabela()
         {
             InitializeComponent();
@@ -15,7 +18,6 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection conexao = new OracleConnection(connectionString);
 
             try
@@ -49,7 +51,6 @@ namespace SAA
         {
             grid_ConsultarTabela.Rows.Clear();
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection conexao = new OracleConnection(connectionString);
 
             try
@@ -91,12 +92,11 @@ namespace SAA
             }
             else
             {
-                string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
                 OracleConnection conexao = new OracleConnection(connectionString);
 
                 string query = "SELECT * FROM ALUNOS";
 
-                query = "SELECT * FROM ALUNOS WHERE nome LIKE '" + text.ToUpper() + "'";
+                query = "SELECT * FROM ALUNOS WHERE nome LIKE '" + text?.ToUpper() + "'";
 
                 try
                 {

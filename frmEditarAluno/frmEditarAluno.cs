@@ -1,10 +1,13 @@
-﻿using System.Data;
+﻿using System.Configuration;
+using System.Data;
 using Oracle.ManagedDataAccess.Client;
 
 namespace SAA
 {
     public partial class frmEditarAluno : Form
     {
+        private static string connectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString.ToString();
+
         public frmEditarAluno()
         {
             InitializeComponent();
@@ -16,7 +19,6 @@ namespace SAA
             this.Dock = DockStyle.Fill;
 
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection conexao = new OracleConnection(connectionString);
 
             try
@@ -95,7 +97,6 @@ namespace SAA
         {
             grid_EditarAluno.Rows.Clear();
 
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection conexao = new OracleConnection(connectionString);
 
             try
@@ -128,7 +129,6 @@ namespace SAA
 
         private void btn_EditarAluno_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection conexao = new OracleConnection(connectionString);
 
             try
@@ -181,7 +181,6 @@ namespace SAA
 
         private void btn_DeletarRegistro_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
             OracleConnection conexao = new OracleConnection(connectionString);
 
             try
@@ -217,8 +216,6 @@ namespace SAA
         {
             txtBox_Pesquisar.Clear();
             grid_EditarAluno.Rows.Clear();
-
-            string connectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.85)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=xepdb1)));Persist Security Info=True;User ID=sys;Password=root;DBA Privilege=SYSDBA";
 
             OracleConnection conexao = new OracleConnection(connectionString);
 
