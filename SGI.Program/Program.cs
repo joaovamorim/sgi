@@ -1,4 +1,6 @@
-namespace SAA
+using SAA;
+
+namespace SGI.SGI.Program
 {
     internal static class Program
     {
