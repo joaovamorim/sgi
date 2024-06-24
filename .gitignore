@@ -1,4 +1,4 @@
-.vscode/
-.vs/
-bin/
-obj/
+main/.vscode/
+main/.vs/
+main/bin/
+main/obj/
