@@ -30,11 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomersDb));
             toolStrip1 = new ToolStrip();
-            refreshToolStripButton = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
             helpToolStripButton = new ToolStripButton();
-            toolStripButton1 = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            toolStripSeparator3 = new ToolStripSeparator();
+            refreshToolStripButton = new ToolStripButton();
+            searchToolStripButton = new ToolStripButton();
             toolStripTextBox1 = new ToolStripTextBox();
-            grid_CadastroAluno = new DataGridView();
+            gridCustomersDb = new DataGridView();
             matricula = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
             dataNascimento = new DataGridViewTextBoxColumn();
@@ -43,14 +46,14 @@
             email = new DataGridViewTextBoxColumn();
             _status = new DataGridViewTextBoxColumn();
             toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)grid_CadastroAluno).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridCustomersDb).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
             // 
             toolStrip1.Dock = DockStyle.Bottom;
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { refreshToolStripButton, helpToolStripButton, toolStripButton1, toolStripTextBox1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripSeparator1, helpToolStripButton, toolStripSeparator2, toolStripSeparator3, refreshToolStripButton, searchToolStripButton, toolStripTextBox1 });
             toolStrip1.Location = new Point(0, 425);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.RenderMode = ToolStripRenderMode.Professional;
@@ -58,16 +61,10 @@
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
-            // refreshToolStripButton
+            // toolStripSeparator1
             // 
-            refreshToolStripButton.Alignment = ToolStripItemAlignment.Right;
-            refreshToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            refreshToolStripButton.Image = (Image)resources.GetObject("refreshToolStripButton.Image");
-            refreshToolStripButton.ImageTransparentColor = Color.Magenta;
-            refreshToolStripButton.Name = "refreshToolStripButton";
-            refreshToolStripButton.Size = new Size(23, 22);
-            refreshToolStripButton.Tag = "";
-            refreshToolStripButton.Text = "Refresh";
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
             // 
             // helpToolStripButton
             // 
@@ -79,15 +76,38 @@
             helpToolStripButton.Size = new Size(23, 22);
             helpToolStripButton.Text = "Help";
             // 
-            // toolStripButton1
+            // toolStripSeparator2
             // 
-            toolStripButton1.BackColor = SystemColors.ControlLight;
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(46, 22);
-            toolStripButton1.Text = "Search";
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 25);
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 25);
+            // 
+            // refreshToolStripButton
+            // 
+            refreshToolStripButton.Alignment = ToolStripItemAlignment.Right;
+            refreshToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            refreshToolStripButton.Image = (Image)resources.GetObject("refreshToolStripButton.Image");
+            refreshToolStripButton.ImageTransparentColor = Color.Magenta;
+            refreshToolStripButton.Name = "refreshToolStripButton";
+            refreshToolStripButton.Size = new Size(23, 22);
+            refreshToolStripButton.Tag = "";
+            refreshToolStripButton.Text = "Refresh";
+            refreshToolStripButton.Click += refreshToolStripButton_Click;
+            // 
+            // searchToolStripButton
+            // 
+            searchToolStripButton.BackColor = SystemColors.ControlLight;
+            searchToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            searchToolStripButton.Image = (Image)resources.GetObject("searchToolStripButton.Image");
+            searchToolStripButton.ImageTransparentColor = Color.Magenta;
+            searchToolStripButton.Name = "searchToolStripButton";
+            searchToolStripButton.Size = new Size(46, 22);
+            searchToolStripButton.Text = "Search";
+            searchToolStripButton.Click += searchToolStripButton_Click;
             // 
             // toolStripTextBox1
             // 
@@ -97,22 +117,24 @@
             toolStripTextBox1.Size = new Size(100, 25);
             toolStripTextBox1.Tag = "Search";
             // 
-            // grid_CadastroAluno
+            // gridCustomersDb
             // 
-            grid_CadastroAluno.AllowUserToAddRows = false;
-            grid_CadastroAluno.AllowUserToDeleteRows = false;
-            grid_CadastroAluno.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            grid_CadastroAluno.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grid_CadastroAluno.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
-            grid_CadastroAluno.Dock = DockStyle.Fill;
-            grid_CadastroAluno.Location = new Point(0, 0);
-            grid_CadastroAluno.MultiSelect = false;
-            grid_CadastroAluno.Name = "grid_CadastroAluno";
-            grid_CadastroAluno.ReadOnly = true;
-            grid_CadastroAluno.RowTemplate.Height = 25;
-            grid_CadastroAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid_CadastroAluno.Size = new Size(800, 425);
-            grid_CadastroAluno.TabIndex = 20;
+            gridCustomersDb.AllowUserToAddRows = false;
+            gridCustomersDb.AllowUserToDeleteRows = false;
+            gridCustomersDb.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridCustomersDb.BackgroundColor = SystemColors.Control;
+            gridCustomersDb.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridCustomersDb.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
+            gridCustomersDb.Dock = DockStyle.Fill;
+            gridCustomersDb.GridColor = SystemColors.Control;
+            gridCustomersDb.Location = new Point(0, 0);
+            gridCustomersDb.MultiSelect = false;
+            gridCustomersDb.Name = "gridCustomersDb";
+            gridCustomersDb.ReadOnly = true;
+            gridCustomersDb.RowTemplate.Height = 25;
+            gridCustomersDb.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gridCustomersDb.Size = new Size(800, 425);
+            gridCustomersDb.TabIndex = 20;
             // 
             // matricula
             // 
@@ -161,7 +183,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(grid_CadastroAluno);
+            Controls.Add(gridCustomersDb);
             Controls.Add(toolStrip1);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -175,7 +197,7 @@
             Load += frmCustomersDb_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)grid_CadastroAluno).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridCustomersDb).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,7 +207,7 @@
         private ToolStrip toolStrip1;
         private ToolStripButton refreshToolStripButton;
         private ToolStripButton helpToolStripButton;
-        private DataGridView grid_CadastroAluno;
+        private DataGridView gridCustomersDb;
         private DataGridViewTextBoxColumn matricula;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn dataNascimento;
@@ -193,7 +215,10 @@
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn email;
         private DataGridViewTextBoxColumn _status;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton searchToolStripButton;
         private ToolStripTextBox toolStripTextBox1;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }
