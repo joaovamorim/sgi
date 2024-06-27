@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj": {}
+    "d:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj": {}
   },
   "projects": {
-    "D:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj": {
+    "d:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj",
+        "projectUniqueName": "d:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj",
         "projectName": "SGI",
-        "projectPath": "D:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj",
+        "projectPath": "d:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj",
         "packagesPath": "C:\\Users\\joao_\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\SGI\\sgi\\frm-customersdb-func\\obj\\",
+        "outputPath": "d:\\Git\\SGI\\sgi\\frm-customersdb-func\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joao_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -35,11 +35,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {

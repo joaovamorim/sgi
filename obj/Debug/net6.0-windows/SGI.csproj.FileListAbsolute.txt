@@ -143,4 +143,5 @@ D:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\refint\SGI.dll
 D:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\SGI.pdb
 D:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\SGI.genruntimeconfig.cache
 D:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\ref\SGI.dll
-D:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\SGI.csproj.Up2Date
+d:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\pt-BR\SGI.resources.cs
+d:\Git\SGI\sgi\frm-customersdb-func\obj\Debug\net6.0-windows\SGI.csproj.CopyComplete
