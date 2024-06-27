@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ESHRF56rLiQTqkHHX4Idj0f9qNKlPjM+uD63qanuWUjvQKbYI7mwkx9JJx83wDpj0LghVGQe3EEN7Db5+C8V6Q==",
+=======
+  "dgSpecHash": "yiXP255zkgfV2q44sVqJsA9eyy8Tr8iTSO8UUbiEOQonq2ntdnAGnJvZwmabJNN57GTY6OEkY4rQbw83uj3X2w==",
+>>>>>>> main
   "success": true,
   "projectFilePath": "d:\\Git\\SGI\\sgi\\frm-customersdb-func\\SGI.csproj",
   "expectedPackageFiles": [
