@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8B/CHU+gtZiHoblGB14/u2kE3XCN5eC2Jqh20EIvGBmyH3MGWAx6qpZvufbA+FwENPNbMtA6oC6+aYNMB4olNg==",
+  "dgSpecHash": "yiXP255zkgfV2q44sVqJsA9eyy8Tr8iTSO8UUbiEOQonq2ntdnAGnJvZwmabJNN57GTY6OEkY4rQbw83uj3X2w==",
   "success": true,
-  "projectFilePath": "D:\\Git\\SGI\\sgi\\main\\SGI.csproj",
+  "projectFilePath": "D:\\Git\\SGI\\sgi\\visual-frm-main\\SGI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao_\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\joao_\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.20\\microsoft.entityframeworkcore.7.0.20.nupkg.sha512",

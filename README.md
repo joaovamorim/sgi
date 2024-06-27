@@ -1,3 +1,3 @@
-version v1.3.1-pre-alpha
+version v1.4.0-pre-alpha
 
 Confluence: https://joaoamorim.atlassian.net/l/cp/0twGpHP5
