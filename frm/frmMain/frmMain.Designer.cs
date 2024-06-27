@@ -29,100 +29,241 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            menuStrip1 = new MenuStrip();
-            opçõesToolStripMenuItem = new ToolStripMenuItem();
-            sairToolStripMenuItem = new ToolStripMenuItem();
-            cadastrarToolStripMenuItem = new ToolStripMenuItem();
-            clientesToolStripMenuItem = new ToolStripMenuItem();
-            produtosToolStripMenuItem = new ToolStripMenuItem();
-            fornecedoresToolStripMenuItem = new ToolStripMenuItem();
-            editarAlunoToolStripMenuItem = new ToolStripMenuItem();
-            consultarAlunoToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            menuStripTop = new MenuStrip();
+            toolsToolStripMenuItem = new ToolStripMenuItem();
+            consultDatabaseToolStripMenuItem = new ToolStripMenuItem();
+            customersToolStripMenuItem1 = new ToolStripMenuItem();
+            productsToolStripMenuItem1 = new ToolStripMenuItem();
+            suppliersDBToolStripMenuItem = new ToolStripMenuItem();
+            issuanceOfInvoicesToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            registerToolStripMenuItem = new ToolStripMenuItem();
+            customersToolStripMenuItem = new ToolStripMenuItem();
+            productsToolStripMenuItem = new ToolStripMenuItem();
+            suppliersToolStripMenuItem = new ToolStripMenuItem();
+            financialControlToolStripMenuItem = new ToolStripMenuItem();
+            billsToPayToolStripMenuItem = new ToolStripMenuItem();
+            billsToReceiveToolStripMenuItem = new ToolStripMenuItem();
+            cashFlowToolStripMenuItem = new ToolStripMenuItem();
+            issuanceOfBillsToolStripMenuItem = new ToolStripMenuItem();
+            inventoryControlToolStripMenuItem = new ToolStripMenuItem();
+            salesToolStripMenuItem = new ToolStripMenuItem();
+            pDVToolStripMenuItem = new ToolStripMenuItem();
+            budgetsToolStripMenuItem = new ToolStripMenuItem();
+            orderOfServiceToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            contentsToolStripMenuItem = new ToolStripMenuItem();
+            indexToolStripMenuItem = new ToolStripMenuItem();
+            searchToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator5 = new ToolStripSeparator();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            menuStripTop.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // menuStripTop
             // 
-            resources.ApplyResources(menuStrip1, "menuStrip1");
-            menuStrip1.BackColor = SystemColors.Control;
-            menuStrip1.GripStyle = ToolStripGripStyle.Visible;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { opçõesToolStripMenuItem, cadastrarToolStripMenuItem, editarAlunoToolStripMenuItem, consultarAlunoToolStripMenuItem });
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+            resources.ApplyResources(menuStripTop, "menuStripTop");
+            menuStripTop.BackColor = SystemColors.Control;
+            menuStripTop.GripStyle = ToolStripGripStyle.Visible;
+            menuStripTop.Items.AddRange(new ToolStripItem[] { toolsToolStripMenuItem, registerToolStripMenuItem, financialControlToolStripMenuItem, inventoryControlToolStripMenuItem, salesToolStripMenuItem, helpToolStripMenuItem });
+            menuStripTop.Name = "menuStripTop";
+            menuStripTop.RenderMode = ToolStripRenderMode.Professional;
             // 
-            // opçõesToolStripMenuItem
+            // toolsToolStripMenuItem
             // 
-            resources.ApplyResources(opçõesToolStripMenuItem, "opçõesToolStripMenuItem");
-            opçõesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
-            opçõesToolStripMenuItem.Name = "opçõesToolStripMenuItem";
+            resources.ApplyResources(toolsToolStripMenuItem, "toolsToolStripMenuItem");
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultDatabaseToolStripMenuItem, issuanceOfInvoicesToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
+            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             // 
-            // sairToolStripMenuItem
+            // consultDatabaseToolStripMenuItem
             // 
-            resources.ApplyResources(sairToolStripMenuItem, "sairToolStripMenuItem");
-            sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Tag = "Fechar App";
-            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
+            resources.ApplyResources(consultDatabaseToolStripMenuItem, "consultDatabaseToolStripMenuItem");
+            consultDatabaseToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { customersToolStripMenuItem1, productsToolStripMenuItem1, suppliersDBToolStripMenuItem });
+            consultDatabaseToolStripMenuItem.Name = "consultDatabaseToolStripMenuItem";
             // 
-            // cadastrarToolStripMenuItem
+            // customersToolStripMenuItem1
             // 
-            resources.ApplyResources(cadastrarToolStripMenuItem, "cadastrarToolStripMenuItem");
-            cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesToolStripMenuItem, produtosToolStripMenuItem, fornecedoresToolStripMenuItem });
-            cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
+            resources.ApplyResources(customersToolStripMenuItem1, "customersToolStripMenuItem1");
+            customersToolStripMenuItem1.Name = "customersToolStripMenuItem1";
             // 
-            // clientesToolStripMenuItem
+            // productsToolStripMenuItem1
             // 
-            resources.ApplyResources(clientesToolStripMenuItem, "clientesToolStripMenuItem");
-            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            resources.ApplyResources(productsToolStripMenuItem1, "productsToolStripMenuItem1");
+            productsToolStripMenuItem1.Name = "productsToolStripMenuItem1";
             // 
-            // produtosToolStripMenuItem
+            // suppliersDBToolStripMenuItem
             // 
-            resources.ApplyResources(produtosToolStripMenuItem, "produtosToolStripMenuItem");
-            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            resources.ApplyResources(suppliersDBToolStripMenuItem, "suppliersDBToolStripMenuItem");
+            suppliersDBToolStripMenuItem.Name = "suppliersDBToolStripMenuItem";
             // 
-            // fornecedoresToolStripMenuItem
+            // issuanceOfInvoicesToolStripMenuItem
             // 
-            resources.ApplyResources(fornecedoresToolStripMenuItem, "fornecedoresToolStripMenuItem");
-            fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            resources.ApplyResources(issuanceOfInvoicesToolStripMenuItem, "issuanceOfInvoicesToolStripMenuItem");
+            issuanceOfInvoicesToolStripMenuItem.Name = "issuanceOfInvoicesToolStripMenuItem";
             // 
-            // editarAlunoToolStripMenuItem
+            // toolStripSeparator1
             // 
-            resources.ApplyResources(editarAlunoToolStripMenuItem, "editarAlunoToolStripMenuItem");
-            editarAlunoToolStripMenuItem.Name = "editarAlunoToolStripMenuItem";
-            editarAlunoToolStripMenuItem.Click += editarAlunoToolStripMenuItem_Click;
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
+            toolStripSeparator1.Name = "toolStripSeparator1";
             // 
-            // consultarAlunoToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            resources.ApplyResources(consultarAlunoToolStripMenuItem, "consultarAlunoToolStripMenuItem");
-            consultarAlunoToolStripMenuItem.Name = "consultarAlunoToolStripMenuItem";
-            consultarAlunoToolStripMenuItem.Click += consultarTabelaToolStripMenuItem_Click;
+            resources.ApplyResources(exitToolStripMenuItem, "exitToolStripMenuItem");
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Tag = "Fechar App";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // registerToolStripMenuItem
+            // 
+            resources.ApplyResources(registerToolStripMenuItem, "registerToolStripMenuItem");
+            registerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { customersToolStripMenuItem, productsToolStripMenuItem, suppliersToolStripMenuItem });
+            registerToolStripMenuItem.Name = "registerToolStripMenuItem";
+            // 
+            // customersToolStripMenuItem
+            // 
+            resources.ApplyResources(customersToolStripMenuItem, "customersToolStripMenuItem");
+            customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            // 
+            // productsToolStripMenuItem
+            // 
+            resources.ApplyResources(productsToolStripMenuItem, "productsToolStripMenuItem");
+            productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            // 
+            // suppliersToolStripMenuItem
+            // 
+            resources.ApplyResources(suppliersToolStripMenuItem, "suppliersToolStripMenuItem");
+            suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            // 
+            // financialControlToolStripMenuItem
+            // 
+            resources.ApplyResources(financialControlToolStripMenuItem, "financialControlToolStripMenuItem");
+            financialControlToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { billsToPayToolStripMenuItem, billsToReceiveToolStripMenuItem, cashFlowToolStripMenuItem, issuanceOfBillsToolStripMenuItem });
+            financialControlToolStripMenuItem.Name = "financialControlToolStripMenuItem";
+            // 
+            // billsToPayToolStripMenuItem
+            // 
+            resources.ApplyResources(billsToPayToolStripMenuItem, "billsToPayToolStripMenuItem");
+            billsToPayToolStripMenuItem.Name = "billsToPayToolStripMenuItem";
+            // 
+            // billsToReceiveToolStripMenuItem
+            // 
+            resources.ApplyResources(billsToReceiveToolStripMenuItem, "billsToReceiveToolStripMenuItem");
+            billsToReceiveToolStripMenuItem.Name = "billsToReceiveToolStripMenuItem";
+            // 
+            // cashFlowToolStripMenuItem
+            // 
+            resources.ApplyResources(cashFlowToolStripMenuItem, "cashFlowToolStripMenuItem");
+            cashFlowToolStripMenuItem.Name = "cashFlowToolStripMenuItem";
+            // 
+            // issuanceOfBillsToolStripMenuItem
+            // 
+            resources.ApplyResources(issuanceOfBillsToolStripMenuItem, "issuanceOfBillsToolStripMenuItem");
+            issuanceOfBillsToolStripMenuItem.Name = "issuanceOfBillsToolStripMenuItem";
+            // 
+            // inventoryControlToolStripMenuItem
+            // 
+            resources.ApplyResources(inventoryControlToolStripMenuItem, "inventoryControlToolStripMenuItem");
+            inventoryControlToolStripMenuItem.Name = "inventoryControlToolStripMenuItem";
+            // 
+            // salesToolStripMenuItem
+            // 
+            resources.ApplyResources(salesToolStripMenuItem, "salesToolStripMenuItem");
+            salesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pDVToolStripMenuItem, budgetsToolStripMenuItem, orderOfServiceToolStripMenuItem });
+            salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+            // 
+            // pDVToolStripMenuItem
+            // 
+            resources.ApplyResources(pDVToolStripMenuItem, "pDVToolStripMenuItem");
+            pDVToolStripMenuItem.Name = "pDVToolStripMenuItem";
+            // 
+            // budgetsToolStripMenuItem
+            // 
+            resources.ApplyResources(budgetsToolStripMenuItem, "budgetsToolStripMenuItem");
+            budgetsToolStripMenuItem.Name = "budgetsToolStripMenuItem";
+            // 
+            // orderOfServiceToolStripMenuItem
+            // 
+            resources.ApplyResources(orderOfServiceToolStripMenuItem, "orderOfServiceToolStripMenuItem");
+            orderOfServiceToolStripMenuItem.Name = "orderOfServiceToolStripMenuItem";
+            // 
+            // helpToolStripMenuItem
+            // 
+            resources.ApplyResources(helpToolStripMenuItem, "helpToolStripMenuItem");
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { contentsToolStripMenuItem, indexToolStripMenuItem, searchToolStripMenuItem, toolStripSeparator5, aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            // 
+            // contentsToolStripMenuItem
+            // 
+            resources.ApplyResources(contentsToolStripMenuItem, "contentsToolStripMenuItem");
+            contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
+            // 
+            // indexToolStripMenuItem
+            // 
+            resources.ApplyResources(indexToolStripMenuItem, "indexToolStripMenuItem");
+            indexToolStripMenuItem.Name = "indexToolStripMenuItem";
+            // 
+            // searchToolStripMenuItem
+            // 
+            resources.ApplyResources(searchToolStripMenuItem, "searchToolStripMenuItem");
+            searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            // 
+            // toolStripSeparator5
+            // 
+            resources.ApplyResources(toolStripSeparator5, "toolStripSeparator5");
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(menuStrip1);
+            Controls.Add(menuStripTop);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             HelpButton = true;
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = menuStripTop;
             Name = "frmMain";
             WindowState = FormWindowState.Maximized;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menuStripTop.ResumeLayout(false);
+            menuStripTop.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem opçõesToolStripMenuItem;
-        private ToolStripMenuItem sairToolStripMenuItem;
-        private ToolStripMenuItem cadastrarToolStripMenuItem;
-        private ToolStripMenuItem consultarAlunoToolStripMenuItem;
-        private ToolStripMenuItem editarAlunoToolStripMenuItem;
-        private ToolStripMenuItem clientesToolStripMenuItem;
-        private ToolStripMenuItem produtosToolStripMenuItem;
-        private ToolStripMenuItem fornecedoresToolStripMenuItem;
+        private MenuStrip menuStripTop;
+        private ToolStripMenuItem toolsToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem registerToolStripMenuItem;
+        private ToolStripMenuItem customersToolStripMenuItem;
+        private ToolStripMenuItem productsToolStripMenuItem;
+        private ToolStripMenuItem suppliersToolStripMenuItem;
+        private ToolStripMenuItem helpToolStripMenuItem;
+        private ToolStripMenuItem contentsToolStripMenuItem;
+        private ToolStripMenuItem indexToolStripMenuItem;
+        private ToolStripMenuItem searchToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator5;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private ToolStripMenuItem inventoryControlToolStripMenuItem;
+        private ToolStripMenuItem financialControlToolStripMenuItem;
+        private ToolStripMenuItem salesToolStripMenuItem;
+        private ToolStripMenuItem pDVToolStripMenuItem;
+        private ToolStripMenuItem budgetsToolStripMenuItem;
+        private ToolStripMenuItem orderOfServiceToolStripMenuItem;
+        private ToolStripMenuItem billsToPayToolStripMenuItem;
+        private ToolStripMenuItem billsToReceiveToolStripMenuItem;
+        private ToolStripMenuItem cashFlowToolStripMenuItem;
+        private ToolStripMenuItem issuanceOfBillsToolStripMenuItem;
+        private ToolStripMenuItem consultDatabaseToolStripMenuItem;
+        private ToolStripMenuItem customersToolStripMenuItem1;
+        private ToolStripMenuItem issuanceOfInvoicesToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem productsToolStripMenuItem1;
+        private ToolStripMenuItem suppliersDBToolStripMenuItem;
     }
 }
