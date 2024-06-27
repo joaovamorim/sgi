@@ -10,7 +10,7 @@
     <Compile Update="SGI.frmEditarAluno\frmEditarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SGI.frmMain\frmMain.cs">
+    <Compile Update="frm\frmMain\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
