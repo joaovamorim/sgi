@@ -1,3 +1,5 @@
+using SGI.frm.ConsultDatabase.frmCustomersDb;
+
 namespace SAA
 {
     public partial class frmMain : Form
@@ -24,6 +26,16 @@ namespace SAA
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void customersToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FecharFormulariosFilhos();
+
+            // Instancia da Form Cadastrar Aluno no Mdi
+            frmCustomersDb openMdi_CustomersDb = new frmCustomersDb();
+            openMdi_CustomersDb.MdiParent = this;
+            openMdi_CustomersDb.Show();
         }
     }
 }

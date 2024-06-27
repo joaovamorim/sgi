@@ -86,6 +86,7 @@
             // 
             resources.ApplyResources(customersToolStripMenuItem1, "customersToolStripMenuItem1");
             customersToolStripMenuItem1.Name = "customersToolStripMenuItem1";
+            customersToolStripMenuItem1.Click += customersToolStripMenuItem1_Click;
             // 
             // productsToolStripMenuItem1
             // 
