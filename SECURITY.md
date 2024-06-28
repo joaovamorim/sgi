@@ -1,26 +1,24 @@
 # Security Policy
 
-## Supported and production versions
+## Version Supported
 
-Versions currently supported and in production.
+Versions:
 
-| Version           | In activity        | Supported          |
-| ----------------- | ------------------ | ------------------ |                     
-| 1.4.0-pre-alpha   | :white_check_mark: | :white_check_mark: |
-| 1.3.1-pre-alpha   | :x:                | :x:                |
-| 1.3.0-pre-alpha   | :x:                | :x:                |
-| 1.2.5-pre-alpha   | :x:                | :x:                |
-| 1.2.4-pre-alpha   | :x:                | :x:                |
-| 1.2.3-pre-alpha   | :x:                | :x:                |
-| 1.2.1-pre-alpha   | :x:                | :x:                |
-| 1.2.0-pre-alpha   | :x:                | :x:                |
-| 1.1.0-pre-alpha   | :x:                | :x:                |
+| Version           | Supported          |
+| ----------------- | ------------------ |                     
+| 1.4.0-pre-alpha   | :white_check_mark: |
+| 1.3.1-pre-alpha   | :x:                |
+| 1.3.0-pre-alpha   | :x:                |
+| 1.2.5-pre-alpha   | :x:                |
+| 1.2.4-pre-alpha   | :x:                |
+| 1.2.3-pre-alpha   | :x:                |
+| 1.2.1-pre-alpha   | :x:                |
+| 1.2.0-pre-alpha   | :x:                |
+| 1.1.0-pre-alpha   | :x:                |
 
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you find any error or bug in the system, please inform us by e-mail.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+E-mail: joao.vamorim@outlook.com.br
