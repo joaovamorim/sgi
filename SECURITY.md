@@ -1,16 +1,21 @@
 # Security Policy
 
-## Supported Versions
+## Supported and production versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Versions currently supported and in production.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version           | In activity        | Supported          |
+| ----------------- | ------------------ | ------------------ |                     
+| 1.4.0-pre-alpha   | :white_check_mark: | :white_check_mark: |
+| 1.3.1-pre-alpha   | :x:                | :x:                |
+| 1.3.0-pre-alpha   | :x:                | :x:                |
+| 1.2.5-pre-alpha   | :x:                | :x:                |
+| 1.2.4-pre-alpha   | :x:                | :x:                |
+| 1.2.3-pre-alpha   | :x:                | :x:                |
+| 1.2.1-pre-alpha   | :x:                | :x:                |
+| 1.2.0-pre-alpha   | :x:                | :x:                |
+| 1.1.0-pre-alpha   | :x:                | :x:                |
+
 
 ## Reporting a Vulnerability
 
