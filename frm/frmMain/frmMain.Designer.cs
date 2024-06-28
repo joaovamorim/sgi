@@ -92,11 +92,13 @@
             // 
             resources.ApplyResources(productsToolStripMenuItem1, "productsToolStripMenuItem1");
             productsToolStripMenuItem1.Name = "productsToolStripMenuItem1";
+            productsToolStripMenuItem1.Click += productsToolStripMenuItem1_Click;
             // 
             // suppliersDBToolStripMenuItem
             // 
             resources.ApplyResources(suppliersDBToolStripMenuItem, "suppliersDBToolStripMenuItem");
             suppliersDBToolStripMenuItem.Name = "suppliersDBToolStripMenuItem";
+            suppliersDBToolStripMenuItem.Click += suppliersDBToolStripMenuItem_Click;
             // 
             // issuanceOfInvoicesToolStripMenuItem
             // 

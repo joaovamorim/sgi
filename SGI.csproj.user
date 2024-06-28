@@ -4,6 +4,9 @@
     <Compile Update="frm\ConsultDatabase\frmCustomersDb\frmCustomersDb.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frm\ConsultDatabase\frmProductsDb\frmProductsDb.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SGI.frmCadastroAluno\frmCadastroAluno.cs">
       <SubType>Form</SubType>
     </Compile>
