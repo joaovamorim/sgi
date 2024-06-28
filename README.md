@@ -39,4 +39,10 @@ Below is some application information.
 + Oracle SQL
 
 ## Documentation
-text.
+>[!NOTE]
+>
+>In production.
+
+Example of the home screen.
+
+![Main Screen](/<> "Main Screen")
