@@ -45,4 +45,4 @@ Below is some application information.
 
 Example of the home screen.
 
-![Main Screen](/<> "Main Screen")
+![Main Screen](/README/screen.PNG "Main Screen")
