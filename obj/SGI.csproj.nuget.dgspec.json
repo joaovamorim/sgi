@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Git\\SGI\\sgi\\frm-products-func\\SGI.csproj": {}
+    "d:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj": {}
   },
   "projects": {
-    "d:\\Git\\SGI\\sgi\\frm-products-func\\SGI.csproj": {
+    "d:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Git\\SGI\\sgi\\frm-products-func\\SGI.csproj",
+        "projectUniqueName": "d:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj",
         "projectName": "SGI",
-        "projectPath": "d:\\Git\\SGI\\sgi\\frm-products-func\\SGI.csproj",
+        "projectPath": "d:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj",
         "packagesPath": "C:\\Users\\joao_\\.nuget\\packages\\",
-        "outputPath": "d:\\Git\\SGI\\sgi\\frm-products-func\\obj\\",
+        "outputPath": "d:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joao_\\AppData\\Roaming\\NuGet\\NuGet.Config",

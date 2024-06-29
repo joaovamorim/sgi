@@ -1,5 +1,6 @@
 using SGI.frm.ConsultDatabase.frmCustomersDb;
 using SGI.frm.ConsultDatabase.frmProductsDb;
+using SGI.frm.ConsultDatabase.frmSuppliersDb;
 
 namespace SAA
 {
@@ -54,6 +55,9 @@ namespace SAA
             FecharFormulariosFilhos();
 
             // Instancia da frmSuppliersDb no Mdi
+            frmSuppliersDb openMdi_SuppliersDb = new frmSuppliersDb();
+            openMdi_SuppliersDb.MdiParent = this;
+            openMdi_SuppliersDb.Show();
         }
     }
 }
