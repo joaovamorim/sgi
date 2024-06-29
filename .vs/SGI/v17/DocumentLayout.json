@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Git\\SGI\\sgi\\frm-products-func\\",
+  "WorkspaceRootPath": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59BF9842-92B2-457E-95EE-8C5AD5D4CCCD}|SGI.csproj|d:\\git\\sgi\\sgi\\frm-products-func\\frm\\consultdatabase\\frmproductsdb\\frmproductsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{59BF9842-92B2-457E-95EE-8C5AD5D4CCCD}|SGI.csproj|d:\\git\\sgi\\sgi\\frm-suppliersdb-func\\frm\\consultdatabase\\frmsuppliersdb\\frmsuppliersdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{59BF9842-92B2-457E-95EE-8C5AD5D4CCCD}|SGI.csproj|solutionrelative:frm\\consultdatabase\\frmsuppliersdb\\frmsuppliersdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59BF9842-92B2-457E-95EE-8C5AD5D4CCCD}|SGI.csproj|d:\\git\\sgi\\sgi\\frm-suppliersdb-func\\frm\\consultdatabase\\frmproductsdb\\frmproductsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{59BF9842-92B2-457E-95EE-8C5AD5D4CCCD}|SGI.csproj|solutionrelative:frm\\consultdatabase\\frmproductsdb\\frmproductsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,14 +26,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmProductsDb.cs [Design]",
-              "DocumentMoniker": "D:\\Git\\SGI\\sgi\\frm-products-func\\frm\\ConsultDatabase\\frmProductsDb\\frmProductsDb.cs",
+              "DocumentMoniker": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\frm\\ConsultDatabase\\frmProductsDb\\frmProductsDb.cs",
               "RelativeDocumentMoniker": "frm\\ConsultDatabase\\frmProductsDb\\frmProductsDb.cs",
-              "ToolTip": "D:\\Git\\SGI\\sgi\\frm-products-func\\frm\\ConsultDatabase\\frmProductsDb\\frmProductsDb.cs [Design]",
+              "ToolTip": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\frm\\ConsultDatabase\\frmProductsDb\\frmProductsDb.cs [Design]",
               "RelativeToolTip": "frm\\ConsultDatabase\\frmProductsDb\\frmProductsDb.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T20:01:42.165Z",
+              "WhenOpened": "2024-06-29T00:57:03.292Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmSuppliersDb.cs [Design]",
+              "DocumentMoniker": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\frm\\ConsultDatabase\\frmSuppliersDb\\frmSuppliersDb.cs",
+              "RelativeDocumentMoniker": "frm\\ConsultDatabase\\frmSuppliersDb\\frmSuppliersDb.cs",
+              "ToolTip": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\frm\\ConsultDatabase\\frmSuppliersDb\\frmSuppliersDb.cs [Design]",
+              "RelativeToolTip": "frm\\ConsultDatabase\\frmSuppliersDb\\frmSuppliersDb.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T00:48:21.353Z",
               "EditorCaption": " [Design]"
             }
           ]

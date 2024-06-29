@@ -1278,11 +1278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\SGI\\sgi\\frm-products-func\\SGI.csproj",
+      "projectUniqueName": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj",
       "projectName": "SGI",
-      "projectPath": "D:\\Git\\SGI\\sgi\\frm-products-func\\SGI.csproj",
+      "projectPath": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj",
       "packagesPath": "C:\\Users\\joao_\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\SGI\\sgi\\frm-products-func\\obj\\",
+      "outputPath": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joao_\\AppData\\Roaming\\NuGet\\NuGet.Config",
