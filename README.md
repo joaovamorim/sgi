@@ -1,5 +1,5 @@
 # IMN - Integrated Management System | pt-BR > SGI
-**Current version:** *v1.4.2-pre-alpha*
+**Current version:** *v1.5.0-pre-alpha*
 
 **Creation date:** May 22, 2024
 

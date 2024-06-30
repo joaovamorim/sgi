@@ -6,6 +6,7 @@ Versions:
 
 | Version           | Supported          |
 | ----------------- | ------------------ |                     
+| 1.5.0-pre-alpha   | :white_check_mark: |
 | 1.4.2-pre-alpha   | :white_check_mark: |
 | 1.4.1-pre-alpha   | :white_check_mark: |
 | 1.4.0-pre-alpha   | :white_check_mark: |

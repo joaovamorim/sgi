@@ -139,6 +139,7 @@
             gridProductsDb.Location = new Point(0, 0);
             gridProductsDb.MultiSelect = false;
             gridProductsDb.Name = "gridProductsDb";
+            gridProductsDb.ReadOnly = true;
             gridProductsDb.RowTemplate.Height = 25;
             gridProductsDb.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridProductsDb.Size = new Size(800, 425);
@@ -148,36 +149,43 @@
             // 
             matricula.HeaderText = "MATRÍCULA";
             matricula.Name = "matricula";
+            matricula.ReadOnly = true;
             // 
             // nome
             // 
             nome.HeaderText = "NOME";
             nome.Name = "nome";
+            nome.ReadOnly = true;
             // 
             // dataNascimento
             // 
             dataNascimento.HeaderText = "DATA NASCIMENTO";
             dataNascimento.Name = "dataNascimento";
+            dataNascimento.ReadOnly = true;
             // 
             // cpf
             // 
             cpf.HeaderText = "CPF";
             cpf.Name = "cpf";
+            cpf.ReadOnly = true;
             // 
             // telefone
             // 
             telefone.HeaderText = "TELEFONE";
             telefone.Name = "telefone";
+            telefone.ReadOnly = true;
             // 
             // email
             // 
             email.HeaderText = "E-MAIL";
             email.Name = "email";
+            email.ReadOnly = true;
             // 
             // _status
             // 
             _status.HeaderText = "STATUS";
             _status.Name = "_status";
+            _status.ReadOnly = true;
             // 
             // timer1
             // 

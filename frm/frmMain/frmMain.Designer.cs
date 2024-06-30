@@ -127,6 +127,7 @@
             // 
             resources.ApplyResources(customersToolStripMenuItem, "customersToolStripMenuItem");
             customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            customersToolStripMenuItem.Click += customersToolStripMenuItem_Click;
             // 
             // productsToolStripMenuItem
             // 
