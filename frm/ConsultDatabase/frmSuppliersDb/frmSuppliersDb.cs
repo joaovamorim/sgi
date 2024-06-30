@@ -7,6 +7,8 @@ namespace SGI.frm.ConsultDatabase.frmSuppliersDb
     public partial class frmSuppliersDb : Form
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["OracleConnectionString"].ConnectionString.ToString();
+        private static OracleConnection connection = new OracleConnection(connectionString);
+        private static string? query;
 
         public frmSuppliersDb()
         {
@@ -17,12 +19,10 @@ namespace SGI.frm.ConsultDatabase.frmSuppliersDb
         {
             this.Dock = DockStyle.Fill;
 
-            OracleConnection connection = new OracleConnection(connectionString);
-
             try
             {
-                string query = @"select * 
-                                 from alunos";
+                query = @"select * 
+                          from alunos";
 
                 DataTable data = new DataTable();
 
@@ -52,12 +52,10 @@ namespace SGI.frm.ConsultDatabase.frmSuppliersDb
         {
             gridSuppliersDb.Rows.Clear();
 
-            OracleConnection connection = new OracleConnection(connectionString);
-
             try
             {
-                string query = @"select *
-                                 from alunos";
+                query = @"select *
+                          from alunos";
 
                 if (toolStripTextBox1.Text != "")
                 {
@@ -108,12 +106,10 @@ namespace SGI.frm.ConsultDatabase.frmSuppliersDb
         {
             gridSuppliersDb.Rows.Clear();
 
-            OracleConnection connection = new OracleConnection(connectionString);
-
             try
             {
-                string query = @"select * 
-                                 from alunos";
+                query = @"select * 
+                          from alunos";
 
                 DataTable data = new DataTable();
 
