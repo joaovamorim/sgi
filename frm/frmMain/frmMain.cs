@@ -13,13 +13,13 @@ namespace SAA
 
         private void FecharFormulariosFilhos()
         {
-            // percorre todos os formul�rios abertos
+            // percorre todos os formularios abertos
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                // se o formul�rio for filho
+                // se o formulario for filho
                 if (Application.OpenForms[i].IsMdiChild)
                 {
-                    // fecha o formul�rio
+                    // fecha o formulario
                     Application.OpenForms[i].Close();
                 }
             }

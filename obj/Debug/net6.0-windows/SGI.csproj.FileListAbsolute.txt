@@ -256,3 +256,4 @@ d:\Git\SGI\sgi\frm-suppliersdb-func\obj\Debug\net6.0-windows\SGI.genruntimeconfi
 d:\Git\SGI\sgi\frm-suppliersdb-func\obj\Debug\net6.0-windows\ref\SGI.dll
 d:\Git\SGI\sgi\frm-suppliersdb-func\obj\Debug\net6.0-windows\pt-BR\SGI.resources.cs
 d:\Git\SGI\sgi\frm-suppliersdb-func\obj\Debug\net6.0-windows\SGI.csproj.CopyComplete
+d:\Git\SGI\sgi\main\obj\Debug\net6.0-windows\SGI.frm.ConsultDatabase.frmSuppliersDb.frmSuppliersDb.resources

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj": {}
+    "D:\\Git\\SGI\\sgi\\main\\main.csproj": {}
   },
   "projects": {
-    "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj": {
+    "D:\\Git\\SGI\\sgi\\main\\main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj",
-        "projectName": "SGI",
-        "projectPath": "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj",
+        "projectUniqueName": "D:\\Git\\SGI\\sgi\\main\\main.csproj",
+        "projectName": "main",
+        "projectPath": "D:\\Git\\SGI\\sgi\\main\\main.csproj",
         "packagesPath": "C:\\Users\\joao_\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\SGI\\sgi\\refactoring\\obj\\",
+        "outputPath": "D:\\Git\\SGI\\sgi\\main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joao_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,20 +40,6 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "dependencies": {
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.1.35, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.20, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.21.13, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

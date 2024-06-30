@@ -1278,11 +1278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj",
+      "projectUniqueName": "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj",
       "projectName": "SGI",
-      "projectPath": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\SGI.csproj",
+      "projectPath": "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj",
       "packagesPath": "C:\\Users\\joao_\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\SGI\\sgi\\frm-suppliersdb-func\\obj\\",
+      "outputPath": "D:\\Git\\SGI\\sgi\\refactoring\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joao_\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1306,11 +1306,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
