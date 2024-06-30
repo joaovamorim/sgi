@@ -1,1 +1,10 @@
-.vscode/
+# Ignore bin and obj folders
+src/bin/
+src/obj/
+
+# Ignore Visual Studio Code configuration folder
+src/.vscode/
+
+# Ignore Visual Studio and IntelliJ IDEA directories
+src/.idea/
+src/.vs/
