@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj": {}
+    "d:\\Git\\SGI\\sgi\\frmRegisterCustomers\\SGI.csproj": {}
   },
   "projects": {
-    "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj": {
+    "d:\\Git\\SGI\\sgi\\frmRegisterCustomers\\SGI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj",
+        "projectUniqueName": "d:\\Git\\SGI\\sgi\\frmRegisterCustomers\\SGI.csproj",
         "projectName": "SGI",
-        "projectPath": "D:\\Git\\SGI\\sgi\\refactoring\\SGI.csproj",
+        "projectPath": "d:\\Git\\SGI\\sgi\\frmRegisterCustomers\\SGI.csproj",
         "packagesPath": "C:\\Users\\joao_\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\SGI\\sgi\\refactoring\\obj\\",
+        "outputPath": "d:\\Git\\SGI\\sgi\\frmRegisterCustomers\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joao_\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -124,7 +124,7 @@
   <data name="customersToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAADB9JREFUeF7tWwl0FEUanu6Z6Z4EXNRd3XXVt+7z2H2+5/pcl8wRIIQQAiHAhhDA
+        DgAACw4BQL7hQQAADB9JREFUeF7tWwl0FEUanu6Z6Z4EXNRd3XXVt+7z2H2+5/pcl8wRIIQQAiHAhhDA
         QMxM9yScCTfhCjGEIy7KoYDchBsBDy7DKSC6KMqleOAtykPw3EPd9Un/+//V3WEmqUnPhCTCvvzvfW8g
         1VX1/19X/fX/VdW2ZrlSxadcE+8O3i+5le5xXjWbICcoyS6v8jssFfSH/s9E8il/kD3K1JaJysk4r6K5
         PCrw0MKrfC271Y1xbiXL1rlQNqpfvRLnzW/dwqdUoXHM6JY+BZIf7AfDJ/WCqTN7wuLFPWD23EwYV94L
@@ -178,9 +178,6 @@
         D46whWj4YPrszpadbTe6ufqEfTvo8d9DHzrLnkBH+ujZhOwNprk8gST2OY6v4PZ6XV9ploYUm+1/blRj
         0j2PqVcAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="customersToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
   </data>
   <data name="customersToolStripMenuItem1.Text" xml:space="preserve">
     <value>Customers DB</value>
@@ -188,7 +185,7 @@
   <data name="productsToolStripMenuItem1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAADB9JREFUeF7tWwl0FEUanu6Z6Z4EXNRd3XXVt+7z2H2+5/pcl8wRIIQQAiHAhhDA
+        DgAACw4BQL7hQQAADB9JREFUeF7tWwl0FEUanu6Z6Z4EXNRd3XXVt+7z2H2+5/pcl8wRIIQQAiHAhhDA
         QMxM9yScCTfhCjGEIy7KoYDchBsBDy7DKSC6KMqleOAtykPw3EPd9Un/+//V3WEmqUnPhCTCvvzvfW8g
         1VX1/19X/fX/VdW2ZrlSxadcE+8O3i+5le5xXjWbICcoyS6v8jssFfSH/s9E8il/kD3K1JaJysk4r6K5
         PCrw0MKrfC271Y1xbiXL1rlQNqpfvRLnzW/dwqdUoXHM6JY+BZIf7AfDJ/WCqTN7wuLFPWD23EwYV94L
@@ -242,9 +239,6 @@
         D46whWj4YPrszpadbTe6ufqEfTvo8d9DHzrLnkBH+ujZhOwNprk8gST2OY6v4PZ6XV9ploYUm+1/blRj
         0j2PqVcAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="productsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
   </data>
   <data name="productsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Products DB</value>
@@ -252,7 +246,7 @@
   <data name="suppliersDBToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAADB9JREFUeF7tWwl0FEUanu6Z6Z4EXNRd3XXVt+7z2H2+5/pcl8wRIIQQAiHAhhDA
+        DgAACw4BQL7hQQAADB9JREFUeF7tWwl0FEUanu6Z6Z4EXNRd3XXVt+7z2H2+5/pcl8wRIIQQAiHAhhDA
         QMxM9yScCTfhCjGEIy7KoYDchBsBDy7DKSC6KMqleOAtykPw3EPd9Un/+//V3WEmqUnPhCTCvvzvfW8g
         1VX1/19X/fX/VdW2ZrlSxadcE+8O3i+5le5xXjWbICcoyS6v8jssFfSH/s9E8il/kD3K1JaJysk4r6K5
         PCrw0MKrfC271Y1xbiXL1rlQNqpfvRLnzW/dwqdUoXHM6JY+BZIf7AfDJ/WCqTN7wuLFPWD23EwYV94L
@@ -307,16 +301,13 @@
         0j2PqVcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="suppliersDBToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
   <data name="suppliersDBToolStripMenuItem.Text" xml:space="preserve">
     <value>Suppliers DB</value>
   </data>
   <data name="consultDatabaseToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABFdJREFUaEPtWFlIFVEY9q2i5S2o16Aeg57qNckWQTR11DC93pmbhWFhC1nRIkSG
+        DgAACw4BQL7hQQAABFdJREFUaEPtWFlIFVEY9q2i5S2o16Aeg57qNckWQTR11DC93pmbhWFhC1nRIkSG
         SIuZqbmUZAv0UJRLtD9ZViYVFFkW+hAa1UPq7V6D0/fPPTOeO57MOx7N4H7wccdZvu/7z5w5izFRRBGF
         O2RmZs7zer0bwHNge05OTj8Y5Oync2C1x+PJ0HV9Ln/s3yMrK2sJgtUi5CB+2XhI94I14GIuM/XQNG0W
         ApSCw7KQ4yGepbdTgrcyk8tODajlwFejQm0rZMaxy8yo62DGlW7mu/HdJB2b53CN7hn1nNfblpubu5DL
@@ -338,16 +329,13 @@
         RK5CYII=
 </value>
   </data>
-  <data name="consultDatabaseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
   <data name="consultDatabaseToolStripMenuItem.Text" xml:space="preserve">
     <value>Consult Database</value>
   </data>
   <data name="issuanceOfInvoicesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEJGSURBVHhe7d13
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEJGSURBVHhe7d13
         mBPV28bx3xZ26b0tRaSjFEWxi4CAKIoUQQQLCKgoIiDdBirYsGIvqKiIotgLYEMRQWyAiAURUemIYMf2
         vHNieEXz7O4km0xm5nzv6/r8BTuZc2aSuZNMZv6XgtRwnOK4xfGSY7Vjm+N3h3jsR8eHjmsddR1epo7j
         asdyxw8Obf0AhMfPji2OFY4nHJMdnRylHISENhUdQx1LHNoTww92OsY7MhypzijHrw5tPQDYxbwWmELQ
@@ -633,11 +621,11 @@
         kqRkO9o5bnQsdmx2/ObQnoQA4IXtDnNp31mO/o7KjoDmf//7PzKCXCt8+cjBAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="issuanceOfInvoicesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
   <data name="issuanceOfInvoicesToolStripMenuItem.Text" xml:space="preserve">
     <value>Issuance of Invoices</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -654,6 +642,9 @@
         NPlqmGEvp6PVR3QZA1p6WIlLoKWHlbgEWnpYiUugpedU/bQYeL+gpcf+Pk/LnOCtQ0uP/XOBlzlgzr8C
         rWaxfy7Qwg4JA/8BdNolOX0LCRvdvibsvrz11ke+T58+fTrKYPAPzlAXnjuiGX0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Exit</value>
@@ -680,9 +671,6 @@
         fEJCQsLIkEr9B1jEPu6czISdAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="customersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
-  </data>
   <data name="customersToolStripMenuItem.Text" xml:space="preserve">
     <value>Customers</value>
   </data>
@@ -697,9 +685,6 @@
         HxZS6lEMUHPa0gO4n9rSxprTlh6gJieKWvnozf2/xf31kP2PkDUnilr56M2zH8DqUXyJ46s0pH4Cph6A
         7U/qPUOiVj4spNT/fQfuZc2CSuxOW+9T5HQZL6jVaDQaR4XIH5zo+fzxShyQAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="productsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
   </data>
   <data name="productsToolStripMenuItem.Text" xml:space="preserve">
     <value>Products</value>
@@ -730,9 +715,6 @@
         IKXSIDMfpxeykLy8/wARUSsI+nmNQAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="suppliersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 22</value>
-  </data>
   <data name="suppliersToolStripMenuItem.Text" xml:space="preserve">
     <value>Suppliers</value>
   </data>
@@ -742,7 +724,7 @@
   <data name="billsToPayToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABQFJREFUeF7tWV1TG1UYzpU/wZneqxf2N+iN+je87rBbtUFtx4uiXuDEbAIJHZUi
+        DgAACw4BQL7hQQAABQFJREFUeF7tWV1TG1UYzpU/wZneqxf2N+iN+je87rBbtUFtx4uiXuDEbAIJHZUi
         m5AU6JAWrvgIM63ShqRNYi0fTlotCDbFYIu0HeoHdTyed3ffZffkLElqml3COTPPTM57nrzv+zy75+wG
         fGKIUd8Iyeo3iqx+H+6IHzVC5ggeH3w1JKlFgBvrEFPkWEGR1WzwWOJFI9zcEZJjRIf6pyKp7xphGo+/
         TRvb8cy6pJbC7yWPGMvNG3sN6KCOx2mxGM6nBqfJJEUr1zWOMZ/8eorEPx3DtYLRdvMGFlq4nCW9J4bM
@@ -772,7 +754,7 @@
   <data name="billsToReceiveToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAxpJREFUaEPtlktoE1EUho8WtKB20SoSKIIboUop1iBCJnYhQhfuRMGlIoJQt2oq
+        DgAACw4BQL7hQQAAAxpJREFUaEPtlktoE1EUho8WtKB20SoSKIIboUop1iBCJnYhQhfuRMGlIoJQt2oq
         UhAXSlHcSSmIEZUaJUJmmj6SEpQi3SjVhmAmFkGwxDTaRyag1Hg9NzmZTpOpTWmc3sJ88BOSe+7M/5+c
         eYCNjY1N1XHF5RZ3XPa440pEiisJSZU1WhIb18eA5FaVMIqVikrEpO1zpBZN9pSaNopKxcMdG3DgqETN
         TOP4/MbxifFRonKxOBIdrEeTE2XG0bSkBs4ei/kbqFRAGNskxeXhEuML+FsnsK7NVCUuvMNLzOO4HE0o
@@ -794,7 +776,7 @@
   <data name="cashFlowToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABINJREFUaEPtmF1oFFcUx2OhpVCxL7WlPtUHfZDs55QYrSgEFRNFnyytbR9qbawU
+        DgAACw4BQL7hQQAABINJREFUaEPtmF1oFFcUx2OhpVCxL7WlPtUHfZDs55QYrSgEFRNFnyytbR9qbawU
         Gq1i2mQ2Gz9AJSq0D1bRSmlTCEFo8tAt2Ww+HxTLQpImJgiaZAnmY01SSn3wA709Z3JG7p05uzu73cQ8
         zA/+DHvvuff+z3zsPTMFLi4uLi4ui4lYLPZdOBx+iX6+OApDgXVePdCI8lQFi6k5I21tbQKSuNbR0fEq
         Nb0YfHrwfW8oKFCeGm03NWcEE6Ak2iKRyDJqXnj+bwKkv6LR6ArqWji0cu1ljx6ofJ5AKFCrVWlvU3da
@@ -822,7 +804,7 @@
   <data name="issuanceOfBillsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAArZJREFUeF7tlb0LjVEcxy+SlEEMRAZ/AWWhKGUwKKVEsSAsTJRJKVKKFCbEYPE2
+        DgAACw4BQL7hQQAAArZJREFUeF7tlb0LjVEcxy+SlEEMRAZ/AWWhKGUwKKVEsSAsTJRJKVKKFCbEYPE2
         yWBQMsikJIuihCiEyEvIy/d773M4fX66tzv+cj71qXPO9/nee55zX55eo9FoNBqNRqPRaHT8GiHJngdY
         oCR7HmCBkux5gAVKsucBFijJngdYoCR7HmCBkux5gAVKsucBFijJngdYoCR7HmCBkux5gAVKsucBFijJ
         ngdYoCR7HmCBkux5gAVKsucBFijJngdYoCR7HmCBkux5gAVKsucBFijJngdYoCR7HmCBkux5gAVKsucB
@@ -849,7 +831,7 @@
   <data name="pDVToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABahJREFUeF7tmV9MW1Ucx/s2YzQ+bZAIOHBRl2CmTEYhsmUmCtGYxQ00Mf558EWT
+        DgAACw4BQL7hQQAABahJREFUeF7tmV9MW1Ucx/s2YzQ+bZAIOHBRl2CmTEYhsmUmCtGYxQ00Mf558EWT
         zcUn45uJMbpkIBjicG4FJxu1KWBgDtnootuiYgLbxJFsUwZsFEpbWGkZdu3t8Z7ruXDOPT8K995zgbL+
         kk9Cm97v7/f99t7bX4stXStYyF3yInIX30QtxchSlB72ctJ29dSymJ/DPkzarp5Sh/MeXG8pah/SdvUU
         HcAvF8fnCEbuCiMdQDqAFAzA2fmXgmpC+1gP6QBSMQB/OAqaMUL6DEgHkIIB9Fzxo0AYNqSXlAwAc310
@@ -882,7 +864,7 @@
   <data name="budgetsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAghJREFUOE9joBnYX8/Asi9JKHh/nGji3ljR0O3RIpJQKcLgTKW44+EM0S8H00T/
+        DgAACw4BQL7hQQAAAghJREFUOE9joBnYX8/Asi9JKHh/nGji3ljR0O3RIpJQKcLgTKW44+EM0S8H00T/
         H0gW/b8vXvTf/jixFKg0fnAwTUTyUJro91PFUv8Ppoj9P5Ak9v9otuT/HcGiP9a6E+GKPXEintc7Fb58
         P2j1/+dRRzAGsc/Xyn/Z5CniCVWGG+yJFtJ6tUb/769jzv//nvYFYxD72VKdvxs8JLSgynCDu0uUs7/s
         Mf3/67jr/39nA8AYxP682/T/7UXK2VBluMGdtUpin/cY/P1x2P7/7xPuYAxig8RAclBl+MHHrao7v+41
@@ -900,7 +882,7 @@
   <data name="orderOfServiceToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAWxJREFUOE9joCrwf/LfKvD5/1B07HT6qxlUCX7g/+z/z4Bn//+jY8tFj39ZrXyS
+        DgAACw4BQL7hQQAAAWxJREFUOE9joCrwf/LfKvD5/1B07HT6qxlUCX7g/+z/z4Bn//+jY8tFj39ZrXyS
         AVWGG2DTDMKW8x7916m/+t9ixdNcqFLsAJtmELZe8OS/btWV/7oNV/5ZrXmWCVWOCbBpBmGfW7/+ux76
         +N8FiF2PffoKVY4JQIoVZu/6LzdjO1YMkgOpgSrHBMi24sNQ5ZgAJKk0b+9/x/OvyHeB1aF7/z1ufflv
         vu82Cjbdfum/2oJJ/9WWNv0XnOjfINThIQPVhgC4DDDddvG//IK8/5LzI/+Lzgz5LzjJ/z9vt+d77iYX

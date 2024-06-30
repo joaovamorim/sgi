@@ -61,36 +61,43 @@
             // 
             email.HeaderText = "E-MAIL";
             email.Name = "email";
+            email.ReadOnly = true;
             // 
             // telefone
             // 
             telefone.HeaderText = "TELEFONE";
             telefone.Name = "telefone";
+            telefone.ReadOnly = true;
             // 
             // cpf
             // 
             cpf.HeaderText = "CPF";
             cpf.Name = "cpf";
+            cpf.ReadOnly = true;
             // 
             // dataNascimento
             // 
             dataNascimento.HeaderText = "DATA NASCIMENTO";
             dataNascimento.Name = "dataNascimento";
+            dataNascimento.ReadOnly = true;
             // 
             // nome
             // 
             nome.HeaderText = "NOME";
             nome.Name = "nome";
+            nome.ReadOnly = true;
             // 
             // matricula
             // 
             matricula.HeaderText = "MATRÍCULA";
             matricula.Name = "matricula";
+            matricula.ReadOnly = true;
             // 
             // _status
             // 
             _status.HeaderText = "STATUS";
             _status.Name = "_status";
+            _status.ReadOnly = true;
             // 
             // toolStripLabel1
             // 
@@ -180,6 +187,7 @@
             gridSuppliersDb.Location = new Point(0, 0);
             gridSuppliersDb.MultiSelect = false;
             gridSuppliersDb.Name = "gridSuppliersDb";
+            gridSuppliersDb.ReadOnly = true;
             gridSuppliersDb.RowTemplate.Height = 25;
             gridSuppliersDb.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridSuppliersDb.Size = new Size(800, 450);

@@ -1,6 +1,7 @@
 using SGI.frm.ConsultDatabase.frmCustomersDb;
 using SGI.frm.ConsultDatabase.frmProductsDb;
 using SGI.frm.ConsultDatabase.frmSuppliersDb;
+using SGI.frm.Register.frmRegisterCustomers;
 
 namespace SAA
 {
@@ -58,6 +59,16 @@ namespace SAA
             frmSuppliersDb openMdi_SuppliersDb = new frmSuppliersDb();
             openMdi_SuppliersDb.MdiParent = this;
             openMdi_SuppliersDb.Show();
+        }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FecharFormulariosFilhos();
+
+            // Instancia da frmRegisterCustomers no Mdi
+            frmRegisterCustomers openMdi_RegisterCustomers = new frmRegisterCustomers();
+            openMdi_RegisterCustomers.MdiParent = this;
+            openMdi_RegisterCustomers.Show();
         }
     }
 }
