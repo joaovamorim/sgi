@@ -1,10 +1,10 @@
 # Ignore bin and obj folders
-src/bin/
-src/obj/
+bin/
+obj/
 
 # Ignore Visual Studio Code configuration folder
-src/.vscode/
+.vscode/
 
 # Ignore Visual Studio and IntelliJ IDEA directories
-src/.idea/
-src/.vs/
+.idea/
+.vs/
