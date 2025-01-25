@@ -1,6 +1,6 @@
 using SAA;
 
-namespace SGI.SGI.Program
+namespace SGI.Program
 {
     internal static class Program
     {
