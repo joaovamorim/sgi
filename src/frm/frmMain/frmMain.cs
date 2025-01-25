@@ -1,3 +1,4 @@
+using System.Reflection;
 using SGI.frm.ConsultDatabase.frmCustomersDb;
 using SGI.frm.ConsultDatabase.frmProductsDb;
 using SGI.frm.ConsultDatabase.frmSuppliersDb;
@@ -10,6 +11,14 @@ namespace SAA
         public frmMain()
         {
             InitializeComponent();
+            DisplayAppVersion();
+        }
+
+        private void DisplayAppVersion()
+        {
+            // Obtém a versão do assembly
+            var version = Assembly.GetExecutingAssembly().GetName().Version;
+            this.Text += $" | Versão: {version}";
         }
 
         private void FecharFormulariosFilhos()
