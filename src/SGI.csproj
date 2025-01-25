@@ -7,9 +7,9 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
 
-    <Version>1.5.1.0</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.5.1.0</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.5.1.0</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.5.2.0</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.5.2.0</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.5.2.0</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
