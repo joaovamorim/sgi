@@ -1,0 +1,41 @@
+name: Publish ClickOnce
+
+on:
+  push:
+    branches:
+      - main  # Executa o workflow quando houver push no branch 'main'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 1. Fazer o checkout do código
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 2. Instalar o .NET
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
+      # 3. Restaurar pacotes NuGet
+      - name: Restore NuGet packages
+        run: dotnet restore D:\git\SGI\sgi\main\src\SGI.csproj
+
+      # 4. Compilar o projeto
+      - name: Build the project
+        run: dotnet build D:\git\SGI\sgi\main\src\SGI.csproj --configuration Release
+
+      # 5. Publicar ClickOnce
+      - name: Publish ClickOnce
+        run: dotnet publish D:\git\SGI\sgi\main\src\SGI.csproj --configuration Release --output D:\git\SGI\sgi\publish
+
+      # 6. Criar uma nova release no GitHub
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: D:\git\SGI\sgi\publish\**/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Usa o token do GitHub para autenticação
