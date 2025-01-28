@@ -22,7 +22,7 @@ jobs:
 
       # 3. Restaurar pacotes NuGet
       - name: Restore NuGet packages
-        run: dotnet restore ./SGI.csproj
+        run: dotnet restore D:\git\SGI\sgi\main\src\SGI.csproj
 
       # 4. Compilar o projeto
       - name: Build the project
