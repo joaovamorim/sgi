@@ -9,20 +9,20 @@
   </PropertyGroup>
 
   <PropertyGroup>
-      <!-- URL apontando para a release do GitHub -->
-      <PublishUrl>https://github.com/joaovamorim/sgi/releases/download/v$(Version)/MinhaAplicacao.application</PublishUrl>
-      
-      <UpdateEnabled>true</UpdateEnabled>
-      <UpdateMode>Foreground</UpdateMode> <!-- Pode ser 'Background' ou 'Foreground' -->
-      <UpdateInterval>1</UpdateInterval> <!-- Intervalo de 1 hora -->
-      
-      <!-- Versões do sistema -->
-      <PublishVersion>$(Version)</PublishVersion>
+    <!-- URL apontando para a release do GitHub -->
+    <PublishUrl>
+      https://github.com/joaovamorim/sgi/releases/download/v$(Version)/MinhaAplicacao.application</PublishUrl>
 
-      <!-- Versionamento Dinâmico -->
-      <Version>$(Version)</Version> <!-- Versão do sistema -->
-      <AssemblyVersion>$(Version)</AssemblyVersion> <!-- Versão da DLL -->
-      <FileVersion>$(Version)</FileVersion> <!-- Versão do arquivo executável -->
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode> <!-- Pode ser 'Background' ou 'Foreground' -->
+    <UpdateInterval>1</UpdateInterval> <!-- Intervalo de 1 hora -->
+
+    <!-- Versões do sistema -->
+    <PublishVersion>1.5.4.0</PublishVersion>
+
+    <Version>1.5.4.0</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.5.4.0</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.5.4.0</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
