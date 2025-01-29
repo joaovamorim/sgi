@@ -38,3 +38,11 @@ jobs:
         with:
           name: ClickOnce
           path: ./src/publish/*
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./src/publish/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
