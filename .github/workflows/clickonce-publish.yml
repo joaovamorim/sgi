@@ -34,17 +34,25 @@ jobs:
       - name: Publish ClickOnce
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 6. Fazer upload do instalador para os artefatos do GitHub (versão atualizada)
+      # 6. Criar a pasta "publish" e mover os arquivos
+      - name: Create publish folder for release files
+        run: mkdir ./src/publish/publish
+
+      # 7. Mover os arquivos para a pasta "publish_files"
+      - name: Move files to publish folder
+        run: move ./src/publish/* ./src/publish/publish/
+
+      # 8. Fazer upload do instalador para os artefatos do GitHub (versão atualizada)
       - name: Upload installer
         uses: actions/upload-artifact@v3  # Atualizado para v3
         with:
           name: ClickOnce
           path: ./src/publish/*
 
-      # 7. Criar uma nova release no GitHub
+      # 9. Criar uma nova release no GitHub
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
-          files: ./src/publish/*
+          files: ./src/publish/publish/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

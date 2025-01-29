@@ -18,11 +18,11 @@
     <UpdateInterval>1</UpdateInterval> <!-- Intervalo de 1 hora -->
 
     <!-- Versões do sistema -->
-    <PublishVersion>1.5.4.0</PublishVersion>
+    <PublishVersion>1.5.5.0</PublishVersion>
 
-    <Version>1.5.4.0</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.5.4.0</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.5.4.0</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.5.5.0</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.5.5.0</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.5.5.0</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
