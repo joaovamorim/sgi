@@ -1,170 +1,132 @@
+using System.IO.Compression;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
-namespace AutoUpdate
+class AutoUpdate
 {
-    static class Program
+    // URL da API do GitHub para pegar a última release
+    private static readonly string githubApiUrl = "https://api.github.com/repos/joaovamorim/sgi/releases/latest"; // Ajuste com seu repositório
+
+    // Caminho onde o SGI.exe é instalado
+    private static readonly string installPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "SGI");
+
+    static async Task Main(string[] args)
     {
-        private static string networkPath = @"\\lnxcs30\sgi\publish"; // Caminho da pasta de rede onde os arquivos de atualização estão
-        private static string localPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Programs", "SGI - Sistema Gerenciamento Integrado");        
-        private static string tempPath = Path.Combine(Path.GetTempPath(), "SGI_Update"); // Caminho da pasta temporária para os arquivos de atualização
-
-        [STAThread]
-        static void Main()
+        // Verifica se já foi executado (evitar execução repetida)
+        if (args.Length > 0 && args[0] == "already_executed")
         {
-            try
+            // Se o argumento 'already_executed' for passado, significa que a atualização foi feita, então só abre o SGI.exe.
+            StartSGI();
+            return;
+        }
+
+        // Obter a versão do SGI.exe
+        string localVersion = GetLocalVersion();
+
+        // Obter a versão mais recente do GitHub
+        string remoteVersion = await GetLatestGitHubReleaseVersion();
+
+        // Comparar as versões
+        if (localVersion != remoteVersion)
+        {
+            // Se a versão local for diferente da versão remota, fazer a atualização
+            await DownloadAndExtractUpdate(remoteVersion);
+        }
+        // Se a versão estiver atualizada, abrir o SGI.exe e encerrar o AutoUpdate.exe
+        StartSGI();
+    }
+
+    // Obter versão do SGI.exe diretamente do arquivo executável
+    static string GetLocalVersion()
+    {
+        string exePath = Path.Combine(installPath, "SGI.exe"); // Caminho completo para o SGI.exe
+        FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(exePath);
+        return versionInfo.ProductVersion; // Retorna a versão do produto
+    }
+
+    // Obter a versão mais recente do GitHub Release e o link para o publish.zip
+    static async Task<string> GetLatestGitHubReleaseVersion()
+    {
+        using (var client = new HttpClient())
+        {
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
+            var response = await client.GetStringAsync(githubApiUrl);
+            dynamic release = JsonConvert.DeserializeObject(response);
+            // Obter o tag_name (versão) da última release
+            string version = release.tag_name.ToString();
+
+            // Pegar o URL do publish.zip (verifica os assets da release)
+            string publishZipUrl = GetPublishZipUrl(release);
+
+            // Realiza o download e extração do arquivo
+            if (!string.IsNullOrEmpty(publishZipUrl))
             {
-                CheckForUpdates();
+                Console.WriteLine($"URL do publish.zip: {publishZipUrl}");
+                await DownloadAndExtractUpdate(publishZipUrl);
             }
-            catch (Exception ex)
+
+            return version.Substring(1); // Remove o 'v' do início da versão
+        }
+    }
+
+    // Função para pegar a URL do publish.zip da última release
+    static string GetPublishZipUrl(dynamic release)
+    {
+        foreach (var asset in release.assets)
+        {
+            string name = asset.name.ToString();
+            if (name.EndsWith(".zip"))
             {
-                MessageBox.Show($"Erro ao verificar atualizações: {ex.Message}");
+                return asset.browser_download_url.ToString(); // Retorna a URL do publish.zip
             }
         }
 
-        static void CheckForUpdates()
+        return string.Empty; // Se não encontrar o arquivo .zip
+    }
+
+    // Baixar e extrair o arquivo publish.zip na pasta de instalação
+    static async Task DownloadAndExtractUpdate(string publishZipUrl)
+    {
+        MessageBox.Show("Nova versão encontrada. Iniciando atualização...");
+
+        string zipFilePath = Path.Combine(installPath, "publish.zip"); // Caminho para o arquivo zip temporário
+
+        // Baixar o arquivo publish.zip
+        using (var client = new HttpClient())
         {
-            try
-            {
-                // Verifica se o SGI.exe existe na pasta de rede
-                string networkExecutable = Path.Combine(networkPath, "SGI.exe");
-                if (!File.Exists(networkExecutable))
-                {
-                    MessageBox.Show("Arquivo SGI.exe não encontrado na pasta de rede.");
-                    return;
-                }
-
-                // Obtém a versão do arquivo SGI.exe da pasta de rede
-                FileVersionInfo networkVersionInfo = FileVersionInfo.GetVersionInfo(networkExecutable);
-                string networkVersion = networkVersionInfo.FileVersion;
-
-                // Obtém a versão do executável local SGI.exe (ajuste o caminho da pasta local para o SGI)
-                string localExecutable = Path.Combine(localPath, "SGI.exe");
-                if (!File.Exists(localExecutable))
-                {
-                    MessageBox.Show("Arquivo SGI.exe não encontrado na pasta local.");
-                    return;
-                }
-
-                FileVersionInfo localVersionInfo = FileVersionInfo.GetVersionInfo(localExecutable);
-                string localVersion = localVersionInfo.FileVersion;
-
-                // Compara as versões
-                if (networkVersion != localVersion)
-                {
-                    MessageBox.Show($"Atualização disponível. Versão atual: {localVersion}, Nova versão: {networkVersion}");
-
-                    // Copia os arquivos para a pasta temporária
-                    CopyFiles(networkPath, tempPath);
-                    MessageBox.Show("Arquivos de atualização copiados para a pasta temporária.");
-
-                    // Aplica a atualização e inicia o SGI.exe
-                    ApplyUpdateAndStartSGI();
-                }
-                else
-                {
-                    MessageBox.Show("O sistema já está atualizado.");
-                    StartSGI(); // Inicia o SGI.exe normalmente
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao verificar atualizações: {ex.Message}");
-            }
+            var fileBytes = await client.GetByteArrayAsync(publishZipUrl);
+            await File.WriteAllBytesAsync(zipFilePath, fileBytes);
         }
 
-        static void ApplyUpdateAndStartSGI()
+        // Extração do arquivo zip na pasta de instalação
+        ZipFile.ExtractToDirectory(zipFilePath, installPath, true); // Extraímos e sobrescrevemos os arquivos existentes
+
+        MessageBox.Show("Atualização concluída!");
+
+        // Remover o arquivo zip após extração
+        File.Delete(zipFilePath);
+
+        // Aguarda a conclusão da extração e então iniciar o SGI.exe
+        await Task.Delay(500);  // Garantir que o SGI.exe seja iniciado após a extração
+
+        // Iniciar o SGI.exe após a atualização e passar o argumento para evitar a reexecução do AutoUpdate
+        StartSGI(true);
+    }
+
+    // Função para iniciar o SGI.exe após a atualização
+    static void StartSGI(bool isUpdate = false)
+    {
+        try
         {
-            try
-            {
-                // Verifica se o SGI.exe está em uso
-                if (IsFileInUse(Path.Combine(localPath, "SGI.exe")))
-                {
-                    MessageBox.Show("SGI.exe está em uso. Feche o aplicativo para continuar com a atualização.");
-                    return;
-                }
+            // Inicia o SGI.exe com o argumento 'already_executed' para evitar a execução do AutoUpdate
+            Process.Start(Path.Combine(installPath, "SGI.exe"), isUpdate ? "already_executed" : "");
 
-                // Copia os arquivos da pasta temporária para a pasta de instalação
-                CopyFiles(tempPath, localPath);
-
-                // Exclui os arquivos temporários após a atualização
-                Directory.Delete(tempPath, true);
-
-                // Inicia o SGI.exe após a atualização
-                StartSGI();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao aplicar a atualização: {ex.Message}");
-            }
+            // Encerra o AutoUpdate.exe
+            Environment.Exit(0); // Saímos completamente do AutoUpdate.exe
         }
-
-        static void StartSGI()
+        catch (Exception ex)
         {
-            try
-            {
-                // Inicia o SGI.exe
-                Process.Start(Path.Combine(localPath, "SGI.exe"));
-                Application.Exit(); // Fecha o AutoUpdate.exe após iniciar o SGI.exe
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao iniciar o SGI.exe: {ex.Message}");
-            }
-        }
-
-        static void CopyFiles(string sourceDir, string targetDir)
-        {
-            try
-            {
-                // Cria o diretório temporário, se não existir
-                if (!Directory.Exists(targetDir))
-                {
-                    Directory.CreateDirectory(targetDir);
-                }
-
-                // Copia todos os arquivos da pasta de origem para a pasta temporária
-                foreach (string file in Directory.GetFiles(sourceDir))
-                {
-                    string fileName = Path.GetFileName(file);
-                    string destFile = Path.Combine(targetDir, fileName);
-
-                    File.Copy(file, destFile, true); // Sobrescreve os arquivos existentes
-                }
-
-                // Opcionalmente, também pode copiar subdiretórios (se necessário)
-                foreach (string dir in Directory.GetDirectories(sourceDir))
-                {
-                    string dirName = Path.GetFileName(dir);
-                    string destDir = Path.Combine(targetDir, dirName);
-
-                    if (!Directory.Exists(destDir))
-                    {
-                        Directory.CreateDirectory(destDir);
-                    }
-
-                    CopyFiles(dir, destDir); // Chama o método recursivamente para copiar subdiretórios
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao copiar arquivos: {ex.Message}");
-            }
-        }
-
-        // Função para verificar se um arquivo está em uso
-        static bool IsFileInUse(string filePath)
-        {
-            try
-            {
-                using (FileStream fs = File.Open(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
-                {
-                    return false; // Arquivo não está em uso
-                }
-            }
-            catch (IOException)
-            {
-                return true; // Arquivo está em uso
-            }
+            MessageBox.Show($"Erro ao iniciar o SGI.exe: {ex.Message}");
         }
     }
 }

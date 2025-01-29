@@ -23,11 +23,11 @@
     <UpdateUnit>Checks</UpdateUnit>
 
     <!-- Versões do sistema -->
-    <PublishVersion>1.6.0.2</PublishVersion>
+    <PublishVersion>1.6.1.0</PublishVersion>
 
-    <Version>1.6.0.2</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.6.0.2</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.6.0.2</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.6.1.0</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.6.1.0</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.6.1.0</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -51,6 +51,7 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <!-- Quando atualizar o setup e AutoUpdate descomente a linha abaixo para compilar AutoUpdate junto com o projeto -->
   <!-- <ItemGroup>
     <ProjectReference Include="..\AutoUpdate\AutoUpdate.csproj" />
   </ItemGroup> -->
