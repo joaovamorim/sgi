@@ -3,9 +3,9 @@ name: Publish ClickOnce
 on:
   push:
     branches:
-      - main  # Define o branch que aciona o workflow
-  tags:
-    - 'v*'  # Aciona quando uma tag é criada (e.g., v1.5.4)
+      - main  # Aciona no push para o branch main
+    tags:
+      - 'v*'  # Aciona no push de tags, por exemplo: v1.5.4
 
 jobs:
   build:
