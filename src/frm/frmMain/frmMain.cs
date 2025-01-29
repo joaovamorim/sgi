@@ -18,7 +18,7 @@ namespace SAA
         {
             // Obtém a versão do assembly
             var version = Assembly.GetExecutingAssembly().GetName().Version;
-            this.Text += $" | Versão: {version} - Teste";
+            this.Text += $" | Versão: {version} - Teste2";
         }
 
         private void FecharFormulariosFilhos()
