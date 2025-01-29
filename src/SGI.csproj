@@ -11,18 +11,23 @@
   <PropertyGroup>
     <!-- URL apontando para a release do GitHub -->
     <PublishUrl>
-      https://github.com/joaovamorim/sgi/releases/download/v$(Version)/MinhaAplicacao.application</PublishUrl>
+      https://github.com/joaovamorim/sgi/releases/download/v$(Version)/MinhaAplicacao.application
+    </PublishUrl>
 
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode> <!-- Pode ser 'Background' ou 'Foreground' -->
-    <UpdateInterval>1</UpdateInterval> <!-- Intervalo de 1 hora -->
+    <!-- <UpdateInterval>1</UpdateInterval> Intervalo de 1 hora -->
+
+    <!-- Sempre verificar atualizações ao iniciar -->
+    <UpdateCheckFrequency>1</UpdateCheckFrequency>
+    <UpdateUnit>Checks</UpdateUnit>
 
     <!-- Versões do sistema -->
-    <PublishVersion>1.5.5.0</PublishVersion>
+    <PublishVersion>1.6.0.0</PublishVersion>
 
-    <Version>1.5.5.0</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.5.5.0</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.5.5.0</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.6.0.0</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.6.0.0</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.6.0.0</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
