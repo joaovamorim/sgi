@@ -50,3 +50,5 @@ jobs:
           files: ./src/publish.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# Fim do arquivo
