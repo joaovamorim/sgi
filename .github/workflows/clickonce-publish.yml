@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Define o branch que aciona o workflow
+    tags:
+      - 'v*'  # Aciona quando uma tag é criada (e.g., v1.5.4)
 
 jobs:
   build:
@@ -20,29 +22,47 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
-      # 3. Restaurar pacotes NuGet (caminho relativo à pasta src)
+      # 3. Instalar o GitVersion
+      - name: Setup GitVersion
+        uses: gitversion/action@v0.9
+        with:
+          versioningMode: Mainline  # Como gerar versões (Mainline pode ser adequado para você)
+
+      # 4. Restaurar pacotes NuGet (caminho relativo à pasta src)
       - name: Restore NuGet packages
         run: dotnet restore ./src/SGI.csproj
 
-      # 4. Compilar o projeto (caminho relativo à pasta src)
+      # 5. Obter a versão gerada pelo GitVersion
+      - name: Get version from GitVersion
+        id: gitversion
+        run: echo "VERSION=$(GitVersion /showvariable SemVer)" >> $GITHUB_ENV  # Guarda a versão no ambiente
+
+      # 6. Atualizar o arquivo .csproj com a nova versão
+      - name: Update .csproj version
+        run: |
+          sed -i 's/<Version>.*<\/Version>/<Version>${{ env.VERSION }}<\/Version>/' ./src/SGI.csproj
+          sed -i 's/<AssemblyVersion>.*<\/AssemblyVersion>/<AssemblyVersion>${{ env.VERSION }}<\/AssemblyVersion>/' ./src/SGI.csproj
+          sed -i 's/<FileVersion>.*<\/FileVersion>/<FileVersion>${{ env.VERSION }}<\/FileVersion>/' ./src/SGI.csproj
+
+      # 7. Compilar o projeto (caminho relativo à pasta src)
       - name: Build the project
         run: dotnet build ./src/SGI.csproj --configuration Release
 
-      # 5. Publicar ClickOnce (caminho relativo à pasta src)
+      # 8. Publicar ClickOnce (caminho relativo à pasta src)
       - name: Publish ClickOnce
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 6. Fazer upload do instalador para os artefatos do GitHub (versão atualizada)
+      # 9. Fazer upload do instalador para os artefatos do GitHub (versão atualizada)
       - name: Upload installer
         uses: actions/upload-artifact@v3  # Atualizado para v3
         with:
           name: ClickOnce
           path: ./src/publish/*
 
+      # 10. Criar uma nova release no GitHub
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           files: ./src/publish/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
