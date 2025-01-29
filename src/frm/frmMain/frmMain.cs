@@ -3,6 +3,7 @@ using SGI.frm.ConsultDatabase.frmCustomersDb;
 using SGI.frm.ConsultDatabase.frmProductsDb;
 using SGI.frm.ConsultDatabase.frmSuppliersDb;
 using SGI.frm.Register.frmRegisterCustomers;
+using SGI.frm.frmAbout;
 
 namespace SAA
 {
@@ -78,6 +79,12 @@ namespace SAA
             frmRegisterCustomers openMdi_RegisterCustomers = new frmRegisterCustomers();
             openMdi_RegisterCustomers.MdiParent = this;
             openMdi_RegisterCustomers.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout openAbout = new frmAbout();
+            openAbout.Show();
         }
     }
 }

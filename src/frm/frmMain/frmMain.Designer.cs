@@ -221,6 +221,7 @@
             // 
             resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // frmMain
             // 

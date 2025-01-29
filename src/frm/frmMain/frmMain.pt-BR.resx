@@ -329,16 +329,13 @@
         RK5CYII=
 </value>
   </data>
-  <data name="consultDatabaseToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
   <data name="consultDatabaseToolStripMenuItem.Text" xml:space="preserve">
     <value>Consult Database</value>
   </data>
   <data name="issuanceOfInvoicesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEJGSURBVHhe7d13
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEJGSURBVHhe7d13
         mBPV28bx3xZ26b0tRaSjFEWxi4CAKIoUQQQLCKgoIiDdBirYsGIvqKiIotgLYEMRQWyAiAURUemIYMf2
         vHNieEXz7O4km0xm5nzv6/r8BTuZc2aSuZNMZv6XgtRwnOK4xfGSY7Vjm+N3h3jsR8eHjmsddR1epo7j
         asdyxw8Obf0AhMfPji2OFY4nHJMdnRylHISENhUdQx1LHNoTww92OsY7MhypzijHrw5tPQDYxbwWmELQ
@@ -624,11 +621,11 @@
         kqRkO9o5bnQsdmx2/ObQnoQA4IXtDnNp31mO/o7KjoDmf//7PzKCXCt8+cjBAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="issuanceOfInvoicesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
   <data name="issuanceOfInvoicesToolStripMenuItem.Text" xml:space="preserve">
     <value>Issuance of Invoices</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -645,6 +642,9 @@
         NPlqmGEvp6PVR3QZA1p6WIlLoKWHlbgEWnpYiUugpedU/bQYeL+gpcf+Pk/LnOCtQ0uP/XOBlzlgzr8C
         rWaxfy7Qwg4JA/8BdNolOX0LCRvdvibsvrz11ke+T58+fTrKYPAPzlAXnjuiGX0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Exit</value>
@@ -906,29 +906,14 @@
   <data name="salesToolStripMenuItem.Text" xml:space="preserve">
     <value>Sales</value>
   </data>
-  <data name="contentsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
-  </data>
   <data name="contentsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Contents</value>
-  </data>
-  <data name="indexToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
   </data>
   <data name="indexToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Index</value>
   </data>
-  <data name="searchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
-  </data>
   <data name="searchToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Search</value>
-  </data>
-  <data name="toolStripSeparator5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 6</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;About...</value>
