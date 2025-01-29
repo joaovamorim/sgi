@@ -2,10 +2,9 @@ name: Publish ClickOnce
 
 on:
   push:
-    # branches:
-    #   - main  # Aciona no push para o branch main
+    # Aciona no push de tags, por exemplo: v1.5.4
     tags:
-      - 'v*'  # Aciona no push de tags, por exemplo: v1.5.4
+      - 'v*'
 
 jobs:
   build:
@@ -17,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       # 2. Instalar o .NET
-      - name: Setup .NET
+        - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
@@ -34,25 +33,23 @@ jobs:
       - name: Publish ClickOnce
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 6. Criar a pasta "publish" e mover os arquivos
-      - name: Create publish folder for release files
-        run: mkdir ./src/publish/publish
+      # 6. Compactar os arquivos da pasta publish em um arquivo .zip
+      - name: Zip publish files
+        run: |
+          $zipFile = "./src/publish/publish.zip"
+          Compress-Archive -Path "./src/publish/*" -DestinationPath $zipFile
 
-      # 7. Mover os arquivos para a pasta "publish_files"
-      - name: Move files to publish folder
-        run: move ./src/publish/* ./src/publish/publish/
-
-      # 8. Fazer upload do instalador para os artefatos do GitHub (versão atualizada)
-      - name: Upload installer
-        uses: actions/upload-artifact@v3  # Atualizado para v3
+      # 7. Fazer upload do arquivo .zip para os artefatos do GitHub
+      - name: Upload publish.zip
+        uses: actions/upload-artifact@v3
         with:
-          name: ClickOnce
-          path: ./src/publish/*
+          name: publish
+          path: ./src/publish/publish.zip
 
-      # 9. Criar uma nova release no GitHub
+      # 8. Criar uma nova release no GitHub
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
-          files: ./src/publish/publish/*
+          files: ./src/publish/publish.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
