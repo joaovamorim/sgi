@@ -32,9 +32,9 @@ jobs:
       - name: Publish ClickOnce
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 6. Fazer upload do instalador para os artefatos do GitHub
+      # 6. Fazer upload do instalador para os artefatos do GitHub (versão atualizada)
       - name: Upload installer
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Atualizado para v3
         with:
           name: ClickOnce
           path: ./src/publish/*
