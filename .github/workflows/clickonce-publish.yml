@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       # 2. Instalar o .NET
+      - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
@@ -31,24 +32,21 @@ jobs:
       - name: Publish ClickOnce
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 6. Compactar a pasta "publish" original em um arquivo ZIP
-      - name: Create ZIP file of the publish folder
-        run: |
-          Compress-Archive -Path ./src/publish/* -DestinationPath ./src/publish.zip
+      # 6. Compactar os arquivos em publish.zip
+      - name: Zip publish folder
+        run: Compress-Archive -Path ./src/publish/* -DestinationPath ./src/publish/publish.zip
 
-      # 7. Fazer upload do arquivo .zip para os artefatos do GitHub
-      - name: Upload ZIP file
+      # 7. Fazer upload do publish.zip para os artefatos do GitHub
+      - name: Upload installer
         uses: actions/upload-artifact@v3
         with:
-          name: publish-zip
-          path: ./src/publish.zip
+          name: ClickOnce
+          path: ./src/publish/publish.zip
 
       # 8. Criar uma nova release no GitHub
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
-          files: ./src/publish.zip
+          files: ./src/publish/publish.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-# Fim do arquivo
