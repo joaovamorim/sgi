@@ -24,9 +24,7 @@ jobs:
 
       # 3. Instalar o GitVersion
       - name: Setup GitVersion
-        uses: gitversion/action@v0.9
-        with:
-          versioningMode: Mainline  # Como gerar versões (Mainline pode ser adequado para você)
+        uses: gitversion/gitversion-action@v0.9.0  # Correção: Usando a ação correta para GitVersion
 
       # 4. Restaurar pacotes NuGet (caminho relativo à pasta src)
       - name: Restore NuGet packages
