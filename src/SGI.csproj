@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -23,17 +23,17 @@
     <UpdateUnit>Checks</UpdateUnit>
 
     <!-- Versões do sistema -->
-    <PublishVersion>1.6.1.1</PublishVersion>
+    <PublishVersion>1.6.2.0</PublishVersion>
 
-    <Version>1.6.1.1</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.6.1.1</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.6.1.1</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.6.2.0</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.6.2.0</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.6.2.0</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.1.35" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
-    <PackageReference Include="Oracle.EntityFrameworkCore" Version="7.21.13" />
+    <PackageReference Include="Dapper" Version="2.1.44" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.60" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,8 +52,8 @@
   </ItemGroup>
 
   <!-- Quando atualizar o setup e AutoUpdate descomente a linha abaixo para compilar AutoUpdate junto com o projeto -->
-  <!-- <ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\AutoUpdate\AutoUpdate.csproj" />
-  </ItemGroup> -->
+  </ItemGroup>
 
 </Project>
