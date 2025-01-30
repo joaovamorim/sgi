@@ -50,6 +50,10 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 
 [Run]
 Filename: "cmd.exe"; Parameters: "/C if not exist ""C:\Program Files\SGI"" mkdir ""C:\Program Files\SGI"""; StatusMsg: "Criando a pasta SGI..."; Flags: runhidden waituntilterminated
-Filename: "cmd.exe"; Parameters: "/C icacls ""C:\Program Files\SGI"" /grant ""Usuários"",""Users"":(OI)(CI)F /t"; StatusMsg: "Concedendo permissões completas na pasta SGI..."; Flags: runhidden waituntilterminated
-Filename: "cmd.exe"; Parameters: "/C icacls ""{app}\{#MyAppExeName}"" /grant ""Usuários"",""Users"":(RX) /t"; StatusMsg: "Concedendo permissões para o AutoUpdate.exe..."; Flags: runhidden waituntilterminated
-Filename: "cmd.exe"; Parameters: "/C icacls ""{app}\{#SGIExeName}"" /grant ""Usuários"",""Users"":(RX) /t"; StatusMsg: "Concedendo permissões para o SGI.exe..."; Flags: runhidden waituntilterminated
+Filename: "cmd.exe"; Parameters: "/C icacls ""C:\Program Files\SGI"" /grant ""Usuários"":(OI)(CI)F /t"; StatusMsg: "Concedendo permissões completas na pasta SGI..."; Flags: runhidden waituntilterminated
+Filename: "cmd.exe"; Parameters: "/C icacls ""{app}\{#MyAppExeName}"" /grant ""Usuários"":(RX) /t"; StatusMsg: "Concedendo permissões para o AutoUpdate.exe..."; Flags: runhidden waituntilterminated
+Filename: "cmd.exe"; Parameters: "/C icacls ""{app}\{#SGIExeName}"" /grant ""Usuários"":(RX) /t"; StatusMsg: "Concedendo permissões para o SGI.exe..."; Flags: runhidden waituntilterminated
+; English Users
+Filename: "cmd.exe"; Parameters: "/C icacls ""C:\Program Files\SGI"" /grant ""Users"":(OI)(CI)F /t"; StatusMsg: "Concedendo permissões completas na pasta SGI..."; Flags: runhidden waituntilterminated
+Filename: "cmd.exe"; Parameters: "/C icacls ""{app}\{#MyAppExeName}"" /grant ""Users"":(RX) /t"; StatusMsg: "Concedendo permissões para o AutoUpdate.exe..."; Flags: runhidden waituntilterminated
+Filename: "cmd.exe"; Parameters: "/C icacls ""{app}\{#SGIExeName}"" /grant ""Users"":(RX) /t"; StatusMsg: "Concedendo permissões para o SGI.exe..."; Flags: runhidden waituntilterminated
