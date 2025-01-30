@@ -16,7 +16,7 @@ namespace SGI.frm.frmAbout
         {
             string exePath = Path.Combine(installPath, "SGI.exe"); // Caminho completo para o SGI.exe
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(exePath);
-            string version = versionInfo.ProductVersion;
+            string version = versionInfo.FileVersion;
             // Obtém a versão do assembly
             lblVersion.Text = $" Versão: v{version}";
         }

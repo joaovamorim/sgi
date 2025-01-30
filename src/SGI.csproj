@@ -23,11 +23,11 @@
     <UpdateUnit>Checks</UpdateUnit>
 
     <!-- Versões do sistema -->
-    <PublishVersion>1.6.2.0</PublishVersion>
+    <PublishVersion>1.6.2.1</PublishVersion>
 
-    <Version>1.6.2.0</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.6.2.0</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.6.2.0</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.6.2.1</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.6.2.1</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.6.2.1</FileVersion> <!-- Versão do arquivo executável -->
   </PropertyGroup>
 
   <ItemGroup>
