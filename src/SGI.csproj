@@ -52,8 +52,8 @@
   </ItemGroup>
 
   <!-- Quando atualizar o setup e AutoUpdate descomente a linha abaixo para compilar AutoUpdate junto com o projeto -->
-  <ItemGroup>
+  <!-- <ItemGroup>
     <ProjectReference Include="..\AutoUpdate\AutoUpdate.csproj" />
-  </ItemGroup>
+  </ItemGroup> -->
 
 </Project>
