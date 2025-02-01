@@ -39,13 +39,13 @@
             toolStripSeparator4 = new ToolStripSeparator();
             toolStripLabel1 = new ToolStripLabel();
             gridCustomersDb = new DataGridView();
-            matricula = new DataGridViewTextBoxColumn();
-            nome = new DataGridViewTextBoxColumn();
-            dataNascimento = new DataGridViewTextBoxColumn();
-            cpf = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
+            cod_ch_func = new DataGridViewTextBoxColumn();
+            nome_func = new DataGridViewTextBoxColumn();
+            data_nasc = new DataGridViewTextBoxColumn();
+            cod_cpf = new DataGridViewTextBoxColumn();
+            num_tel = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
-            _status = new DataGridViewTextBoxColumn();
+            ativ_atl = new DataGridViewTextBoxColumn();
             timer1 = new System.Windows.Forms.Timer(components);
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridCustomersDb).BeginInit();
@@ -134,7 +134,7 @@
             gridCustomersDb.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridCustomersDb.BackgroundColor = SystemColors.Control;
             gridCustomersDb.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridCustomersDb.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
+            gridCustomersDb.Columns.AddRange(new DataGridViewColumn[] { cod_ch_func, nome_func, data_nasc, cod_cpf, num_tel, email, ativ_atl });
             gridCustomersDb.Dock = DockStyle.Fill;
             gridCustomersDb.GridColor = SystemColors.Control;
             gridCustomersDb.Location = new Point(0, 0);
@@ -146,35 +146,35 @@
             gridCustomersDb.Size = new Size(800, 425);
             gridCustomersDb.TabIndex = 20;
             // 
-            // matricula
+            // cod_ch_func
             // 
-            matricula.HeaderText = "MATRÍCULA";
-            matricula.Name = "matricula";
-            matricula.ReadOnly = true;
+            cod_ch_func.HeaderText = "MATRÍCULA";
+            cod_ch_func.Name = "cod_ch_func";
+            cod_ch_func.ReadOnly = true;
             // 
-            // nome
+            // nome_func
             // 
-            nome.HeaderText = "NOME";
-            nome.Name = "nome";
-            nome.ReadOnly = true;
+            nome_func.HeaderText = "NOME";
+            nome_func.Name = "nome_func";
+            nome_func.ReadOnly = true;
             // 
-            // dataNascimento
+            // data_nasc
             // 
-            dataNascimento.HeaderText = "DATA NASCIMENTO";
-            dataNascimento.Name = "dataNascimento";
-            dataNascimento.ReadOnly = true;
+            data_nasc.HeaderText = "DATA NASCIMENTO";
+            data_nasc.Name = "data_nasc";
+            data_nasc.ReadOnly = true;
             // 
-            // cpf
+            // cod_cpf
             // 
-            cpf.HeaderText = "CPF";
-            cpf.Name = "cpf";
-            cpf.ReadOnly = true;
+            cod_cpf.HeaderText = "CPF";
+            cod_cpf.Name = "cod_cpf";
+            cod_cpf.ReadOnly = true;
             // 
-            // telefone
+            // num_tel
             // 
-            telefone.HeaderText = "TELEFONE";
-            telefone.Name = "telefone";
-            telefone.ReadOnly = true;
+            num_tel.HeaderText = "TELEFONE";
+            num_tel.Name = "num_tel";
+            num_tel.ReadOnly = true;
             // 
             // email
             // 
@@ -182,11 +182,11 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
-            // _status
+            // ativ_atl
             // 
-            _status.HeaderText = "STATUS";
-            _status.Name = "_status";
-            _status.ReadOnly = true;
+            ativ_atl.HeaderText = "STATUS";
+            ativ_atl.Name = "ativ_atl";
+            ativ_atl.ReadOnly = true;
             // 
             // timer1
             // 
@@ -224,13 +224,13 @@
         private ToolStripButton refreshToolStripButton;
         private ToolStripButton helpToolStripButton;
         private DataGridView gridCustomersDb;
-        private DataGridViewTextBoxColumn matricula;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn dataNascimento;
-        private DataGridViewTextBoxColumn cpf;
-        private DataGridViewTextBoxColumn telefone;
+        private DataGridViewTextBoxColumn cod_ch_func;
+        private DataGridViewTextBoxColumn nome_func;
+        private DataGridViewTextBoxColumn data_nasc;
+        private DataGridViewTextBoxColumn cod_cpf;
+        private DataGridViewTextBoxColumn num_tel;
         private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn _status;
+        private DataGridViewTextBoxColumn ativ_atl;
         private ToolStripButton searchToolStripButton;
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripSeparator toolStripSeparator4;
