@@ -1,9 +1,9 @@
 # IMN - Integrated Management System | pt-BR > SGI
-**Current version:** *v1.5.0-pre-alpha*
+**Current version:** *v1.6.2.5*
 
 **Creation date:** May 22, 2024
 
-**Confluence:** [Confluence](https://joaoamorim.atlassian.net/l/cp/0twGpHP5)
+**Confluence:** [Confluence]()
 
 #### Created by:
 **Name:** João Victor Amorim
@@ -12,7 +12,7 @@
 
 #### Contacts: 
 
-E-mail: [E-mail](joao.vamorim@outlook.com.br)
+E-mail: [E-mail]()
 
 Discord: joaovamorim
 
@@ -25,15 +25,15 @@ Below is some application information.
 + C#
 
 ### .NET Version
-+ net6.0
++ net8.0
 
 ### Type of application
 + Windows Forms - Desktop
 
 ### Packages
-1. Dapper v2.1.35
-2. Microsoft.EntityFrameworkCore v7.0.20
-3. Oracle.EntityFrameworkCore v7.21.13
+1. Dapper v2.1.44
+2. Microsoft.EntityFrameworkCore v9.0.1
+3. Oracle.EntityFrameworkCore v9.23.60
 
 ### Database
 + Oracle SQL
