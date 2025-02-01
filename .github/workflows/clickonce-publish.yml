@@ -3,7 +3,7 @@ name: Publish ClickOnce
 on:
   push:
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+.[0-9]+'  # Captura tags como 1.0.0.0, 2.3.4.5, etc.
+      - '[0-9]+.*'  # Aciona no push de tags, por exemplo: 1.5.4
 
 jobs:
   build:
@@ -38,7 +38,7 @@ jobs:
 
       # 7. Fazer upload do publish.zip para os artefatos do GitHub
       - name: Upload installer
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ClickOnce
           path: ./src/publish/publish.zip
