@@ -38,7 +38,7 @@ jobs:
 
       # 7. Fazer upload do publish.zip para os artefatos do GitHub
       - name: Upload installer
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ClickOnce
           path: ./src/publish/publish.zip
