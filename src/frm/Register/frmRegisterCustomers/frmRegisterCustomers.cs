@@ -64,15 +64,15 @@ namespace SGI.frm.Register.frmRegisterCustomers
 
                     command.Connection = connection;
 
-                    int matricula = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
-                    string nome = txtName.Text.ToUpper();
-                    string data_nascimento = txtDateBirth.Text;
-                    string cpf = txtCpf.Text;
-                    string telefone = txtTelephone.Text;
+                    int cod_ch_func = new Random(DateTime.Now.Millisecond).Next(100000, 1000000);
+                    string nome_func = txtName.Text.ToUpper();
+                    string data_nasc = txtDateBirth.Text;
+                    string cod_cpf = txtCpf.Text;
+                    string num_tel = txtTelephone.Text;
                     string email = txtEmail.Text;
-                    string status = "Ativo";
+                    string ativ_atl = "Ativo";
 
-                    command.CommandText = "insert into alunos values (" + matricula + ", '" + nome + "', '" + data_nascimento + "', '" + cpf + "', '" + telefone + "', '" + email + "', '" + status + "')";
+                    command.CommandText = "insert into alunos values (" + cod_ch_func + ", '" + nome_func + "', '" + data_nasc + "', '" + cod_cpf + "', '" + num_tel + "', '" + email + "', '" + ativ_atl + "')";
 
                     command.ExecuteNonQuery();
 

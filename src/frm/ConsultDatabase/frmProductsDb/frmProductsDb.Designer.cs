@@ -39,13 +39,13 @@
             toolStripSeparator4 = new ToolStripSeparator();
             toolStripLabel1 = new ToolStripLabel();
             gridProductsDb = new DataGridView();
-            matricula = new DataGridViewTextBoxColumn();
+            cod_ch_func = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
-            dataNascimento = new DataGridViewTextBoxColumn();
-            cpf = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
+            data_nasc = new DataGridViewTextBoxColumn();
+            cod_cpf = new DataGridViewTextBoxColumn();
+            num_tel = new DataGridViewTextBoxColumn();
             email = new DataGridViewTextBoxColumn();
-            _status = new DataGridViewTextBoxColumn();
+            ativ_atl = new DataGridViewTextBoxColumn();
             timer1 = new System.Windows.Forms.Timer(components);
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridProductsDb).BeginInit();
@@ -133,7 +133,7 @@
             gridProductsDb.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridProductsDb.BackgroundColor = SystemColors.Control;
             gridProductsDb.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridProductsDb.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
+            gridProductsDb.Columns.AddRange(new DataGridViewColumn[] { cod_ch_func, nome, data_nasc, cod_cpf, num_tel, email, ativ_atl });
             gridProductsDb.Dock = DockStyle.Fill;
             gridProductsDb.GridColor = SystemColors.Control;
             gridProductsDb.Location = new Point(0, 0);
@@ -145,35 +145,35 @@
             gridProductsDb.Size = new Size(800, 425);
             gridProductsDb.TabIndex = 20;
             // 
-            // matricula
+            // cod_ch_func
             // 
-            matricula.HeaderText = "MATRÍCULA";
-            matricula.Name = "matricula";
-            matricula.ReadOnly = true;
+            cod_ch_func.HeaderText = "MATRÍCULA";
+            cod_ch_func.Name = "cod_ch_func";
+            cod_ch_func.ReadOnly = true;
             // 
             // nome
             // 
             nome.HeaderText = "NOME";
-            nome.Name = "nome";
+            nome.Name = "nome_func";
             nome.ReadOnly = true;
             // 
-            // dataNascimento
+            // data_nasc
             // 
-            dataNascimento.HeaderText = "DATA NASCIMENTO";
-            dataNascimento.Name = "dataNascimento";
-            dataNascimento.ReadOnly = true;
+            data_nasc.HeaderText = "DATA NASCIMENTO";
+            data_nasc.Name = "data_nasc";
+            data_nasc.ReadOnly = true;
             // 
-            // cpf
+            // cod_cpf
             // 
-            cpf.HeaderText = "CPF";
-            cpf.Name = "cpf";
-            cpf.ReadOnly = true;
+            cod_cpf.HeaderText = "CPF";
+            cod_cpf.Name = "cod_cpf";
+            cod_cpf.ReadOnly = true;
             // 
-            // telefone
+            // num_tel
             // 
-            telefone.HeaderText = "TELEFONE";
-            telefone.Name = "telefone";
-            telefone.ReadOnly = true;
+            num_tel.HeaderText = "TELEFONE";
+            num_tel.Name = "num_tel";
+            num_tel.ReadOnly = true;
             // 
             // email
             // 
@@ -181,11 +181,11 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
-            // _status
+            // ativ_atl
             // 
-            _status.HeaderText = "STATUS";
-            _status.Name = "_status";
-            _status.ReadOnly = true;
+            ativ_atl.HeaderText = "STATUS";
+            ativ_atl.Name = "ativ_atl";
+            ativ_atl.ReadOnly = true;
             // 
             // timer1
             // 
@@ -223,13 +223,13 @@
         private ToolStripButton refreshToolStripButton;
         private ToolStripButton helpToolStripButton;
         private DataGridView gridProductsDb;
-        private DataGridViewTextBoxColumn matricula;
+        private DataGridViewTextBoxColumn cod_ch_func;
         private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn dataNascimento;
-        private DataGridViewTextBoxColumn cpf;
-        private DataGridViewTextBoxColumn telefone;
+        private DataGridViewTextBoxColumn data_nasc;
+        private DataGridViewTextBoxColumn cod_cpf;
+        private DataGridViewTextBoxColumn num_tel;
         private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn _status;
+        private DataGridViewTextBoxColumn ativ_atl;
         private ToolStripButton searchToolStripButton;
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripSeparator toolStripSeparator4;

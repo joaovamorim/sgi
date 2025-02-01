@@ -32,12 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSuppliersDb));
             timer1 = new System.Windows.Forms.Timer(components);
             email = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
-            cpf = new DataGridViewTextBoxColumn();
-            dataNascimento = new DataGridViewTextBoxColumn();
-            nome = new DataGridViewTextBoxColumn();
-            matricula = new DataGridViewTextBoxColumn();
-            _status = new DataGridViewTextBoxColumn();
+            num_tel = new DataGridViewTextBoxColumn();
+            cod_cpf = new DataGridViewTextBoxColumn();
+            data_nasc = new DataGridViewTextBoxColumn();
+            nome_func = new DataGridViewTextBoxColumn();
+            cod_ch_func = new DataGridViewTextBoxColumn();
+            ativ_atl = new DataGridViewTextBoxColumn();
             toolStripLabel1 = new ToolStripLabel();
             toolStripTextBox1 = new ToolStripTextBox();
             searchToolStripButton = new ToolStripButton();
@@ -63,41 +63,41 @@
             email.Name = "email";
             email.ReadOnly = true;
             // 
-            // telefone
+            // num_tel
             // 
-            telefone.HeaderText = "TELEFONE";
-            telefone.Name = "telefone";
-            telefone.ReadOnly = true;
+            num_tel.HeaderText = "TELEFONE";
+            num_tel.Name = "num_tel";
+            num_tel.ReadOnly = true;
             // 
-            // cpf
+            // cod_cpf
             // 
-            cpf.HeaderText = "CPF";
-            cpf.Name = "cpf";
-            cpf.ReadOnly = true;
+            cod_cpf.HeaderText = "CPF";
+            cod_cpf.Name = "cod_cpf";
+            cod_cpf.ReadOnly = true;
             // 
-            // dataNascimento
+            // data_nasc
             // 
-            dataNascimento.HeaderText = "DATA NASCIMENTO";
-            dataNascimento.Name = "dataNascimento";
-            dataNascimento.ReadOnly = true;
+            data_nasc.HeaderText = "DATA NASCIMENTO";
+            data_nasc.Name = "data_nasc";
+            data_nasc.ReadOnly = true;
             // 
-            // nome
+            // nome_func
             // 
-            nome.HeaderText = "NOME";
-            nome.Name = "nome";
-            nome.ReadOnly = true;
+            nome_func.HeaderText = "NOME";
+            nome_func.Name = "nome_func";
+            nome_func.ReadOnly = true;
             // 
-            // matricula
+            // cod_ch_func
             // 
-            matricula.HeaderText = "MATRÍCULA";
-            matricula.Name = "matricula";
-            matricula.ReadOnly = true;
+            cod_ch_func.HeaderText = "MATRÍCULA";
+            cod_ch_func.Name = "cod_ch_func";
+            cod_ch_func.ReadOnly = true;
             // 
-            // _status
+            // ativ_atl
             // 
-            _status.HeaderText = "STATUS";
-            _status.Name = "_status";
-            _status.ReadOnly = true;
+            ativ_atl.HeaderText = "STATUS";
+            ativ_atl.Name = "ativ_atl";
+            ativ_atl.ReadOnly = true;
             // 
             // toolStripLabel1
             // 
@@ -181,7 +181,7 @@
             gridSuppliersDb.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridSuppliersDb.BackgroundColor = SystemColors.Control;
             gridSuppliersDb.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridSuppliersDb.Columns.AddRange(new DataGridViewColumn[] { matricula, nome, dataNascimento, cpf, telefone, email, _status });
+            gridSuppliersDb.Columns.AddRange(new DataGridViewColumn[] { cod_ch_func, nome_func, data_nasc, cod_cpf, num_tel, email, ativ_atl });
             gridSuppliersDb.Dock = DockStyle.Fill;
             gridSuppliersDb.GridColor = SystemColors.Control;
             gridSuppliersDb.Location = new Point(0, 0);
@@ -221,12 +221,12 @@
 
         private System.Windows.Forms.Timer timer1;
         private DataGridViewTextBoxColumn email;
-        private DataGridViewTextBoxColumn telefone;
-        private DataGridViewTextBoxColumn cpf;
-        private DataGridViewTextBoxColumn dataNascimento;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn matricula;
-        private DataGridViewTextBoxColumn _status;
+        private DataGridViewTextBoxColumn num_tel;
+        private DataGridViewTextBoxColumn cod_cpf;
+        private DataGridViewTextBoxColumn data_nasc;
+        private DataGridViewTextBoxColumn nome_func;
+        private DataGridViewTextBoxColumn cod_ch_func;
+        private DataGridViewTextBoxColumn ativ_atl;
         private ToolStripLabel toolStripLabel1;
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripButton searchToolStripButton;
