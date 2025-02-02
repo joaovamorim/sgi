@@ -9,44 +9,79 @@ jobs:
   build:
     runs-on: windows-latest
 
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
     steps:
       # 1. Fazer o checkout do código do repositório
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # Usando a versão mais recente
 
-      # 2. Instalar o .NET
+      # 2. Cache de pacotes NuGet para melhorar a performance
+      - name: Cache NuGet packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      # 3. Instalar o .NET
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      # 3. Restaurar pacotes NuGet (caminho relativo à pasta src)
+      # 4. Restaurar pacotes NuGet (caminho relativo à pasta src)
       - name: Restore NuGet packages
         run: dotnet restore ./src/SGI.csproj
 
-      # 4. Compilar o projeto (caminho relativo à pasta src)
+      # 5. Compilar o projeto (caminho relativo à pasta src)
       - name: Build the project
-        run: dotnet build ./src/SGI.csproj --configuration Release
+        run: dotnet build ./src/SGI.csproj --configuration ${{ matrix.configuration }}
 
-      # 5. Publicar ClickOnce (caminho relativo à pasta src)
+      # 6. Validar código (analisar e formatar código)
+      - name: Analyze code with .NET CLI
+        run: dotnet format ./src/SGI.csproj --verify-no-changes
+
+      # 7. Publicar ClickOnce (caminho relativo à pasta src)
       - name: Publish ClickOnce
-        run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
+        run: dotnet publish ./src/SGI.csproj --configuration ${{ matrix.configuration }} --output ./src/publish
 
-      # 6. Compactar os arquivos em publish.zip
+      # 8. Compactar os arquivos em publish.zip
       - name: Zip publish folder
         run: Compress-Archive -Path ./src/publish/* -DestinationPath ./src/publish/publish.zip
 
-      # 7. Fazer upload do publish.zip para os artefatos do GitHub
+      # 9. Fazer upload do publish.zip para os artefatos do GitHub
       - name: Upload installer
         uses: actions/upload-artifact@v4
         with:
           name: ClickOnce
           path: ./src/publish/publish.zip
 
-      # 8. Criar uma nova release no GitHub
+      # 10. Criar uma nova release no GitHub
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           files: ./src/publish/publish.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 11. Notificar o Discord (alerta de sucesso)
+      - name: Send Discord notification (success)
+        if: ${{ success() }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{"content": "✅ Build and release successful for SGI on branch '${{ github.ref_name }}'!"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      # 12. Notificar o Discord (alerta de falha)
+      - name: Send Discord notification (failure)
+        if: ${{ failure() }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d '{"content": "❌ Build failed for SGI on branch '${{ github.ref_name }}'!"}' \
+          ${{ secrets.DISCORD_WEBHOOK_URL }}
