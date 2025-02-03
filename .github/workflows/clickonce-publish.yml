@@ -43,11 +43,19 @@ jobs:
         run: |
           [xml]$csproj = Get-Content ./src/SGI.csproj
           $version = $csproj.Project.PropertyGroup.Version
+          if (-not $version) {
+            Write-Error "Version not found in the .csproj file"
+            exit 1
+          }
           echo "VERSION=$version" >> $GITHUB_ENV
 
       # 6. Criar e enviar a tag (baseada na versão extraída, sem o prefixo 'v')
       - name: Create and push tag
         run: |
+          if [ -z "${{ env.VERSION }}" ]; then
+            echo "Version not set, aborting tag creation"
+            exit 1
+          fi
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git tag -a "${{ env.VERSION }}" -m "Version ${{ env.VERSION }}"
