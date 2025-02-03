@@ -23,11 +23,15 @@
     <UpdateUnit>Checks</UpdateUnit>
 
     <!-- Versões do sistema -->
-    <PublishVersion>1.6.3.0</PublishVersion>
+    <PublishVersion>1.6.3.1</PublishVersion>
 
-    <Version>1.6.3.0</Version> <!-- Versão do sistema -->
-    <AssemblyVersion>1.6.3.0</AssemblyVersion> <!-- Versão da DLL -->
-    <FileVersion>1.6.3.0</FileVersion> <!-- Versão do arquivo executável -->
+    <Version>1.6.3.1</Version> <!-- Versão do sistema -->
+    <AssemblyVersion>1.6.3.1</AssemblyVersion> <!-- Versão da DLL -->
+    <FileVersion>1.6.3.1</FileVersion> <!-- Versão do arquivo executável -->
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ApplicationIcon>Resources/SGI_logo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -51,7 +55,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <!-- Quando atualizar o setup e AutoUpdate descomente a linha abaixo para compilar AutoUpdate junto com o projeto -->
+  <!-- Quando atualizar o setup e AutoUpdate descomente a linha abaixo para compilar AutoUpdate
+  junto com o projeto -->
   <!-- <ItemGroup>
     <ProjectReference Include="..\AutoUpdate\AutoUpdate.csproj" />
   </ItemGroup> -->
