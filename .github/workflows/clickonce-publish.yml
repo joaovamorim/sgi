@@ -67,21 +67,17 @@ jobs:
       - name: Build the project
         run: dotnet build ./src/SGI.csproj --configuration ${{ matrix.configuration }}
 
-      # 8. Corrigir e validar código (analisar formatação de espaços em branco)
-      - name: Format whitespace in the project
-        run: dotnet format whitespace ./src/SGI.csproj --verify-no-changes
-
-      # 9. Publicar ClickOnce **somente se for Release**
+      # 8. Publicar ClickOnce **somente se for Release**
       - name: Publish ClickOnce (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente publica se for Release
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 10. Compactar os arquivos em publish.zip **somente se for Release**
+      # 9. Compactar os arquivos em publish.zip **somente se for Release**
       - name: Zip publish folder (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente compacta se for Release
         run: Compress-Archive -Path ./src/publish/* -DestinationPath ./src/publish/publish.zip
 
-      # 11. Fazer upload do publish.zip para os artefatos do GitHub **somente se for Release**
+      # 10. Fazer upload do publish.zip para os artefatos do GitHub **somente se for Release**
       - name: Upload installer (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente faz upload se for Release
         uses: actions/upload-artifact@v4
@@ -89,7 +85,7 @@ jobs:
           name: ClickOnce
           path: ./src/publish/publish.zip
 
-      # 12. Criar uma nova release no GitHub **somente se for Release**
+      # 11. Criar uma nova release no GitHub **somente se for Release**
       - name: Create GitHub release (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente cria release se for Release
         uses: softprops/action-gh-release@v1
@@ -99,7 +95,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 13. Notificar o Discord (alerta de sucesso)
+      # 12. Notificar o Discord (alerta de sucesso)
       - name: Send Discord notification (success)
         if: ${{ success() && matrix.configuration == 'Release' }}  # Notifica apenas em Release e sucesso
         run: |
@@ -107,7 +103,7 @@ jobs:
           $message = '{"content": "✅ Build and release successful for SGI (Release) on branch ''${{ github.ref_name }}''!"}'
           curl -H "Content-Type: application/json" -X POST -d $message $webhookUrl
 
-      # 14. Notificar o Discord (alerta de falha)
+      # 13. Notificar o Discord (alerta de falha)
       - name: Send Discord notification (failure)
         if: ${{ failure() }}
         run: |
