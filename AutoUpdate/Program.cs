@@ -30,10 +30,15 @@ class AutoUpdate
         if (localVersion != remoteVersion)
         {
             // Se a versão local for diferente da versão remota, fazer a atualização
-            await DownloadAndExtractUpdate(remoteVersion);
+            MessageBox.Show("Nova versão encontrada. Iniciando atualização...");
+            string publishZipUrl = await GetPublishZipUrl(); // Obter a URL do publish.zip
+            await DownloadAndExtractUpdate(publishZipUrl); // Realiza o download e extração
         }
-        // Se a versão estiver atualizada, abrir o SGI.exe e encerrar o AutoUpdate.exe
-        StartSGI();
+        else
+        {
+            // Se as versões estão iguais, abre o SGI.exe diretamente
+            StartSGI();
+        }
     }
 
     // Obter versão do SGI.exe diretamente do arquivo executável
@@ -41,10 +46,10 @@ class AutoUpdate
     {
         string exePath = Path.Combine(installPath, "SGI.exe"); // Caminho completo para o SGI.exe
         FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(exePath);
-        return versionInfo.ProductVersion; // Retorna a versão do produto
+        return versionInfo.FileVersion!; // Retorna a versão do produto
     }
 
-    // Obter a versão mais recente do GitHub Release e o link para o publish.zip
+    // Obter a versão mais recente do GitHub Release
     static async Task<string> GetLatestGitHubReleaseVersion()
     {
         using (var client = new HttpClient())
@@ -54,30 +59,25 @@ class AutoUpdate
             dynamic release = JsonConvert.DeserializeObject(response);
             // Obter o tag_name (versão) da última release
             string version = release.tag_name.ToString();
-
-            // Pegar o URL do publish.zip (verifica os assets da release)
-            string publishZipUrl = GetPublishZipUrl(release);
-
-            // Realiza o download e extração do arquivo
-            if (!string.IsNullOrEmpty(publishZipUrl))
-            {
-                Console.WriteLine($"URL do publish.zip: {publishZipUrl}");
-                await DownloadAndExtractUpdate(publishZipUrl);
-            }
-
-            return version.Substring(1); // Remove o 'v' do início da versão
+            return version; // Remove o 'v' do início da versão
         }
     }
 
     // Função para pegar a URL do publish.zip da última release
-    static string GetPublishZipUrl(dynamic release)
+    static async Task<string> GetPublishZipUrl()
     {
-        foreach (var asset in release.assets)
+        using (var client = new HttpClient())
         {
-            string name = asset.name.ToString();
-            if (name.EndsWith(".zip"))
+            client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
+            var response = await client.GetStringAsync(githubApiUrl);
+            dynamic release = JsonConvert.DeserializeObject(response);
+            foreach (var asset in release.assets)
             {
-                return asset.browser_download_url.ToString(); // Retorna a URL do publish.zip
+                string name = asset.name.ToString();
+                if (name.EndsWith(".zip"))
+                {
+                    return asset.browser_download_url.ToString(); // Retorna a URL do publish.zip
+                }
             }
         }
 
@@ -87,7 +87,11 @@ class AutoUpdate
     // Baixar e extrair o arquivo publish.zip na pasta de instalação
     static async Task DownloadAndExtractUpdate(string publishZipUrl)
     {
-        MessageBox.Show("Nova versão encontrada. Iniciando atualização...");
+        if (string.IsNullOrEmpty(publishZipUrl))
+        {
+            MessageBox.Show("Erro: Não foi possível encontrar o arquivo de atualização.");
+            return;
+        }
 
         string zipFilePath = Path.Combine(installPath, "publish.zip"); // Caminho para o arquivo zip temporário
 

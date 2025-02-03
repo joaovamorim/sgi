@@ -2,7 +2,7 @@
 ; VEJA A DOCUMENTAÇÃO PARA DETALHES SOBRE A CRIAÇÃO DE ARQUIVOS DE SCRIPT DO INNO SETUP!
 
 #define MyAppName "SGI"
-#define MyAppVersion "1.6.2.0"
+#define MyAppVersion "1.6.3.0"
 #define MyAppPublisher "Amorim Company, Inc."
 #define MyAppExeName "AutoUpdate.exe"
 #define SGIExeName "SGI.exe"
@@ -22,7 +22,7 @@ ArchitecturesInstallIn64BitMode=x64compatible
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
 PrivilegesRequired=admin
-OutputDir=D:\git\SGI\sgi\DEV\ISS
+OutputDir=D:\git\SGI\sgi\main\ISS
 OutputBaseFilename=Setup_SGI
 SolidCompression=yes
 WizardStyle=modern
@@ -34,9 +34,9 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "D:\git\SGI\sgi\DEV\src\bin\Release\net8.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\git\SGI\sgi\DEV\src\bin\Release\net8.0-windows\publish\{#SGIExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\git\SGI\sgi\DEV\src\bin\Release\net8.0-windows\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\git\SGI\sgi\main\src\bin\Release\net8.0-windows\publish\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\git\SGI\sgi\main\src\bin\Release\net8.0-windows\publish\{#SGIExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\git\SGI\sgi\main\src\bin\Release\net8.0-windows\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Registry]
 Root: HKA; Subkey: "Software\Classes\{#MyAppAssocExt}\OpenWithProgids"; ValueType: string; ValueName: "{#MyAppAssocKey}"; ValueData: ""; Flags: uninsdeletevalue
