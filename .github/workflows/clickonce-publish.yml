@@ -2,16 +2,12 @@ name: Publish ClickOnce
 
 on:
   push:
-    branches:
-      - main  # Aciona o CI/CD ao fazer push na branch main
+    tags:
+      - '[0-9]+.*'  # Aciona no push de tags, por exemplo: 1.5.4
 
 jobs:
   build:
     runs-on: windows-latest
-
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
 
     steps:
       # 1. Fazer o checkout do código do repositório
@@ -37,76 +33,45 @@ jobs:
       - name: Restore NuGet packages
         run: dotnet restore ./src/SGI.csproj
 
-      # 5. Extrair versão do arquivo de projeto (.csproj) usando PowerShell
-      - name: Get version from project file
-        id: get_version
-        run: |
-          [xml]$csproj = Get-Content ./src/SGI.csproj
-          $version = $csproj.Project.PropertyGroup.Version
-          if (-not $version) {
-            Write-Error "Version not found in the .csproj file"
-            exit 1
-          }
-          echo "VERSION=$version" >> $GITHUB_ENV
-
-      # 6. Criar a tag com a versão extraída do .csproj (caso não exista)
-      - name: Create Git tag
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git fetch --tags
-          if (git tag -l "$VERSION") {
-            echo "Tag $VERSION already exists."
-          } else {
-            git tag $VERSION
-            git push origin $VERSION
-            echo "Tag $VERSION created and pushed."
-          }
-
-      # 7. Compilar o projeto (caminho relativo à pasta src)
+      # 5. Compilar o projeto (caminho relativo à pasta src)
       - name: Build the project
-        run: dotnet build ./src/SGI.csproj --configuration ${{ matrix.configuration }}
+        run: dotnet build ./src/SGI.csproj --configuration Release
 
-      # 8. Publicar ClickOnce **somente se for Release**
-      - name: Publish ClickOnce (Release only)
-        if: ${{ matrix.configuration == 'Release' }}  # Somente publica se for Release
+      # 6. Publicar ClickOnce
+      - name: Publish ClickOnce
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 9. Compactar os arquivos em publish.zip **somente se for Release**
-      - name: Zip publish folder (Release only)
-        if: ${{ matrix.configuration == 'Release' }}  # Somente compacta se for Release
+      # 7. Compactar os arquivos em publish.zip
+      - name: Zip publish folder
         run: Compress-Archive -Path ./src/publish/* -DestinationPath ./src/publish/publish.zip
 
-      # 10. Fazer upload do publish.zip para os artefatos do GitHub **somente se for Release**
-      - name: Upload installer (Release only)
-        if: ${{ matrix.configuration == 'Release' }}  # Somente faz upload se for Release
+      # 8. Fazer upload do publish.zip para os artefatos do GitHub
+      - name: Upload installer
         uses: actions/upload-artifact@v4
         with:
           name: ClickOnce
           path: ./src/publish/publish.zip
 
-      # 11. Criar uma nova release no GitHub **somente se for Release**
-      - name: Create GitHub release (Release only)
-        if: ${{ matrix.configuration == 'Release' }}  # Somente cria release se for Release
+      # 9. Criar uma nova release no GitHub
+      - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           files: ./src/publish/publish.zip
-          tag_name: ${{ env.VERSION }}  # Usando a tag criada
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 12. Notificar o Discord (alerta de sucesso)
+      # 10. Notificar o Discord (alerta de sucesso)
       - name: Send Discord notification (success)
-        if: ${{ success() && matrix.configuration == 'Release' }}  # Notifica apenas em Release e sucesso
+        if: ${{ success() }}  # Notifica apenas em sucesso
         run: |
           $webhookUrl = '${{ secrets.DISCORD_WEBHOOK_URL }}'
-          $message = '{"content": "✅ Build and release successful for SGI (Release) on branch ''${{ github.ref_name }}''!"}'
+          $message = '{"content": "✅ Build and release successful for SGI on tag ''${{ github.ref_name }}''!"}'
           curl -H "Content-Type: application/json" -X POST -d $message $webhookUrl
 
-      # 13. Notificar o Discord (alerta de falha)
+      # 11. Notificar o Discord (alerta de falha)
       - name: Send Discord notification (failure)
-        if: ${{ failure() }}
+        if: ${{ failure() }}  # Notifica apenas em falha
         run: |
           $webhookUrl = '${{ secrets.DISCORD_WEBHOOK_URL }}'
-          $message = '{"content": "❌ Build failed for SGI on branch ''${{ github.ref_name }}''!"}'
+          $message = '{"content": "❌ Build failed for SGI on tag ''${{ github.ref_name }}''!"}'
           curl -H "Content-Type: application/json" -X POST -d $message $webhookUrl
