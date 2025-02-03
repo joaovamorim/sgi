@@ -49,17 +49,17 @@ jobs:
           }
           echo "VERSION=$version" >> $GITHUB_ENV
 
-      # 6. Criar e enviar a tag (baseada na versão extraída, sem o prefixo 'v')
-      - name: Create and push tag
+      # 6. Verificar se a tag já existe antes de criar e enviar
+      - name: Check if tag exists and create or skip
         run: |
-          if [ -z "${{ env.VERSION }}" ]; then
-            echo "Version not set, aborting tag creation"
-            exit 1
+          if git rev-parse "refs/tags/${{ env.VERSION }}" >/dev/null 2>&1; then
+            echo "Tag ${{ env.VERSION }} already exists, skipping tag creation"
+          else
+            git config user.name "GitHub Actions"
+            git config user.email "actions@github.com"
+            git tag -a "${{ env.VERSION }}" -m "Version ${{ env.VERSION }}"
+            git push origin "${{ env.VERSION }}"
           fi
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git tag -a "${{ env.VERSION }}" -m "Version ${{ env.VERSION }}"
-          git push origin "${{ env.VERSION }}"
 
       # 7. Compilar o projeto (caminho relativo à pasta src)
       - name: Build the project
