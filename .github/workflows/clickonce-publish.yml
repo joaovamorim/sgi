@@ -2,8 +2,8 @@ name: Publish ClickOnce
 
 on:
   push:
-    tags:
-      - '[0-9]+.*'  # Aciona no push de tags, por exemplo: 1.5.4
+    branches:
+      - main  # Aciona o CI/CD ao fazer push na branch main
 
 jobs:
   build:
@@ -84,6 +84,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ./src/publish/publish.zip
+          tag_name: ${{ env.VERSION }}  # Usando a tag que foi criada
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
