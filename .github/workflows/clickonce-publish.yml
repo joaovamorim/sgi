@@ -49,18 +49,18 @@ jobs:
           }
           echo "VERSION=$version" >> $GITHUB_ENV
 
-      # 6. Verificar se a tag já existe antes de criar e enviar
-      - name: Check if tag exists and create or skip
+      # 6. Criar a tag com a versão extraída do .csproj (caso não exista)
+      - name: Create Git tag
         run: |
-          git fetch --tags  # Buscar todas as tags remotas
-          $tagExists = git tag -l ${{ env.VERSION }}
-          if ($tagExists) {
-            echo "Tag ${{ env.VERSION }} already exists, skipping tag creation"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git fetch --tags
+          if (git tag -l "$VERSION") {
+            echo "Tag $VERSION already exists."
           } else {
-            git config user.name "GitHub Actions"
-            git config user.email "actions@github.com"
-            git tag -a "${{ env.VERSION }}" -m "Version ${{ env.VERSION }}"
-            git push origin "${{ env.VERSION }}"
+            git tag $VERSION
+            git push origin $VERSION
+            echo "Tag $VERSION created and pushed."
           }
 
       # 7. Compilar o projeto (caminho relativo à pasta src)
@@ -91,7 +91,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ./src/publish/publish.zip
-          tag_name: ${{ env.VERSION }}  # Usando a tag que foi criada
+          tag_name: ${{ env.VERSION }}  # Usando a tag criada
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
