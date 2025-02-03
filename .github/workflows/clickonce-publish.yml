@@ -37,25 +37,40 @@ jobs:
       - name: Restore NuGet packages
         run: dotnet restore ./src/SGI.csproj
 
-      # 5. Compilar o projeto (caminho relativo à pasta src)
+      # 5. Extrair versão do arquivo de projeto (.csproj)
+      - name: Get version from project file
+        id: get_version
+        run: |
+          $version=$(cat ./src/SGI.csproj | grep '<Version>' | sed -E 's/.*<Version>(.*)<\/Version>.*/\1/')
+          echo "VERSION=$version" >> $GITHUB_ENV
+
+      # 6. Criar e enviar a tag (baseada na versão extraída, sem o prefixo 'v')
+      - name: Create and push tag
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git tag -a "${{ env.VERSION }}" -m "Version ${{ env.VERSION }}"
+          git push origin "${{ env.VERSION }}"
+
+      # 7. Compilar o projeto (caminho relativo à pasta src)
       - name: Build the project
         run: dotnet build ./src/SGI.csproj --configuration ${{ matrix.configuration }}
 
-      # 6. Corrigir e validar código (analisar formatação de espaços em branco)
+      # 8. Corrigir e validar código (analisar formatação de espaços em branco)
       - name: Format whitespace in the project
         run: dotnet format whitespace ./src/SGI.csproj --verify-no-changes
 
-      # 7. Publicar ClickOnce **somente se for Release**
+      # 9. Publicar ClickOnce **somente se for Release**
       - name: Publish ClickOnce (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente publica se for Release
         run: dotnet publish ./src/SGI.csproj --configuration Release --output ./src/publish
 
-      # 8. Compactar os arquivos em publish.zip **somente se for Release**
+      # 10. Compactar os arquivos em publish.zip **somente se for Release**
       - name: Zip publish folder (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente compacta se for Release
         run: Compress-Archive -Path ./src/publish/* -DestinationPath ./src/publish/publish.zip
 
-      # 9. Fazer upload do publish.zip para os artefatos do GitHub **somente se for Release**
+      # 11. Fazer upload do publish.zip para os artefatos do GitHub **somente se for Release**
       - name: Upload installer (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente faz upload se for Release
         uses: actions/upload-artifact@v4
@@ -63,7 +78,7 @@ jobs:
           name: ClickOnce
           path: ./src/publish/publish.zip
 
-      # 10. Criar uma nova release no GitHub **somente se for Release**
+      # 12. Criar uma nova release no GitHub **somente se for Release**
       - name: Create GitHub release (Release only)
         if: ${{ matrix.configuration == 'Release' }}  # Somente cria release se for Release
         uses: softprops/action-gh-release@v1
@@ -72,7 +87,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 11. Notificar o Discord (alerta de sucesso)
+      # 13. Notificar o Discord (alerta de sucesso)
       - name: Send Discord notification (success)
         if: ${{ success() && matrix.configuration == 'Release' }}  # Notifica apenas em Release e sucesso
         run: |
@@ -80,7 +95,7 @@ jobs:
           $message = '{"content": "✅ Build and release successful for SGI (Release) on branch ''${{ github.ref_name }}''!"}'
           curl -H "Content-Type: application/json" -X POST -d $message $webhookUrl
 
-      # 12. Notificar o Discord (alerta de falha)
+      # 14. Notificar o Discord (alerta de falha)
       - name: Send Discord notification (failure)
         if: ${{ failure() }}
         run: |
