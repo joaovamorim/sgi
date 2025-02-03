@@ -52,14 +52,16 @@ jobs:
       # 6. Verificar se a tag já existe antes de criar e enviar
       - name: Check if tag exists and create or skip
         run: |
-          if git rev-parse "refs/tags/${{ env.VERSION }}" >/dev/null 2>&1; then
+          git fetch --tags  # Buscar todas as tags remotas
+          $tagExists = git tag -l ${{ env.VERSION }}
+          if ($tagExists) {
             echo "Tag ${{ env.VERSION }} already exists, skipping tag creation"
-          else
+          } else {
             git config user.name "GitHub Actions"
             git config user.email "actions@github.com"
             git tag -a "${{ env.VERSION }}" -m "Version ${{ env.VERSION }}"
             git push origin "${{ env.VERSION }}"
-          fi
+          }
 
       # 7. Compilar o projeto (caminho relativo à pasta src)
       - name: Build the project
