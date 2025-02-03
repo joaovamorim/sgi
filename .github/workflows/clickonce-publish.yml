@@ -37,11 +37,12 @@ jobs:
       - name: Restore NuGet packages
         run: dotnet restore ./src/SGI.csproj
 
-      # 5. Extrair versão do arquivo de projeto (.csproj)
+      # 5. Extrair versão do arquivo de projeto (.csproj) usando PowerShell
       - name: Get version from project file
         id: get_version
         run: |
-          $version=$(cat ./src/SGI.csproj | grep '<Version>' | sed -E 's/.*<Version>(.*)<\/Version>.*/\1/')
+          [xml]$csproj = Get-Content ./src/SGI.csproj
+          $version = $csproj.Project.PropertyGroup.Version
           echo "VERSION=$version" >> $GITHUB_ENV
 
       # 6. Criar e enviar a tag (baseada na versão extraída, sem o prefixo 'v')
